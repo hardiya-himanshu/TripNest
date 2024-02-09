@@ -1,0 +1,76 @@
+.main {
+    background-image: url(../assets/login_bg.jpg);
+    width: 100;
+    height: 100vh;
+    /* background-position: center center; */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    /* border: 2px solid white; */
+    /* background-color: azure; */
+    /* background: rgba(rgb(255, 255, 255), green, blue, .15); */
+    background: rgba(255, 255, 255, 0.272);
+    box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5px);
+
+    text-align: center;
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    /* width: 350px;
+    height: 400px; */
+}
+
+.title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    /* border: 2px solid red; */
+
+}
+
+.form form input::placeholder {
+    color: black;
+}
+
+form input {
+    font-size: 18px;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border: none;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    /* width: 200px; */
+    /* color: var(--color1); */
+}
+
+.t_c {
+    display: flex;
+    gap: 10px;
+    /* border: 2px solid red; */
+    /* margin: 10px 0px; */
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+}
