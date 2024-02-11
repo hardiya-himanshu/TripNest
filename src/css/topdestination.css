@@ -1,0 +1,28 @@
+.top_destination {
+    background-color: #B2CCFF;
+    width: 100%;
+    height: 100vh;
+    padding: 7vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20vh;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.cards_section {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    /* border: 2px solid pink; */
+}
+
+img {
+    width: 200px;
+}

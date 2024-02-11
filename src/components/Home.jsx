@@ -7,7 +7,7 @@ import '../css/style.css'
 function Home() {
   return (      
     <>
-        
+
 <section class="home">
     <div className='black_opacity'></div>
     <nav>
@@ -22,7 +22,7 @@ function Home() {
                 <li>Categories</li>
                 <li>Discount</li>
             </ul>
-                
+
                 <img src="../public/assets/white_user.png" alt=""/>
         </div>
     </nav>
@@ -33,12 +33,8 @@ function Home() {
 </section>
     </>
 
-    
+
   )
 }
 
 export default Home
-
-
-
-
