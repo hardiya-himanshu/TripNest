@@ -7,5 +7,20 @@
 }
 
 :root {
-    --color1: white
+    --color1: white;
+    --primary: #002160;
+    --secondary: #B2CCFF;      
+}
+
+html::-webkit-scrollbar {
+    width: .5vw;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--secondary);
 }

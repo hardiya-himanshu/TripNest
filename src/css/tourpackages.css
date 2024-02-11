@@ -1,0 +1,24 @@
+.tour_packages {
+    width: 100%;
+    height: 105vh;
+    background-color: #B2CCFF;
+    /* border: 2px solid red; */
+    padding: 5vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+}
+
+.title_tour_packages {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.more_tour {
+    text-decoration: underline;
+    font-weight: 700;
+    text-align: end;
+    padding: 0vh 15vw;
+}
