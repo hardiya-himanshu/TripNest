@@ -27,6 +27,8 @@
 
 .categories_drop_down {
     padding: 0px 15vw;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 .categories_grid {

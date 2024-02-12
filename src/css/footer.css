@@ -1,0 +1,24 @@
+.footer_Section {
+    width: 100%;
+    height: 45vh;
+    background-color: var(--primary);
+    /* border: 2px solid red; */
+    padding: 7vh;
+    display: flex;
+    /* flex-direction: column; */
+    gap: 5vh;
+    /* border-radius: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 15vw;
+    color: var(--color1);
+}
+
+.alignment {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: center;
+}

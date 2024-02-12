@@ -5,6 +5,8 @@ import Hotels from './components/Hotels'
 import TopDestination from './components/TopDestination'
 import TourPackages from './components/TourPackages'
 import Categories_section from './components/Categories_section'
+import OnDiscount from './components/OnDiscount'
+import Footer from './components/Footer'
 
 
 function App() {
@@ -19,6 +21,8 @@ function App() {
       <TourPackages/>
       <Hotels/>
       <Categories_section/>
+      <OnDiscount/>
+      <Footer/>
     </body>
     
   )

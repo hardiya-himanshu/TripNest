@@ -15,7 +15,7 @@ function TourPackages() {
         TOUR PACKAGES
         </div>
         {/* <div className="tour_cards grid grid-cols-4 grid-rows-2 px-36 gap-5 "> */}
-        <div className="tour_cards grid grid-cols-4 grid-rows-2 gap-5 border">
+        <div className="tour_cards grid grid-cols-4 grid-rows-2 gap-5">
             {/* <Tourcard tourimage={ladakh} className="row-span-2  h-full w-full " imgClass="rounded-lg h-full w-full shadow-2xl"/>
             <Tourcard tourimage={usa} className="w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
             <Tourcard tourimage={jerusalem} className="col-span-2 w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
