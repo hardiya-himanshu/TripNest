@@ -4,7 +4,7 @@ import Home from './components/Home'
 import Hotels from './components/Hotels'
 import TopDestination from './components/TopDestination'
 import TourPackages from './components/TourPackages'
-
+import Categories_section from './components/Categories_section'
 
 
 function App() {
@@ -18,6 +18,7 @@ function App() {
       <TopDestination/>
       <TourPackages/>
       <Hotels/>
+      <Categories_section/>
     </body>
     
   )
