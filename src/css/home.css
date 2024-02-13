@@ -23,7 +23,7 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 0px 20px;
-    font-size: 20px;
+    font-size: 1.25rem;
     color: var(--color1);
     /* background-color: rgb(0, 0, 255); */
     /* z-index: 2; */
@@ -70,14 +70,31 @@ nav {
     height: 85%;
     color: var(--color1);
     z-index: 2;
-    font-size: 50px;
+    font-size: 3rem;
     text-align: center;
     font-weight: 400;
+    padding: 10px;
     /* line-height: 40px; */
 }
 
 @media screen and (max-width:1150px) {
     .nav_content ul {
         display: none;
+    }
+
+    .tagline {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .tagline {
+        font-size: 2rem;
+    }
+
+    nav .logo img {
+        height: 50px;
+        width: auto;
+        /* border: 2px solid red; */
     }
 }

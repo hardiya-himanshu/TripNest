@@ -12,7 +12,7 @@ import Footer from './components/Footer'
 function App() {
   return (
 
-    <body>
+    <>
 
       <Home/>
       {/* <Login/> */}
@@ -23,7 +23,7 @@ function App() {
       <Categories_section/>
       <OnDiscount/>
       <Footer/>
-    </body>
+    </>
     
   )
 }

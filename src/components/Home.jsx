@@ -10,13 +10,13 @@ function Home() {
     <>
 <div className="progressbar"></div>
 <div className="scrollpath"></div>
-<section class="home">
+<section className="home">
     <div className='black_opacity'></div>
     <nav>
-        <div class="logo">
+        <div className="logo">
             <img src={logo} alt="Image" />
         </div>
-        <div class="nav_content">
+        <div className="nav_content">
             <ul>
                 <li>Top Destinations</li>
                 <li>Packages</li>

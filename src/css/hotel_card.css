@@ -110,3 +110,18 @@
     background-image: linear-gradient(to right, #B2CCFF, #b2ccffeb, rgba(255, 255, 0, 0));
     transform: rotate(180deg);
 }
+
+@media screen and (max-width:1350px) {
+    .main_hotel_card {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .hotel_card_content {
+        align-items: flex-start;
+        /* border: 2px solid red; */
+        padding: 0;
+        gap: 20px;
+    }
+}

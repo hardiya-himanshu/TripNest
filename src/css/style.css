@@ -6,10 +6,14 @@
 
 }
 
+body {
+    font-size: 16px;
+}
+
 :root {
     --color1: white;
     --primary: #002160;
-    --secondary: #B2CCFF;      
+    --secondary: #B2CCFF;
 }
 
 html::-webkit-scrollbar {
