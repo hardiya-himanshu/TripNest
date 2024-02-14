@@ -33,7 +33,7 @@ function TopDestination() {
         <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
               <Card image={paris}/>
               <Card image={tokyo}/>
-              <Card image={tokyo}/>
+              <Card image={lakshadweep}/>
               <Card image={seoul}/>
               <Card image={bali}/>
               

@@ -102,7 +102,7 @@
 
 .gradient2 {
     position: absolute;
-    right: -1px;
+    right: 0px;
     z-index: 1;
     height: 120%;
     /* border: 2px solid rgb(0, 0, 0); */

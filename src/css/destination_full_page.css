@@ -1,0 +1,257 @@
+.destination_fullpage_section {
+    padding: 2vw;
+    background-color: var(--secondary);
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.dfp_content {
+    background-color: var(--primary);
+    /* background-color: pink; */
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    /* border: 3px solid white; */
+    overflow: hidden scroll;
+    position: relative;
+}
+
+
+.dfp_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    width: 30px;
+
+}
+
+.dfp_content::-webkit-scrollbar {
+    display: none;
+}
+
+/* 
+
+.dfp_content::-webkit-scrollbar {
+    width: 1vw;
+    scroll-behavior: smooth;
+}
+
+.dfp_content::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+
+.dfp_content::-webkit-scrollbar-track {
+    background-color: var(--color1);
+
+} */
+
+.dfp_image {
+    position: relative;
+
+    /* object-fit: contain; */
+    overflow: hidden;
+    width: 100%;
+    height: 50%;
+    /* border-radius: 15px 15px 0px 0px; */
+}
+
+.dfp_image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.gradient {
+    position: absolute;
+    bottom: 0px;
+    /* border: 2px solid rgb(199, 0, 0); */
+    right: 0px;
+    z-index: 1;
+    height: 100%;
+    /* border: 2px solid rgb(255, 255, 255); */
+    width: 100%;
+    background-image: linear-gradient(to top, var(--primary), rgba(255, 255, 0, 0), rgba(255, 255, 0, 0));
+    /* transform: rotate(0deg); */
+}
+
+.dfp_others {
+    color: var(--color1);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.dfp_city_name {
+    font-size: 25px;
+    font-weight: 600;
+    text-shadow: 2px 2px 10px black;
+}
+
+.dfp_city_description {
+    font-size: 17px;
+}
+
+.dfp_attractions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dfp_attractions_title {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 500;
+    /* margin-top: 10px; */
+}
+
+.dfp_attractions_main {
+    display: flex;
+    /* justify-content: space-between; */
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.dfp_attractions_content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color1);
+
+}
+
+.dfp_attractions_content img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.attraction_name {
+    color: black;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-weight: 600;
+    /* border: 2px solid red; */
+}
+
+/* HOTELS */
+
+.dfp_hotels {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dfp_hotels_title {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 500;
+    /* margin-top: 10px; */
+}
+
+.dfp_hotels_main {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+
+    gap: 40px;
+    align-items: center;
+}
+
+.dfp_hotels_content {
+    display: flex;
+    flex-direction: column;
+    /* gap: 10px; */
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color1);
+
+}
+
+.dfp_hotels_content img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.hotel_name {
+    color: black;
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    font-weight: 600;
+    /* border: 2px solid red; */
+}
+
+.dfp_reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dpf_reviews_title {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 500;
+    /* margin-top: 10px; */
+}
+
+.dfp_reviews_content textarea {
+    resize: none;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 830px;
+    width: 100%;
+}
+
+.dfp_reviews_content textarea::placeholder {
+    color: rgb(83, 83, 83);
+}
+
+.dpf_contacts {
+    display: flex;
+    gap: 15px;
+    /* margin-top: 10px; */
+    flex-direction: column;
+}
+
+.dpf_number {
+    display: flex;
+    gap: 10px;
+}
+
+.dpf_number img {
+    width: 25px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    padding: 2px;
+}
+
+.dpf_email {
+    display: flex;
+    gap: 10px;
+}
+
+.dpf_email img {
+    width: 25px;
+    background-color: var(--color1);
+    border-radius: 5px;
+    padding: 2px;
+}
