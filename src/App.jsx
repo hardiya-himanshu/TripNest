@@ -16,15 +16,15 @@ function App() {
 
     <>
 
-      <Signup/>
+      {/* <Signup/> */}
       {/* <Login/> */}
-      {/* <Home/>
+      <Home/>
       <TopDestination/>
       <TourPackages/>
       <Hotels/>
       <Categories_section/>
       <OnDiscount/>
-      <Footer/> */}
+      <Footer/>
       {/* <Destination_Full_Page/> */}
       {/* <Tour_Full_Page/> */}
       {/* <Hotel_Full_Page/> */}
