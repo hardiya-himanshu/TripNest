@@ -75,10 +75,17 @@ nav {
     cursor: pointer;
 }
 
-
+.user_settings {
+    display: flex;
+    /* flex-direction: column; */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
 
 .user_options {
-    position: absolute;
+    /* position: absolute; */
     top: 60px;
     right: 20px;
     width: 220px;
@@ -88,37 +95,48 @@ nav {
     padding: 5px 5px;
     border-radius: 10px;
     overflow: hidden;
-    /* border: .5px solid var(--color1); */
-    cursor: pointer;
     border: .5px solid var(--color1);
     background-color: var(--primary);
     border-radius: 10px;
+    /* pointer-events: none; */
 
 }
 
 .logup_option {
-    position: absolute;
+    /* pointer-events: none; */
+    /* position: absolute; */
     top: 60px;
     right: 20px;
     width: 220px;
+    /* height: 100px; */
     min-width: 200px;
     display: flex;
     flex-direction: column;
     padding: 5px 5px;
     border-radius: 10px;
     overflow: hidden;
+    /* border: .5px solid var(--color1); */
     cursor: pointer;
     border: .5px solid var(--color1);
     background-color: var(--primary);
     border-radius: 10px;
 }
 
+
 .account_setting,
 .logout,
 .login-signup {
-    /* border: .5px solid var(--color1); */
     cursor: pointer;
-    padding: 0px 10px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* height: 100px; */
+
+}
+
+.account_setting:hover,
+.logout:hover,
+.login-signup:hover {
+    background-color: #013594;
 }
 
 

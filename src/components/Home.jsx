@@ -1,16 +1,18 @@
 import React from 'react'
-import { Link } from 'react-scroll'
+import { Link as ScrollLink} from 'react-scroll'
 import { useRef, useState} from 'react'
+import {Link} from 'react-router-dom'
 import '../css/home.css'
 import '../css/style.css'
 import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
 import user from "../assets/white_user.png"
 
 
+
 function Home() {
 
     const[user_opt, user_opt_show] = useState(false)
-    const[login_sts, set_login_sts] = useState(false)
+    const[login_sts, set_login_sts] = useState(true)
 
   return (      
     <>
@@ -24,41 +26,53 @@ function Home() {
         </div>
         <div className="nav_content">
             <ul>
-                <Link to='top_destination' spy={true} smooth={true}>
+                <ScrollLink to='top_destination' spy={true} smooth={true}>
                 <li>Top Destinations</li>
-                </Link>
-                <Link to='tour_packages' spy={true} smooth={true}>
+                </ScrollLink>
+                <ScrollLink to='tour_packages' spy={true} smooth={true}>
                 <li>Packages</li>
-                </Link>
-                <Link to='hotel_section' spy={true} smooth={true}>
+                </ScrollLink>
+                <ScrollLink to='hotel_section' spy={true} smooth={true}>
                 <li>Hotels</li>
-                </Link>
-                <Link to='categories_section' spy={true} smooth={true}>
+                </ScrollLink>
+                <ScrollLink to='categories_section' spy={true} smooth={true}>
                 <li>Categories</li>
-                </Link>
-                <Link to='ondiscount_section' spy={true} smooth={true}>
+                </ScrollLink>
+                <ScrollLink to='ondiscount_section' spy={true} smooth={true}>
                 <li>Discount</li>
-                </Link>
+                </ScrollLink>
             </ul>
+                <div className="user_settings">
 
-                <img onClick={()=>user_opt_show(!user_opt)} src={user} alt=""/>
-        </div>
-        
-        {login_sts?
-            user_opt?
-            
-                <div className='user_options'>
-                <div className='account_setting'>Account Setting</div>
-                <div className='logout'>Logout</div>
+                    <img onClick={()=>user_opt_show(!user_opt)} src={user} alt=""/>
+
+                     {login_sts?
+                user_opt?
+                
+                    <div className='user_options'>
+                        <Link to='/account' className='account_setting'>Account           Setting
+                        </Link>
+                        <Link to='/login' className='logout'>
+                            Logout
+                        
+                        </Link>
+                    </div>
+                :null
+            :
+                user_opt?
+                <div className='logup_option'>
+                
+                        <Link to='/login' className='login-signup'>Login/Signup</Link></div>               
+                
+                
+                :null
+            }             
+
                 </div>
-            :null
-        :
-            user_opt?
-            <div className='logup_option'>
-                <div className='login-signup'>Login/Signup</div>
-            </div>
-            :null
-        }
+                </div>
+                
+            
+        
         
     </nav>
     <div className="tagline">
