@@ -11,7 +11,7 @@ import oceania from '../assets/oceania.jpg'
 
 function Categories_section() {
   return (
-    <div className='categories_section'>
+    <div className='categories_section' id='categories_section'>
         <div className="categories_title">
             CATEGORIES
         </div>

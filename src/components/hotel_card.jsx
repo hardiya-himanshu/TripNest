@@ -9,7 +9,7 @@ function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice
         </div>
         <div className="hotel_card_content">
             <div className="hotel_div1">
-                <div className="hotel_name">{hotelName}</div>
+                <div className="hotel_card_name">{hotelName}</div>
                 <div className="hotel_location">{hotelLocation}</div>
                 <div className="hotel_type">{hotelType}</div>
 

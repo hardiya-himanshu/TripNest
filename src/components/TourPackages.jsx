@@ -10,7 +10,7 @@ import usa from "../assets/usa.jpg"
 
 function TourPackages() {
   return (
-    <section className='tour_packages'>
+    <section className='tour_packages' id='tour_packages'>
         <div className="title_tour_packages">
         TOUR PACKAGES
         </div>

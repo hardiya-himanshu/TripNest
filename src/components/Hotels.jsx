@@ -7,7 +7,7 @@ import hotel1 from '../assets/hotel1.jpg'
 
 function Hotels() {
   return (
-    <section className='hotel_section'>
+    <section className='hotel_section' id='hotel_section'>
       <div className="title_hotels">HOTELS</div>
       <div className="hotel_cards">
 

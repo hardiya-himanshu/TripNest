@@ -23,7 +23,7 @@ function TopDestination() {
     }
 
   return (
-    <section className='top_destination'>
+    <section className='top_destination' id='top_destination'>
         <div className="title">
         TOP DESTINATION
         </div>

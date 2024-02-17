@@ -5,7 +5,7 @@ import Lakshadweep from '../assets/Lakshadweep.webp'
 
 function OnDiscount() {
   return (
-    <div className='ondiscount_section'>
+    <div className='ondiscount_section' id='ondiscount_section'>
         <div className="discount_title">
             ON DISCOUNT
         </div>

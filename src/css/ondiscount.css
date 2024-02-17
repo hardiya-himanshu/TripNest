@@ -1,7 +1,7 @@
 .ondiscount_section {
     width: 100%;
     height: 100vh;
-    background-color: #B2CCFF;
+    background-color: var(--secondary);
     /* border: 2px solid red; */
     padding: 7vh;
     display: flex;

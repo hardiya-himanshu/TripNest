@@ -25,7 +25,7 @@ function Signup() {
                 <label htmlFor="t_c">I accept the Terms & Conditions</label>
                 <input type="checkbox" name="t_c" id="t_c" />
             </div>
-        <button onClick="" className='signup_btn'>SIGN UP</button>
+        <button className='signup_btn'>SIGN UP</button>
         </form>
         
       </div>

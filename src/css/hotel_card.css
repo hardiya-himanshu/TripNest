@@ -32,7 +32,7 @@
     flex-direction: column;
 }
 
-.hotel_name,
+.hotel_card_name,
 .hotel_location,
 .hotel_type,
 .hotel_price {
@@ -40,7 +40,7 @@
     color: var(--color1);
 }
 
-.hotel_name {
+.hotel_card_name {
     font-size: 30px;
 }
 
@@ -97,7 +97,7 @@
     height: 120%;
     /* border: 2px solid rgb(0, 0, 0); */
     width: 15%;
-    background-image: linear-gradient(to right, #B2CCFF, #b2ccffeb, rgba(255, 255, 0, 0));
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
 }
 
 .gradient2 {
@@ -107,7 +107,7 @@
     height: 120%;
     /* border: 2px solid rgb(0, 0, 0); */
     width: 15%;
-    background-image: linear-gradient(to right, #B2CCFF, #b2ccffeb, rgba(255, 255, 0, 0));
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
     transform: rotate(180deg);
 }
 

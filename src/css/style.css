@@ -14,6 +14,8 @@ body {
     --color1: white;
     --primary: #002160;
     --secondary: #B2CCFF;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
 }
 
 html::-webkit-scrollbar {
