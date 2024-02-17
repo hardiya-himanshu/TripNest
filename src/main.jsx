@@ -8,6 +8,8 @@ import ErrorPage from './components/ErrorPage'
 import { Route, Routes, BrowserRouter, RouterProvider, createBrowserRouter ,createRoutesFromElements } from 'react-router-dom'
 import Main_Site from './Main_Site'
 import Account_Settings from './components/Account_Settings'
+import Acc_Set_PD from './components/Acc_Set_PD'
+import Acc_Sett_SD from './components/Acc_Sett_SD'
 
 const router = createBrowserRouter([
 
@@ -29,7 +31,17 @@ const router = createBrowserRouter([
     {
       path:"/account",
       element:<Account_Settings/>,
-      errorElement:<ErrorPage/>
+      errorElement:<ErrorPage/>,
+      children:[
+        {
+          path:"/account/personal_details",
+          element:<Acc_Set_PD/>
+        },
+        {
+          path:"/account/security",
+          element:<Acc_Sett_SD/>
+        },
+      ]
     }
 
 
