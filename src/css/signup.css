@@ -95,13 +95,14 @@ form input {
     flex-wrap: wrap;
 }
 
+/* 
 .btn {
     font-size: 20px;
     padding: 5px 10px;
     border-radius: 5px;
     width: 100px;
-    /* border: 2px solid red; */
-}
+    border: 2px solid red;
+} */
 
 .signup_btn {
     background-color: var(--secondary);

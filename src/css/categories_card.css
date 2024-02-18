@@ -6,6 +6,7 @@
     box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.804);
     height: 200px;
     /* padding: ; */
+    cursor: pointer;
 }
 
 .dark_bg_categories {
@@ -24,6 +25,11 @@
     font-size: 25px;
     color: var(--color1);
 }
+
+.categories_card_section:hover>.categories_card_name {
+    text-decoration: underline;
+}
+
 
 .categories_card_name_asia {
     left: 46%;

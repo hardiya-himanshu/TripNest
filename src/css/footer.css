@@ -17,6 +17,7 @@
 }
 
 .alignment {
+    cursor: pointer;
     display: flex;
     gap: 20px;
     justify-content: flex-start;

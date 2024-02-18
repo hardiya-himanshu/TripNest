@@ -30,6 +30,10 @@
     display: none;
 }
 
+.acth::-webkit-scrollbar {
+    display: none;
+}
+
 .hfp_image {
     position: relative;
 

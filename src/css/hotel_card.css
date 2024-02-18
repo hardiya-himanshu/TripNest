@@ -69,7 +69,10 @@
     background-color: var(--color1);
     border-radius: 10px;
     font-weight: 600;
-    width: fit-content;
+    width: 60%;
+    font-size: 1.1rem;
+    /* border: 2px solid red; */
+
 }
 
 
@@ -78,6 +81,7 @@
     position: absolute;
     top: 45%;
     z-index: 2;
+    cursor: pointer;
 }
 
 .card_arrow_left img {
@@ -92,7 +96,7 @@
 
 .gradient1 {
     position: absolute;
-    left: 0;
+    left: 0px;
     z-index: 1;
     height: 120%;
     /* border: 2px solid rgb(0, 0, 0); */

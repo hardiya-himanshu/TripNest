@@ -1,3 +1,72 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inder', sans-serif;
+
+}
+
+body {
+    font-size: 16px;
+}
+
+
+html::-webkit-scrollbar {
+    width: .5vw;
+    scroll-behavior: smooth;
+    display: none;
+}
+
+/* html::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+}
+
+html::-webkit-scrollbar-track {
+    background-color: var(--secondary);
+} */
+
+:root {
+    --color1: white;
+    --hcolor: black;
+    --primary: #002160;
+    --secondary: #B2CCFF;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
+}
+
+[data-theme='1'] {
+    --color1: white;
+    --primary: #002160;
+    --secondary: #B2CCFF;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
+}
+
+[data-theme='2'] {
+    --color1: white;
+    --primary: #000000;
+    --secondary: #FFFFFF;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
+}
+
+[data-theme='3'] {
+    --color1: white;
+    --primary: #545454;
+    --hcolor: white;
+    --secondary: #000000;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
+}
+
+[data-theme='4'] {
+    --color1: white;
+    --primary: #605600;
+    --secondary: #FDFFB2;
+    /* --primary: #1573ff;
+    --secondary: #5dbef7; */
+}

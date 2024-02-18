@@ -44,7 +44,7 @@
     height: 100%;
     /* border: 2px solid white; */
     padding: 10px;
-    background-color: #002160;
+    background-color: var(--primary);
 }
 
 .aspf_sbc {

@@ -10,6 +10,8 @@ import Main_Site from './Main_Site'
 import Account_Settings from './components/Account_Settings'
 import Acc_Set_PD from './components/Acc_Set_PD'
 import Acc_Sett_SD from './components/Acc_Sett_SD'
+import Acc_Sett_RV from './components/Acc_Sett_RV'
+import Acc_Sett_TH from './components/Acc_Sett_TH'
 
 const router = createBrowserRouter([
 
@@ -29,17 +31,25 @@ const router = createBrowserRouter([
       errorElement:<ErrorPage/>
     },
     {
-      path:"/account",
+      path:"/account/",
       element:<Account_Settings/>,
       errorElement:<ErrorPage/>,
       children:[
         {
-          path:"/account/personal_details",
+          path:"/account/",
           element:<Acc_Set_PD/>
         },
         {
           path:"/account/security",
           element:<Acc_Sett_SD/>
+        },
+        {
+          path:"/account/reviews",
+          element:<Acc_Sett_RV/>
+        },
+        {
+          path:"/account/themes",
+          element:<Acc_Sett_TH/>
         },
       ]
     }

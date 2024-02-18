@@ -13,7 +13,7 @@ function Account_Settings() {
 
         </Link>
             <div className="asfp_sidebar">
-                <Link to="/account/personal_details">
+                <Link to="/account/">
                 <div className="asfp_pd aspf_sbc">
                     PERSONAL DETAILS
                 </div>
@@ -24,12 +24,16 @@ function Account_Settings() {
                 </div>
 
                 </Link>
+                <Link to="/account/reviews">
                 <div className="asfp_mr aspf_sbc">
                     MY REVIEWS
                 </div>
+                </Link>
+                <Link to="/account/themes">
                 <div className="asfp_t aspf_sbc">
                     THEMES
                 </div>
+                </Link>
             </div>
             <div className="asfp_main_content">
                 <Outlet/>
