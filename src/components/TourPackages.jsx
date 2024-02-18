@@ -6,6 +6,7 @@ import brazil from "../assets/brazil.jpg"
 import jerusalem from "../assets/jerusalem.jpg"
 import mauritius from "../assets/mauritius.avif"
 import tokyo2 from "../assets/tokyo2.jpg"
+import {Link} from 'react-router-dom'
 import usa from "../assets/usa.jpg"
 
 function TourPackages() {
@@ -22,6 +23,7 @@ function TourPackages() {
             <Tourcard tourimage={tokyo2} className="w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
             <Tourcard tourimage={mauritius} className="w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
             <Tourcard tourimage={brazil} className="w-full h-full" imgClass="rounded-lg w-full h-full shadow-2xl"/> */}
+
             <Tourcard tourimage={ladakh} className="tour_first tour_card row-span-2" tour_name="Ladakh"/>
             <Tourcard tourimage={usa} className="tour_second tour_card" tour_name="USA"/>
             <Tourcard tourimage={jerusalem} className="tour_third tour_card col-span-2" tour_name="Jerusalem"/>

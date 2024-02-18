@@ -11,12 +11,16 @@ import hotel3 from "../assets/hotel3.webp"
 import phone from "../assets/phone.png"
 import close from "../assets/close.png"
 import email from "../assets/email.png"
+import {Link} from 'react-router-dom'
+
 
 function Destination_Full_Page() {
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
-        <img className='dfp_close' src={close} alt="" />
+       <Link to='/'>
+            <img className='dfp_close' src={close} alt="" />
+       </Link>
 
             <div className="dfp_image">
                 <div className="gradient"></div>
@@ -84,7 +88,7 @@ function Destination_Full_Page() {
                         <div>help.tripnest@gmail.com</div>
                     </div>
                 </div>
-                <div className="btn dpf_btn">
+                <div className="dpf_btn">
                    BOOK NOW
                 </div>
             </div>

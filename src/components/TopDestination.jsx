@@ -9,6 +9,7 @@ import lakshadweep from "../assets/lakshadweep.jpg"
 import bali from "../assets/bali.jpg"
 import left_arrow from "../assets/left-arrow.png"
 import right_arrow from "../assets/right-arrow.png"
+import {Link} from 'react-router-dom'
 import { useRef } from 'react'
 
 
@@ -31,11 +32,21 @@ function TopDestination() {
           <div className="gradient1"></div>
               <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
         <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
-              <Card image={paris}/>
-              <Card image={tokyo}/>
-              <Card image={lakshadweep}/>
-              <Card image={seoul}/>
-              <Card image={bali}/>
+              <Link to="/destination" className="dcard">
+                <Card image={paris}/>
+              </Link>
+              <Link to="/destination" className="dcard">
+                <Card image={tokyo}/>
+              </Link>
+              <Link to="/destination"  className="dcard">
+                <Card image={lakshadweep}/>
+              </Link>
+              <Link to="/destination" className="dcard">
+                <Card image={seoul}/>
+              </Link>
+              <Link to="/destination" className="dcard">
+                <Card image={bali} />
+              </Link>
               
         </div>
               <div className='card_arrow_right card_arrow'><img src={right_arrow} alt="" /></div>

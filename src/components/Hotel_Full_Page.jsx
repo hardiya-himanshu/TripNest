@@ -5,12 +5,16 @@ import shimla_full from "../assets/shimla_full.jpg"
 import phone from "../assets/phone.png"
 import email from "../assets/email.png"
 import close from "../assets/close.png"
+import {Link} from 'react-router-dom'
+
 
 function Hotel_Full_Page() {
   return (
     <div className='hotel_fullpage_section'>
         <div className="hfp_content">
-        <img className='hfp_close' src={close} alt="" />
+        <Link to='/'>
+            <img className='hfp_close' src={close} alt="" />
+        </Link>
         
             <div className="hfp_image">
                 <div className="gradient"></div>
@@ -38,7 +42,7 @@ function Hotel_Full_Page() {
                             <div>help.tripnest@gmail.com</div>
                         </div>
                     </div>
-                    <div className="btn hpf_btn">
+                    <div className="hpf_btn_book">
                     BOOK NOW
                     </div>
                 </div>

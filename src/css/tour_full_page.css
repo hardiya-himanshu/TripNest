@@ -107,3 +107,12 @@
     border-radius: 5px;
     padding: 2px;
 }
+
+.tpf_btn {
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--primary);
+    background-color: var(--color1);
+    width: fit-content;
+    font-weight: 700;
+}

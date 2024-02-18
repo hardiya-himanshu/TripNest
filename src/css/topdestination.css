@@ -41,6 +41,21 @@
     /* animation: 2s slide_card infinite linear; */
 }
 
+.cards_section .dcard {
+
+    /* display: flex; */
+    /* gap: 30px; */
+    /* justify-content: center;
+    align-items: center; */
+    /* border: 2px solid rgb(0, 0, 0); */
+    /* position: relative; */
+    height: 100%;
+    /* overflow-x: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 2vh; */
+}
+
 
 
 .card_arrow img {

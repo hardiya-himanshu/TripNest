@@ -18,27 +18,31 @@ function Home() {
     <>
 <div className="progressbar"></div>
 <div className="scrollpath"></div>
-<section className="home">
+<section className="home" id='home'>
     <div className='black_opacity'></div>
+    <div className="navbar">
+
     <nav>
         <div className="logo">
-            <img src={logo} alt="Image" />
+            <ScrollLink to='home' spy={true} smooth={true}>
+                <img src={logo} alt="Image" />
+            </ScrollLink>
         </div>
         <div className="nav_content">
             <ul>
-                <ScrollLink to='top_destination' spy={true} smooth={true}>
+                <ScrollLink to='top_destination' offset={-70} spy={true} smooth={true}>
                 <li>Top Destinations</li>
                 </ScrollLink>
-                <ScrollLink to='tour_packages' spy={true} smooth={true}>
+                <ScrollLink to='tour_packages' offset={-70} spy={true} smooth={true}>
                 <li>Packages</li>
                 </ScrollLink>
-                <ScrollLink to='hotel_section' spy={true} smooth={true}>
+                <ScrollLink to='hotel_section' offset={-70} spy={true} smooth={true}>
                 <li>Hotels</li>
                 </ScrollLink>
-                <ScrollLink to='categories_section' spy={true} smooth={true}>
+                <ScrollLink to='categories_section' offset={-70} spy={true} smooth={true}>
                 <li>Categories</li>
                 </ScrollLink>
-                <ScrollLink to='ondiscount_section' spy={true} smooth={true}>
+                <ScrollLink to='ondiscount_section' offset={-70} spy={true} smooth={true}>
                 <li>Discount</li>
                 </ScrollLink>
             </ul>
@@ -75,6 +79,8 @@ function Home() {
         
         
     </nav>
+    </div>
+
     <div className="tagline">
    EXPERIENCE THE WORLD YOUR WAY
 <br/>WITH TRIPNEST

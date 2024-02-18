@@ -75,6 +75,8 @@
     display: flex;
     flex-direction: column;
     gap: 0px;
+    /* border: 2px solid red; */
+
 }
 
 
@@ -86,12 +88,15 @@
 
 .hfp_city_location {
     font-size: 20px;
+    /* border: 2px solid red; */
 }
 
 .hfp_btns {
     display: flex;
     gap: 10px;
     margin-top: 30px;
+    /* border: 2px solid red; */
+
 }
 
 .hfp_btn {
@@ -135,4 +140,13 @@
     background-color: var(--color1);
     border-radius: 5px;
     padding: 2px;
+}
+
+.hpf_btn_book {
+    background-color: var(--color1);
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    color: var(--primary);
+    font-weight: 700;
 }

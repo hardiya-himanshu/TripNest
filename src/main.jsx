@@ -7,6 +7,9 @@ import Signup from './components/Signup'
 import ErrorPage from './components/ErrorPage'
 import { Route, Routes, BrowserRouter, RouterProvider, createBrowserRouter ,createRoutesFromElements } from 'react-router-dom'
 import Main_Site from './Main_Site'
+import Hotel_Full_Page from './components/Hotel_Full_Page'
+import Tour_Full_Page from './components/Tour_Full_Page'
+import Destination_Full_Page from './components/Destination_Full_Page'
 import Account_Settings from './components/Account_Settings'
 import Acc_Set_PD from './components/Acc_Set_PD'
 import Acc_Sett_SD from './components/Acc_Sett_SD'
@@ -31,10 +34,26 @@ const router = createBrowserRouter([
       errorElement:<ErrorPage/>
     },
     {
+      path:"/hotelpage",
+      element:<Hotel_Full_Page/>,
+      errorElement:<ErrorPage/>
+    },
+    {
+      path:"/packages",
+      element:<Tour_Full_Page/>,
+      errorElement:<ErrorPage/>
+    },
+    {
+      path:"/destination",
+      element:<Destination_Full_Page/>,
+      errorElement:<ErrorPage/>
+    },
+    {
       path:"/account/",
       element:<Account_Settings/>,
       errorElement:<ErrorPage/>,
-      children:[
+      children:
+      [
         {
           path:"/account/",
           element:<Acc_Set_PD/>
@@ -51,8 +70,9 @@ const router = createBrowserRouter([
           path:"/account/themes",
           element:<Acc_Sett_TH/>
         },
-      ]
-    }
+      ]  
+    },
+    
 
 
   ]

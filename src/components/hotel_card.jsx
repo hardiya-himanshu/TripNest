@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/hotel_card.css'
+import {Link} from 'react-router-dom'
 
 function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice}) {
   return (
@@ -17,7 +18,9 @@ function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice
 
             <div className='hotel_div2'>
                 <div className="hotel_price">₹{hotelPrice}</div>
+                <Link to='/hotelpage'>
                 <button className='btn'>BOOK NOW</button>
+                </Link>
                 
             </div>
         </div>

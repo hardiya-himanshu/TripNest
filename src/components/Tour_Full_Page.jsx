@@ -5,12 +5,16 @@ import ladakh_full from "../assets/ladakh_full.jpg"
 import phone from "../assets/phone.png"
 import email from "../assets/email.png"
 import close from "../assets/close.png"
+import {Link} from 'react-router-dom'
+
 
 function Tour_Full_Page() {
   return (
     <div className='tour_fullpage_section'>
         <div className="tfp_content">
-        <img className='tfp_close' src={close} alt="" />
+        <Link to='/'>
+            <img className='tfp_close' src={close} alt="" />
+        </Link>
         
             <div className="tfp_image">
                 <div className="gradient"></div>
@@ -30,7 +34,7 @@ function Tour_Full_Page() {
                         <div>help.tripnest@gmail.com</div>
                     </div>
                 </div>
-                <div className="btn tpf_btn">
+                <div className=" tpf_btn">
                    BOOK NOW
                 </div>
             </div>
