@@ -13,8 +13,8 @@ export default {
       "secondary2": '#FFFFFF',
       "primary3": '#545454',
       "secondary3": '#000000',
-      "primary4": '#605600',
-      "secondary4": '#FDFFB2',
+      "primary4": 'green',
+      "secondary4": '#9aff9a',
     },},
     
   },

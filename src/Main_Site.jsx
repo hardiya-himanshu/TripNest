@@ -8,6 +8,18 @@ import OnDiscount from './components/OnDiscount'
 import Footer from './components/Footer'
 
 function Main_Site() {
+
+  window.addEventListener("load", () => {
+    const loader = document.querySelector(".loader");
+  
+    loader.classList.add("loader--hidden");
+  
+    loader.addEventListener("onload", () => {
+      document.body.removeChild(loader);
+    });
+  });
+
+  
   return (
     <div>
       <Home/>

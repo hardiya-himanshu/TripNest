@@ -7,7 +7,10 @@
     height: 100vh;
     /* background-position: bottom; */
     background-size: cover;
-    /* display: flex; */
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+
 
 }
 
@@ -29,14 +32,16 @@
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 0px 20px;
+    padding: 0px 10px;
     font-size: 1.25rem;
     color: var(--color1);
-    background: rgba(0, 0, 0, 0.544);
-    box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    background: var(--primary);
+    box-shadow: 0 8px 32px 00px rgba(0, 0, 0, .7);
+    /* backdrop-filter: blur(10px); */
     align-items: center;
-
+    z-index: 1;
+    position: relative;
+    /* padding: 10px; */
 
 }
 
@@ -46,10 +51,7 @@ nav .logo img {
     /* border: 2px solid red; */
 }
 
-nav {
-    z-index: 1;
-    position: relative;
-}
+
 
 .nav_content {
     display: flex;
@@ -60,7 +62,7 @@ nav {
 
     display: flex;
     list-style: none;
-    gap: 7vw;
+    gap: 5vw;
     flex-wrap: wrap;
     /* border: 2px solid red; */
     align-items: center;
@@ -69,12 +71,33 @@ nav {
 .nav_content ul li {
     transition: all .5s ease-in-out;
     cursor: pointer;
+    position: relative;
+    padding: 0px 5px;
+}
+
+.nav_content ul li::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: var(--color1);
+    width: 0%;
+    left: 0;
+    bottom: -3px;
+    transition: .3s;
 }
 
 .nav_content ul li:hover {
     /* color: var(--primary); */
-    text-decoration: underline;
+    /* text-decoration: underline; */
     text-shadow: 2px 2px 10px var(--color1);
+}
+
+.nav_content ul li:hover:after {
+    /* color: var(--primary); */
+    /* text-decoration: underline; */
+    width: 100%;
+    box-shadow: 2px 2px 10px var(--color1);
+
 }
 
 .nav_content img {
@@ -90,7 +113,15 @@ nav {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    padding: 10px;
+
 }
+
+/* 
+.user_settings img {
+    transition: all 1s;
+
+} */
 
 .user_options {
     /* position: absolute; */
@@ -144,17 +175,21 @@ nav {
 .account_setting:hover,
 .logout:hover,
 .login-signup:hover {
-    background-color: #013594;
+    background-color: var(--color1);
+    color: var(--color2);
 }
 
 
+
+
 .tagline {
+    width: fit-content;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     /* border: 2px solid red; */
-    height: 85%;
+    height: fit-content;
     color: var(--color1);
     z-index: 2;
     font-size: 3rem;
@@ -163,8 +198,15 @@ nav {
     padding: 10px;
     /* line-height: 40px; */
     cursor: default;
-    padding-top: 10%;
+    /* padding-top: 10%; */
+    /* margin-top: 25%; */
+    top: 40%;
 }
+
+.tagline:hover {
+    cursor: pointer;
+}
+
 
 @media screen and (max-width:1150px) {
     .nav_content ul {

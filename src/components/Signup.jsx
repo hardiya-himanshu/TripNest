@@ -11,9 +11,9 @@ function Signup() {
       <div className='main'>
       <img className='signup_bg' src={signupimg} alt="" />
       <div className="form">
-
+      <Link to='/login'>
         <img src={back} alt="" />
-
+      </Link>
         <div className="title">
             SIGN UP
         </div>

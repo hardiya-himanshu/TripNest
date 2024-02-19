@@ -10,7 +10,7 @@ function OnDiscount() {
             ON DISCOUNT
         </div>
         <div className="discount_content">
-            <div className="dark_bg"></div>
+            {/* <div className="dark_bg"></div> */}
             <img src={Lakshadweep} alt="" />
             <div className="percentage_discount"></div>
             <div className="percentage_discount_number">35% OFF</div>

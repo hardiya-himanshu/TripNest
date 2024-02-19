@@ -32,8 +32,10 @@ html::-webkit-scrollbar-track {
 :root {
     --color1: white;
     --hcolor: black;
+    --color2: black;
     --primary: #002160;
     --secondary: #B2CCFF;
+    --alpha: .5;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
 }
@@ -41,6 +43,7 @@ html::-webkit-scrollbar-track {
 [data-theme='1'] {
     --color1: white;
     --primary: #002160;
+    --color2: black;
     --secondary: #B2CCFF;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -49,6 +52,7 @@ html::-webkit-scrollbar-track {
 [data-theme='2'] {
     --color1: white;
     --primary: #000000;
+    --color2: black;
     --secondary: #FFFFFF;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -58,6 +62,7 @@ html::-webkit-scrollbar-track {
     --color1: white;
     --primary: #545454;
     --hcolor: white;
+    --color2: black;
     --secondary: #000000;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -65,8 +70,47 @@ html::-webkit-scrollbar-track {
 
 [data-theme='4'] {
     --color1: white;
-    --primary: #605600;
-    --secondary: #FDFFB2;
+    --primary: green;
+    --color2: black;
+    --secondary: #9aff9a;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color2);
+    transition: opacity 0.75s, visibility 0.75s;
+}
+
+.loader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #bababa;
+    border-top-color: var(--color1);
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+    from {
+        transform: rotate(0turn);
+    }
+
+    to {
+        transform: rotate(1turn);
+    }
 }

@@ -11,7 +11,10 @@ function Login() {
     <div className='main'>
     <img className='bg_login' src={signupimg} alt="" />
     <div className="form">
+        <Link to='/'>
         <img src={back} alt="" />
+
+        </Link>
 
         <div className="title">
             LOGIN

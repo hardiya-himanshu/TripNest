@@ -6,7 +6,8 @@
     padding: 7vh 3vw;
     display: flex;
     flex-direction: column;
-    gap: 10vh;
+    gap: 7vh;
+    /* border: 2px solid red; */
     align-items: center;
 }
 
@@ -19,20 +20,62 @@
 }
 
 .hotel_cards {
-    display: flex;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     position: relative;
+    width: 100%;
+    column-gap: 10px;
     /* width: 100%; */
-    /* border: 2px solid red; */
-    width: 70%;
+    overflow: hidden;
 }
+
+
+.gradient1 {
+    position: absolute;
+    left: 0px;
+    z-index: 1;
+    height: 100%;
+    /* border: 2px solid rgb(0, 0, 0); */
+    width: 15%;
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
+}
+
+.gradient2 {
+    position: absolute;
+    right: 0px;
+    z-index: 1;
+    height: 100%;
+    /* border: 2px solid rgb(0, 0, 0); */
+    width: 15%;
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
+    transform: rotate(180deg);
+}
+
+.card_arrow img {
+    width: 60px;
+    position: absolute;
+    top: 45%;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.card_arrow_left img {
+    left: 0px;
+}
+
+.card_arrow_right img {
+    right: 0px;
+}
+
 
 @media screen and (max-width:1350px) {
 
     .hotel_cards {
         width: 70%;
-        background-color: #000;
+        background-color: var(--primary);
     }
 }
 
@@ -40,7 +83,7 @@
 
     .hotel_cards {
         width: 100%;
-        background-color: #000;
+        background-color: var(--primary);
     }
 }
 
@@ -48,6 +91,6 @@
 
     .hotel_cards {
         width: 100%;
-        background-color: #000;
+        background-color: var(--primary);
     }
 }

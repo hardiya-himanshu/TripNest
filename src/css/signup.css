@@ -22,9 +22,10 @@
     /* border: 2px solid white; */
     /* background-color: azure; */
     /* background: rgba(rgb(255, 255, 255), green, blue, .15); */
-    background: rgb(178, 204, 255, .4);
+    background: var(--secondary);
     box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
+    color: var(--color2);
     text-align: center;
     border-radius: 10px;
     padding: 30px;
@@ -105,12 +106,13 @@ form input {
 } */
 
 .signup_btn {
-    background-color: var(--secondary);
+    background-color: var(--primary);
     box-shadow: 1px 1px 10px black;
     font-size: 20px;
     padding: 5px 10px;
     border-radius: 5px;
     font-weight: 600;
+    color: var(--color1);
     transition: all .5s ease-in-out;
 }
 

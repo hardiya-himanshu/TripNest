@@ -23,7 +23,8 @@
     /* border: 2px solid white; */
     /* background-color: azure; */
     /* background: rgba(rgb(255, 255, 255), green, blue, .15); */
-    background: rgb(178, 204, 255, .4);
+    /* background: rgb(178, 204, 255, .4); */
+    background: var(--secondary);
     box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
     text-align: center;
@@ -96,7 +97,8 @@ form input {
 
 
 .login_btn {
-    background-color: rgb(178, 204, 255);
+    background-color: var(--primary);
+    color: var(--color1);
     box-shadow: 1px 1px 10px black;
     font-size: 20px;
     padding: 5px 10px;

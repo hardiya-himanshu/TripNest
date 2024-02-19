@@ -4,17 +4,10 @@ import { useState } from 'react'
 
 function Theme_Card({primary, secondary, ColorName}) {
 
-    const [pColor,setpColor] = useState("#102160")
-    const [sColor,setsColor] = useState("#B2CCFF")
-
-
 
   return (
     <div className='flex flex-col gap-2 cursor-pointer' 
-    onClick={()=>{
-            setpColor(primary)
-            setsColor(secondary)
-    }}>
+    >
         <div className={`border hover:border-4   hover:border-red-500 w-56 h-40 rounded-lg flex flex-col gap-2 p-2 ${secondary} `}>
                 <div className='flex gap-2 w-full h-2/3 rounded-lg '>
                     <div className={` ${primary} h-full w-1/2 rounded-lg`}></div>

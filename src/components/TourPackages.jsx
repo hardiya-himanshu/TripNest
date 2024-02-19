@@ -24,12 +24,12 @@ function TourPackages() {
             <Tourcard tourimage={mauritius} className="w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
             <Tourcard tourimage={brazil} className="w-full h-full" imgClass="rounded-lg w-full h-full shadow-2xl"/> */}
 
-            <Tourcard tourimage={ladakh} className="tour_first tour_card row-span-2" tour_name="Ladakh"/>
-            <Tourcard tourimage={usa} className="tour_second tour_card" tour_name="USA"/>
-            <Tourcard tourimage={jerusalem} className="tour_third tour_card col-span-2" tour_name="Jerusalem"/>
-            <Tourcard tourimage={tokyo2} className="tour_fourth tour_card" tour_name="Tokyo"/>
-            <Tourcard tourimage={mauritius} className="tour_fifth tour_card" tour_name="Mauritius"/>
-            <Tourcard tourimage={brazil} className="tour_sixth tour_card" tour_name="Brazil"/>
+            <Tourcard tourimage={ladakh} className="tour_first row-span-2" tour_name="Ladakh"/>
+            <Tourcard tourimage={usa} className="tour_second " tour_name="USA"/>
+            <Tourcard tourimage={jerusalem} className="tour_third  col-span-2" tour_name="Jerusalem"/>
+            <Tourcard tourimage={tokyo2} className="tour_fourth " tour_name="Tokyo"/>
+            <Tourcard tourimage={mauritius} className="tour_fifth " tour_name="Mauritius"/>
+            <Tourcard tourimage={brazil} className="tour_sixth " tour_name="Brazil"/>
         </div>
         <div className="more_tour cursor-pointer">More</div>
     </section>

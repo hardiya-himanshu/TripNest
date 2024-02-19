@@ -12,7 +12,7 @@ import user from "../assets/white_user.png"
 function Home() {
 
     const[user_opt, user_opt_show] = useState(false)
-    const[login_sts, set_login_sts] = useState(true)
+    const[login_sts, set_login_sts] = useState(false)
 
   return (      
     <>

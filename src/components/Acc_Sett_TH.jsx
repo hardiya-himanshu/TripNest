@@ -30,7 +30,7 @@ function Acc_Sett_TH() {
       </div>
       <div className="acth_content grid grid-cols-2 gap-5 rounded-lg w-fit">
             <div onClick={theme1}>
-                <Theme_Card primary="bg-primary1" ColorName="FORMAL" secondary="bg-secondary1" />
+                <Theme_Card primary="bg-primary1" ColorName="COOL" secondary="bg-secondary1" />
             </div>
             <div onClick={theme2}>
                 <Theme_Card primary="bg-primary2" ColorName="LIGHT"       secondary="bg-secondary2" />
@@ -39,7 +39,7 @@ function Acc_Sett_TH() {
                 <Theme_Card primary="bg-primary3" ColorName="DARK" secondary="bg-secondary3" />
             </div>
             <div onClick={theme4}>
-                <Theme_Card primary="bg-primary4" ColorName="SUNNY" secondary="bg-secondary4" />
+                <Theme_Card primary="bg-primary4" ColorName="FOREST" secondary="bg-secondary4" />
             </div>
         
       </div>

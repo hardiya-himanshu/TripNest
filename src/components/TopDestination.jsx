@@ -28,10 +28,10 @@ function TopDestination() {
         <div className="title">
         TOP DESTINATION
         </div>
-        <div className='for arrow'>
+        <div className='for_arrow'>
           <div className="gradient1"></div>
               <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
-        <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
+          <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
               <Link to="/destination" className="dcard">
                 <Card image={paris}/>
               </Link>

@@ -2,8 +2,10 @@
     display: flex;
     background-color: var(--primary);
     padding: 40px;
-    width: 70vw;
+    width: 100vw;
     justify-content: center;
+    /* border: 2px solid red; */
+    gap: 20px;
 }
 
 .hotel_image {
@@ -12,8 +14,8 @@
 }
 
 .hotel_image img {
-    height: 320px;
-    width: 320px;
+    height: 25rem;
+    width: 25rem;
 }
 
 .hotel_card_content {
@@ -76,44 +78,6 @@
 }
 
 
-.card_arrow img {
-    width: 60px;
-    position: absolute;
-    top: 45%;
-    z-index: 2;
-    cursor: pointer;
-}
-
-.card_arrow_left img {
-    left: 0px;
-}
-
-.card_arrow_right img {
-    right: 0px;
-}
-
-
-
-.gradient1 {
-    position: absolute;
-    left: 0px;
-    z-index: 1;
-    height: 120%;
-    /* border: 2px solid rgb(0, 0, 0); */
-    width: 15%;
-    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
-}
-
-.gradient2 {
-    position: absolute;
-    right: 0px;
-    z-index: 1;
-    height: 120%;
-    /* border: 2px solid rgb(0, 0, 0); */
-    width: 15%;
-    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
-    transform: rotate(180deg);
-}
 
 @media screen and (max-width:1350px) {
     .main_hotel_card {

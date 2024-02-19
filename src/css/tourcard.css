@@ -4,6 +4,7 @@
     grid-template-rows: 2;
     /* border: 3px solid rgb(61, 47, 255); */
     padding: 0vh 15vw;
+
 }
 
 .tour_card {
@@ -11,17 +12,32 @@
     overflow: hidden;
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.804);
+    background-color: black;
+    transition: all .3s;
+
 }
 
+.tour_card:hover {
+    box-shadow: 1px 1px 20px 2px var(--primary);
+    /* border: 3px solid var(--primary); */
+
+}
+
+.tour_card:hover>.tour_card>img {
+    transform: scale(1.05);
+}
+
+/* 
 .dark_bg_tour {
     width: 100%;
     height: 100%;
     position: absolute;
     background-color: black;
     opacity: .5;
+    z-index: 50;
 
-}
+} */
+
 
 .tour_name {
     position: absolute;
@@ -39,9 +55,17 @@
 .tour_card img {
     width: 100%;
     height: 100%;
+    opacity: .5;
     object-fit: cover;
+    transition: transform 1s;
 
 }
+
+.tour_card img:hover {
+    transform: scale(1.2);
+
+}
+
 
 .tour_first {
     /* border: 3px solid greenyellow; */
