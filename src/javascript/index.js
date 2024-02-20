@@ -30,8 +30,6 @@ import d5hotel2 from "../assets/d5hotel2.jpeg"
 
 
 
-
-
 const d1_desc ="Seoul, the vibrant capital of South Korea, seamlessly blends modernity with ancient traditions. Skyscrapers coexist with historic palaces, bustling street markets, and cutting-edge technology. Explore the city's rich history at Gyeongbokgung Palace, indulge in flavorful street food, and witness the dynamic energy of K-pop culture. Seoul is a captivating blend of old and new."
 
 const d2_desc ="Tokyo, Japan's bustling capital, is a vibrant metropolis blending modernity with tradition. Neon-lit streetscapes contrast with serene temples and lush parks. The city pulses with energy, offering diverse culinary delights, cutting-edge technology, and unparalleled shopping experiences. Its efficient transit system connects iconic landmarks like the Tokyo Tower and the historic Senso-ji Temple."

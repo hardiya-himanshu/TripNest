@@ -33,7 +33,7 @@ function Acc_Sett_TH() {
                 <Theme_Card primary="bg-primary1" ColorName="COOL" secondary="bg-secondary1" />
             </div>
             <div onClick={theme2}>
-                <Theme_Card primary="bg-primary2" ColorName="LIGHT"       secondary="bg-secondary2" />
+                <Theme_Card primary="bg-primary2" ColorName="LIGHT" secondary="bg-secondary2" />
             </div>
             <div onClick={theme3}>
                 <Theme_Card primary="bg-primary3" ColorName="DARK" secondary="bg-secondary3" />

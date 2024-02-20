@@ -7,14 +7,14 @@ export default {
   theme: {
     extend: {
       colors: {
-      "primary1": '#102160',
+      "primary1": 'rgb(43, 43, 43)',
       "secondary1": '#B2CCFF',
-      "primary2": '#000000',
-      "secondary2": '#FFFFFF',
-      "primary3": '#545454',
-      "secondary3": '#000000',
-      "primary4": 'green',
-      "secondary4": '#9aff9a',
+      "primary2": '#323232',
+      "secondary2": '#dfdfdf',
+      "primary3": 'rgb(31, 31, 31)',
+      "secondary3": '#4b4b4b',
+      "primary4": 'rgb(43, 43, 43)',
+      "secondary4": '#caffa7',
     },},
     
   },

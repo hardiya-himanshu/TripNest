@@ -30,6 +30,8 @@ html::-webkit-scrollbar-track {
 } */
 
 :root {
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
     --color1: white;
     --hcolor: black;
     --color2: black;

@@ -33,19 +33,19 @@ function TopDestination() {
               <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
           <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
               <Link to="/destination/seoul" className="dcard">
-                <Card image={seoul}/>
+                <Card image={seoul} destination_name="SEOUL"/>
               </Link>
               <Link to="/destination/tokyo" className="dcard">
-                <Card image={tokyo}/>
+                <Card image={tokyo} destination_name="TOKYO"/>
               </Link>
               <Link to="/destination/lakshadweep"  className="dcard">
-                <Card image={lakshadweep}/>
+                <Card image={lakshadweep} destination_name="LAKSHADWEEP"/>
               </Link>
               <Link to="/destination/bali" className="dcard">
-                <Card image={bali} />
+                <Card image={bali}  destination_name="BALI"/>
               </Link>
               <Link to="/destination/paris" className="dcard">
-                <Card image={paris}/>
+                <Card image={paris} destination_name="PARIS"/>
               </Link>
               
         </div>
