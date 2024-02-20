@@ -33,8 +33,10 @@ html::-webkit-scrollbar-track {
     --color1: white;
     --hcolor: black;
     --color2: black;
-    --primary: #002160;
-    --secondary: #B2CCFF;
+    --primary: rgb(0, 38, 88);
+    /* --primary: rgb(38, 38, 38); */
+    /* --primary: #002160; */
+    --secondary: #b8cfff;
     --alpha: .5;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -42,7 +44,8 @@ html::-webkit-scrollbar-track {
 
 [data-theme='1'] {
     --color1: white;
-    --primary: #002160;
+    --primary: rgb(43, 43, 43);
+    /* --primary: #002160; */
     --color2: black;
     --secondary: #B2CCFF;
     /* --primary: #1573ff;
@@ -51,28 +54,29 @@ html::-webkit-scrollbar-track {
 
 [data-theme='2'] {
     --color1: white;
-    --primary: #000000;
+    --primary: #323232;
     --color2: black;
-    --secondary: #FFFFFF;
+    --secondary: #dfdfdf;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
 }
 
 [data-theme='3'] {
     --color1: white;
-    --primary: #545454;
+    --primary: rgb(31, 31, 31);
+    /* --primary: #545454; */
     --hcolor: white;
     --color2: black;
-    --secondary: #000000;
+    --secondary: #4b4b4b;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
 }
 
 [data-theme='4'] {
     --color1: white;
-    --primary: green;
+    --primary: rgb(43, 43, 43);
     --color2: black;
-    --secondary: #9aff9a;
+    --secondary: #caffa7;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
 }

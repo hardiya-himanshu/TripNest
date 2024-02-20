@@ -14,7 +14,7 @@ import email from "../assets/email.png"
 import {Link} from 'react-router-dom'
 
 
-function Destination_Full_Page() {
+function Destination_Full_Page({d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2}) {
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
@@ -24,27 +24,27 @@ function Destination_Full_Page() {
 
             <div className="dfp_image">
                 <div className="gradient"></div>
-                <img src={seoul_lg} alt="" />
+                <img src={d_image} alt="" />
             </div>
             <div className="dfp_others">
-                <div className="dfp_city_name">SEOUL, SOUTH KOREA</div>
-                <div className="dfp_city_description">Seoul, the vibrant capital of South Korea, seamlessly blends modernity with ancient traditions. Skyscrapers coexist with historic palaces, bustling street markets, and cutting-edge technology. Explore the city's rich history at Gyeongbokgung Palace, indulge in flavorful street food, and witness the dynamic energy of K-pop culture. Seoul is a captivating blend of old and new.</div>
+                <div className="dfp_city_name">{d_name}</div>
+                <div className="dfp_city_description">{d_desc}</div>
                 <div className="dfp_attractions">
                     <div className="dfp_attractions_title">NEARBY ATTRACTIONS</div>
                     
                     <div className="dfp_attractions_main">
                         <div className="dfp_attractions_content">
-                            <img src={att1} alt="" />
-                            <div className="attraction_name">Gyeongbokgung Palace</div>
+                            <img src={d_a_i_1} alt="" />
+                            <div className="attraction_name">{d_a_n_1}</div>
                         </div>
                         <div className="dfp_attractions_content">
-                            <img src={att2} alt="" />
-                            <div className="attraction_name">N Seoul Tower</div>
+                            <img src={d_a_i_2} alt="" />
+                            <div className="attraction_name">{d_a_n_2}</div>
                         </div>
-                        <div className="dfp_attractions_content">
+                        {/* <div className="dfp_attractions_content">
                             <img src={att3} alt="" />
                             <div className="attraction_name">National Museum of Korea</div>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>
@@ -53,17 +53,17 @@ function Destination_Full_Page() {
                     
                     <div className="dfp_hotels_main">
                         <div className="dfp_hotels_content">
-                            <img src={hotel1} alt="" />
-                            <div className="hotel_name">L7 Hongdae</div>
+                            <img src={d_h_i_1} alt="" />
+                            <div className="hotel_name">{d_h_n_1}</div>
                         </div>
                         <div className="dfp_hotels_content">
-                            <img src={hotel2} alt="" />
-                            <div className="hotel_name">GLAD Hotel Mapor</div>
+                            <img src={d_h_i_2} alt="" />
+                            <div className="hotel_name">{d_h_n_2}</div>
                         </div>
-                        <div className="dfp_hotels_content">
+                        {/* <div className="dfp_hotels_content">
                             <img src={hotel3} alt="" />
                             <div className="hotel_name">L7 Myeongdong</div>
-                        </div>
+                        </div> */}
                     </div>
 
                 </div>

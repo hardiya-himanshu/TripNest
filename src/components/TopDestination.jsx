@@ -32,20 +32,20 @@ function TopDestination() {
           <div className="gradient1"></div>
               <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
           <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
-              <Link to="/destination" className="dcard">
-                <Card image={paris}/>
-              </Link>
-              <Link to="/destination" className="dcard">
-                <Card image={tokyo}/>
-              </Link>
-              <Link to="/destination"  className="dcard">
-                <Card image={lakshadweep}/>
-              </Link>
-              <Link to="/destination" className="dcard">
+              <Link to="/destination/seoul" className="dcard">
                 <Card image={seoul}/>
               </Link>
-              <Link to="/destination" className="dcard">
+              <Link to="/destination/tokyo" className="dcard">
+                <Card image={tokyo}/>
+              </Link>
+              <Link to="/destination/lakshadweep"  className="dcard">
+                <Card image={lakshadweep}/>
+              </Link>
+              <Link to="/destination/bali" className="dcard">
                 <Card image={bali} />
+              </Link>
+              <Link to="/destination/paris" className="dcard">
+                <Card image={paris}/>
               </Link>
               
         </div>
