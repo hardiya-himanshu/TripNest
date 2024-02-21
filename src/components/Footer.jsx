@@ -1,16 +1,6 @@
 import React from 'react'
 import '../css/footer.css'
-import x from "../assets/x.png"
-import facebook from "../assets/facebook.png"
-import instagram from "../assets/instagram.png"
-import reddit from "../assets/reddit.png"
-import work from "../assets/work.png"
-import history from "../assets/history.png"
-import phone from "../assets/phone.png"
-import telephone from "../assets/telephone.png"
-import email from "../assets/email.png"
-import terms from "../assets/terms.png"
-import policy from "../assets/policy.png"
+import {x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy} from '../javascript/index'
 
 function Footer() {
   return (
@@ -21,19 +11,19 @@ function Footer() {
             </div>
             <div className="fu_content flex flex-col gap-4">
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={x}alt="X.com" className='w-8' /></span>
+                    <span className=' rounded-md'><img src={x}alt="X.com" className='w-8' /></span>
                     <span className="line">X.com</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={facebook}alt="X.com" className='w-8' /></span>
+                    <span className=' rounded-md'><img src={facebook}alt="X.com" className='w-8' /></span>
                     <span className="line">Facebook</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={instagram}alt="X.com" className='w-8' /></span>
+                    <span className=' rounded-md'><img src={instagram}alt="X.com" className='w-8' /></span>
                     <span className="line">Instagram</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={reddit}alt="X.com" className='w-8' /></span>
+                    <span className=' rounded-md'><img src={reddit}alt="X.com" className='w-8' /></span>
                     <span className="line">Reddit</span>
                 </div>
             </div>
@@ -44,15 +34,15 @@ function Footer() {
             </div>
             <div className="c_content flex flex-col gap-4">
             <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={phone}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={phone}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">+91 91XXXXXXXX</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={telephone}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={telephone}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">+079 79XXXXXXXX</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={email}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={email}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">tripnest.help@gmail.com</span>
                 </div>
                
@@ -64,11 +54,11 @@ function Footer() {
             </div>
             <div className="a_content flex flex-col gap-4">
             <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={work}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={work}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">Work</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={history}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={history}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">History</span>
                 </div>
             </div>
@@ -78,11 +68,11 @@ function Footer() {
                 OTHERS
             </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={terms}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={terms}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">Terms of Use</span>
                 </div>
                 <div className='alignment'>
-                    <span className='bg-white rounded-md'><img src={policy}alt="X.com" className='w-8 p-1' /></span>
+                    <span className=' rounded-md'><img src={policy}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">Privacy Policy</span>
                 </div>
         </div>

@@ -41,3 +41,20 @@ const d3_desc ="Lakshadweep, India's tropical paradise, is an archipelago of ser
 const d4_desc ="Bali, Indonesia's enchanting island, captivates visitors with its mystical allure. Lush rice terraces cascade down verdant hillsides, while ancient temples nestled in lush jungles evoke a sense of spiritual tranquility. Pristine beaches beckon surfers and sun-seekers alike, while vibrant markets and colorful ceremonies showcase Bali's rich culture. "
 
 export {seoul_lg, tokyo_lg, lakshadweep_lg,bali_lg,paris_lg,d1att1,d2att1,d3att1,d4att1,d5att1,d1att2,d2att2,d3att2,d4att2,d5att2,d1hotel1,d2hotel1,d3hotel1,d4hotel1,d5hotel1,d1hotel2,d2hotel2,d3hotel2,d4hotel2,d5hotel2, d1_desc,d2_desc,d3_desc,d4_desc,d5_desc}
+
+// FOOTER
+
+
+import x from "../assets/x.svg"
+import facebook from "../assets/facebook.svg"
+import instagram from "../assets/instagram.svg"
+import reddit from "../assets/reddit.svg"
+import work from "../assets/work.png"
+import history from "../assets/history.png"
+import phone from "../assets/phone.png"
+import telephone from "../assets/telephone.png"
+import email from "../assets/email.png"
+import terms from "../assets/terms.png"
+import policy from "../assets/policy.png"
+
+export{x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy}
