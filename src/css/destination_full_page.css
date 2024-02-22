@@ -120,6 +120,7 @@
     flex-direction: column;
     /* gap: 10px; */
     width: 250px;
+    cursor: pointer;
     height: 300px;
     border-radius: 10px;
     overflow: hidden;
@@ -164,12 +165,12 @@
     display: flex;
     /* justify-content: space-between; */
     flex-wrap: wrap;
-
     gap: 40px;
     align-items: center;
 }
 
 .dfp_hotels_content {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     /* gap: 10px; */
@@ -241,7 +242,7 @@
 
 .dpf_number img {
     width: 25px;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
     border-radius: 5px;
     padding: 2px;
 }
@@ -253,7 +254,7 @@
 
 .dpf_email img {
     width: 25px;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
     border-radius: 5px;
     padding: 2px;
 }
@@ -261,8 +262,15 @@
 .dpf_btn {
     border-radius: 10px;
     padding: 10px;
+    cursor: pointer;
     color: var(--primary);
     background-color: var(--color1);
     width: fit-content;
     font-weight: 700;
+    transition: transform .3s;
+}
+
+.dpf_btn:hover {
+    transform: scale(1.1);
+    font-weight: 800;
 }

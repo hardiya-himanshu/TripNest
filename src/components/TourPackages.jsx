@@ -49,7 +49,6 @@ function TourPackages() {
             </Link>
 
         </div>
-        <div className="more_tour cursor-pointer">More</div>
     </section>
   )
 }

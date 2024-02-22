@@ -6,7 +6,7 @@
     padding: 5vh;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 7vh;
     /* border: 2px solid red; */
 
 }
@@ -26,12 +26,6 @@
     /* border: 2px solid red; */
 }
 
-.categories_drop_down {
-    padding: 0px 15vw;
-    text-decoration: underline;
-    font-weight: 600;
-    cursor: pointer;
-}
 
 .categories_grid {
     padding: 0px 15vw;

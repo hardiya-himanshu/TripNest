@@ -121,4 +121,11 @@
     background-color: var(--color1);
     width: fit-content;
     font-weight: 700;
+    transition: transform .3s;
+}
+
+
+.tpf_btn:hover {
+    transform: scale(1.1);
+    font-weight: 800;
 }

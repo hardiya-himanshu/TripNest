@@ -9,46 +9,64 @@
     transition: all .3s;
     cursor: pointer;
     background-color: black;
-
+    --shine-deg: 45deg;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background-repeat: no-repeat;
+    background-position: -100% 0, 0 0;
+    background-image: linear-gradient(var(--shine-deg),
+            transparent 20%,
+            transparent 40%,
+            rgba(124, 124, 124, 0.479) 50%,
+            rgba(123, 123, 123, 0.432) 55%,
+            transparent 70%,
+            transparent 100%);
+    background-size: 400% 300%, 200% 100%;
+    transition: background-position 2s ease;
+    transition: all .2s;
 }
 
 .categories_card_section:hover {
-    box-shadow: 1px 1px 20px 2px var(--primary);
-
-}
-
-.dark_bg_categories {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    background-color: black;
-    opacity: .5;
+    background-position: 100%0, 0 0;
+    transition-duration: .5s;
+    transform: scale(1.03);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.5), -4px -4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .categories_card_name {
     position: absolute;
-    top: 45%;
-    left: 35%;
+    bottom: 40%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
     font-weight: 900;
     font-size: 25px;
     color: var(--color1);
+    cursor: pointer;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    transition: all .5s ease-in-out;
+    align-items: center;
+    cursor: pointer;
+    /* position: relative; */
+    padding: 0px 2px;
+    width: fit-content;
 }
 
-.categories_card_section:hover>.categories_card_name {
-    text-decoration: underline;
+.categories_card_name:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background-color: var(--color1);
+    width: 0%;
+    left: 0;
+    bottom: 0px;
+    transition: .3s;
 }
 
-
-.categories_card_name_asia {
-    left: 46%;
-}
-
-.categories_card_name_antarctica {
-    left: 20%;
-}
-
-.categories_card_name_oceania {
-    left: 40%;
+.categories_card_section:hover .categories_card_name::after {
+    width: 100%;
+    box-shadow: 2px 2px 10px var(--color1);
 }
 
 .categories_card_image {
@@ -57,9 +75,4 @@
     object-fit: cover;
     transition: transform 1s;
     opacity: .5;
-}
-
-.categories_card_image:hover {
-    transform: scale(1.20);
-
 }

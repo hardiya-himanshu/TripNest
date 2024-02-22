@@ -11,11 +11,13 @@
 .hotel_image {
     border-radius: 10px;
     overflow: hidden;
+    transition: transform .3s;
 }
 
 .hotel_image img {
     height: 25rem;
     width: 25rem;
+
 }
 
 .hotel_card_content {
@@ -73,8 +75,20 @@
     font-weight: 600;
     width: 60%;
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform .3s;
     /* border: 2px solid red; */
+}
 
+
+.btn:hover {
+    transform: scale(1.1);
+    font-weight: 800;
+
+}
+
+.hotel_image:hover {
+    transform: scale(1.05);
 }
 
 
