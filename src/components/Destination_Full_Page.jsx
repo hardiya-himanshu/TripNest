@@ -1,24 +1,15 @@
 import React from 'react'
 import "../css/destination_full_page.css"
 import "../css/style.css"
-import seoul_lg from "../assets/seoul_lg.jpg"
-import att1 from "../assets/att1.jpeg"
-import att2 from "../assets/att2.jpeg"
-import att3 from "../assets/att3.jpeg"
-import hotel1 from "../assets/hotel1.webp"
-import hotel2 from "../assets/hotel2.webp"
-import hotel3 from "../assets/hotel3.webp"
-import phone from "../assets/phone.png"
-import close from "../assets/close.png"
-import email from "../assets/email.png"
+import { phone,close,email } from '../javascript'
 import {Link} from 'react-router-dom'
 
 
-function Destination_Full_Page({d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2}) {
+function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2}) {
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
-       <Link to='/'>
+       <Link to={dest_to}>
             <img className='dfp_close' src={close} alt="" />
        </Link>
 

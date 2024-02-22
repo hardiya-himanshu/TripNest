@@ -1,14 +1,13 @@
 import React from 'react'
 import "../css/tour_full_page.css"
 import "../css/style.css"
-import ladakh_full from "../assets/ladakh_full.jpg"
 import phone from "../assets/phone.png"
 import email from "../assets/email.png"
 import close from "../assets/close.png"
 import {Link} from 'react-router-dom'
 
 
-function Tour_Full_Page() {
+function Tour_Full_Page({image_cover,tour_name,tour_desc,tour_duration,tour_price}) {
   return (
     <div className='tour_fullpage_section'>
         <div className="tfp_content">
@@ -18,12 +17,18 @@ function Tour_Full_Page() {
         
             <div className="tfp_image">
                 <div className="gradient"></div>
-                <img src={ladakh_full} alt="" />
+                <img src={image_cover} alt="" />
             </div>
             <div className="tfp_others">
-                <div className="tfp_city_name">LADAKH, INDIA</div>
-                <div className="tfp_city_description">Ladakh, located in the northernmost part of India, is known for its unique culture, rugged terrain, and scenic beauty1. It’s one of the highest regions in the world2. Famous for its Buddhist monasteries, stunning lakes, and snow-capped peaks1, Ladakh offers a blend of natural beauty and cultural richness</div>
-                
+                <div className="tfp_city_name">{tour_name}</div>
+
+                <div className="tfp_duration-price">
+                    <div className='tfp_duration'></div>{tour_duration}
+                    <div className='tfp_price'></div>₹ {tour_price}
+                </div>
+
+                <div className="tfp_city_description">{tour_desc}</div>
+
                 <div className="tpf_contacts">
                     <div className="tpf_number">
                         <img src={phone} alt="" />
@@ -34,6 +39,7 @@ function Tour_Full_Page() {
                         <div>help.tripnest@gmail.com</div>
                     </div>
                 </div>
+
                 <div className=" tpf_btn">
                    BOOK NOW
                 </div>

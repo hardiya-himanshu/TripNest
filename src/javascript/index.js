@@ -1,3 +1,5 @@
+//  TOP DESTINATION
+
 import seoul_lg from "../assets/seoul_lg.jpg"
 import d1att1 from "../assets/att1.jpeg"
 import d1att2 from "../assets/att2.jpeg"
@@ -42,6 +44,67 @@ const d4_desc ="Bali, Indonesia's enchanting island, captivates visitors with it
 
 export {seoul_lg, tokyo_lg, lakshadweep_lg,bali_lg,paris_lg,d1att1,d2att1,d3att1,d4att1,d5att1,d1att2,d2att2,d3att2,d4att2,d5att2,d1hotel1,d2hotel1,d3hotel1,d4hotel1,d5hotel1,d1hotel2,d2hotel2,d3hotel2,d4hotel2,d5hotel2, d1_desc,d2_desc,d3_desc,d4_desc,d5_desc}
 
+
+// TOUR PACKAGES
+
+import ladakh_cover from '../assets/ladakh_full.jpg'
+import pl_c from '../assets/pl_c.jpg'
+import jerusalem_c from '../assets/jerusalem_c.jpg'
+import brasilia_c from '../assets/brasilia_c.jpg'
+import tokyo_c from '../assets/tokyo_c.jpg'
+import la_c from '../assets/la_c.png'
+export{ladakh_cover, pl_c,la_c,jerusalem_c,brasilia_c,tokyo_c}
+
+// General
+
+import close from "../assets/close.png"
+
+export {close}
+
+
+// Categories
+
+
+import antarctica from '../assets/antarctica.jpg'
+import na from '../assets/na.webp'
+import sa from '../assets/sa.png'
+import europe from '../assets/europe.jpg'
+import asia from '../assets/asia.jpg'
+import africa from '../assets/africa.jpg'
+import oceania from '../assets/oceania.jpg'
+
+export {antarctica,na,sa,europe,asia,africa,oceania}
+
+
+// Categories => Categories_Full_Page
+
+import ahmdbd from "../assets/ahmdbd.webp"
+import jerusalem2 from "../assets/jerusalem2.jpg"
+import beijing from "../assets/beijing.jpg"
+import rio from "../assets/rio.jpg"
+import mexicocity from "../assets/mexicocity.jpg"
+import nairobi from "../assets/nairobi.jpg"
+import antarctica2 from "../assets/antarctica2.jpg"
+import sydney from "../assets/sydney.jpeg"
+import miami from "../assets/miami.avif"
+import london from "../assets/london.avif"
+import auckland from "../assets/auckland.webp"
+import athens from "../assets/athens.webp"
+import berlin from "../assets/berlin.webp"
+import cairo from "../assets/cairo.webp"
+
+
+export{ahmdbd,beijing,jerusalem2,rio,mexicocity,miami,sydney,antarctica2,london,athens,auckland,berlin,cairo,nairobi}
+
+
+// Categories => Categories_Full_Page => Categories_Full_Page_View
+
+
+import abad_lg from '../assets/abad_lg.jpeg'
+
+export{abad_lg}
+
+
 // FOOTER
 
 
@@ -58,3 +121,6 @@ import terms from "../assets/terms.png"
 import policy from "../assets/policy.png"
 
 export{x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy}
+
+
+// Main.jsx

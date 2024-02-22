@@ -24,12 +24,30 @@ function TourPackages() {
             <Tourcard tourimage={mauritius} className="w-full h-full " imgClass="rounded-lg w-full h-full shadow-2xl"/>
             <Tourcard tourimage={brazil} className="w-full h-full" imgClass="rounded-lg w-full h-full shadow-2xl"/> */}
 
-            <Tourcard tourimage={ladakh} className="tour_first row-span-2" tour_name="Ladakh"/>
-            <Tourcard tourimage={usa} className="tour_second " tour_name="USA"/>
-            <Tourcard tourimage={jerusalem} className="tour_third  col-span-2" tour_name="Jerusalem"/>
-            <Tourcard tourimage={tokyo2} className="tour_fourth " tour_name="Tokyo"/>
-            <Tourcard tourimage={mauritius} className="tour_fifth " tour_name="Mauritius"/>
-            <Tourcard tourimage={brazil} className="tour_sixth " tour_name="Brazil"/>
+            <Link to="/tour/ladakh" className='row-span-2 '>
+            <Tourcard tourimage={ladakh} className="tour_first h-full" tour_name="LADAKH"/>
+            </Link>
+
+            <Link to="/tour/los_angeles" >
+            <Tourcard tourimage={usa} className="tour_second " tour_name="LOS ANGELES"/>
+            </Link>
+
+            <Link to="/tour/jerusalem"  className='col-span-2'>
+            <Tourcard tourimage={jerusalem} className="tour_third  " tour_name="JERUSALEM"/>
+            </Link>
+
+            <Link to="/tour/tokyo" >
+            <Tourcard tourimage={tokyo2} className="tour_fourth h-full" tour_name="TOKYO"/>
+            </Link>
+
+            <Link to="/tour/port_louis" >
+            <Tourcard tourimage={mauritius} className="tour_fifth h-full" tour_name="PORT LOUIS"/>
+            </Link>
+
+            <Link to="/tour/brasilia" >
+            <Tourcard tourimage={brazil} className="tour_sixth h-full" tour_name="BRASILIA"/>
+            </Link>
+
         </div>
         <div className="more_tour cursor-pointer">More</div>
     </section>

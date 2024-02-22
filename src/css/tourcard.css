@@ -41,8 +41,10 @@
 
 .tour_name {
     position: absolute;
-    top: 45%;
-    left: 35%;
+    bottom: 50%;
+    left: 30%;
+    /* right: 0%; */
+    margin: auto;
     font-weight: 900;
     font-size: 25px;
     color: var(--color1);
@@ -63,7 +65,6 @@
 
 .tour_card img:hover {
     transform: scale(1.2);
-
 }
 
 
