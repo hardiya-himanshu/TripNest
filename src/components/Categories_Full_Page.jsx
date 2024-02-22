@@ -5,7 +5,7 @@ import {close} from '../javascript/index'
 import {ahmdbd,beijing,jerusalem2,rio,mexicocity,miami,sydney,antarctica2,london,athens,auckland,berlin,cairo,nairobi} from '../javascript/index'
 import Categories_FullPage_Cards from './Categories_FullPage_Cards'
 
-function Categories_Full_Card() {
+function Categories_Full_Page() {
   return (
     <div className='categories_fullpage_section'>
       <div className="cfp_content">
@@ -117,4 +117,4 @@ function Categories_Full_Card() {
   )
 }
 
-export default Categories_Full_Card
+export default Categories_Full_Page

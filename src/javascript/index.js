@@ -100,9 +100,9 @@ export{ahmdbd,beijing,jerusalem2,rio,mexicocity,miami,sydney,antarctica2,london,
 // Categories => Categories_Full_Page => Categories_Full_Page_View
 
 
-import abad_lg from '../assets/abad_lg.jpeg'
+import abad_c from '../assets/abad_lg.jpeg'
 
-export{abad_lg}
+export{abad_c}
 
 
 // FOOTER
