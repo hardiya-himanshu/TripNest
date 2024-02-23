@@ -1,7 +1,7 @@
 import React from 'react'
 import '../css/signup.css'
 import '../css/style.css'
-import signupimg from '../assets/login_bg.jpg'
+import signupimg from '../assets/login-signup-bg.jpg'
 import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 
@@ -26,11 +26,11 @@ function Signup() {
                 <label htmlFor="t_c">I accept the Terms & Conditions</label>
                 <input type="checkbox" name="t_c" id="t_c" />
             </div>
-            <Link to="/login"><button className='signup_btn'>SIGN UP</button></Link>
-            {/* <Link to="/login">
+            <Link to="/login" className='w-fit relative left-0 right-0 m-auto'><button className='signup_btn'>SIGN UP</button></Link>
+            <Link to="/login" >
             <div className="gotologin font-bold underline cursor-pointer">Login?</div>
 
-            </Link> */}
+            </Link>
         </form>
         
       </div>

@@ -149,4 +149,11 @@
     border-radius: 10px;
     color: var(--primary);
     font-weight: 700;
+    transition: transform .3s;
+}
+
+.hpf_btn_book:hover {
+    transform: scale(1.1);
+    font-weight: 800;
+    cursor: pointer;
 }

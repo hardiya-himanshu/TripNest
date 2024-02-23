@@ -12,6 +12,10 @@ import bg_audio from "../assets/bg_audio2.mp3"
 
 function Home() {
 
+    window.addEventListener("load", ()=>{
+        document.getElementById("autoplay").volume = .2
+    })
+
     const[user_opt, user_opt_show] = useState(false)
     const[login_sts, set_login_sts] = useState(true)
 

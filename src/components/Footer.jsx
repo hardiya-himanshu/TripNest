@@ -1,6 +1,6 @@
 import React from 'react'
 import '../css/footer.css'
-import {x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy} from '../javascript/index'
+import {x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy,message} from '../javascript/index'
 
 function Footer() {
   return (
@@ -44,6 +44,10 @@ function Footer() {
                 <div className='alignment'>
                     <span className=' rounded-md'><img src={email}alt="X.com" className='w-8 p-1' /></span>
                     <span className="line">tripnest.help@gmail.com</span>
+                </div>
+                <div className='alignment'>
+                    <span className=' rounded-md'><img src={message}alt="X.com" className='w-8 p-1' /></span>
+                    <span className="line">Message Us</span>
                 </div>
                
             </div>

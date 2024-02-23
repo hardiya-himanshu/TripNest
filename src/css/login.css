@@ -20,13 +20,13 @@
 
 
 .form {
-    /* border: 2px solid white; */
-    /* background-color: azure; */
-    /* background: rgba(rgb(255, 255, 255), green, blue, .15); */
-    /* background: rgb(178, 204, 255, .4); */
-    background: var(--secondary);
+    background: linear-gradient(to bottom, rgba(var(--secondary2), .2), rgba(var(--secondary2), .6), rgba(var(--secondary2), .9));
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(10px);
+
+    /* background: var(--secondary); */
     box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
     text-align: center;
     border-radius: 10px;
     padding: 30px;
@@ -99,9 +99,14 @@ form input {
 .login_btn {
     background-color: var(--primary);
     color: var(--color1);
+    /* border: 2px solid red; */
     box-shadow: 1px 1px 10px black;
     font-size: 20px;
-    padding: 5px 10px;
+    padding: 5px 15px;
     border-radius: 5px;
     font-weight: 600;
+}
+
+.gotologin {
+    color: var(--hcolor);
 }

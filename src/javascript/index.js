@@ -131,8 +131,9 @@ import telephone from "../assets/telephone.png"
 import email from "../assets/email.png"
 import terms from "../assets/terms.png"
 import policy from "../assets/policy.png"
+import message from "../assets/message.png"
 
-export{x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy}
+export{x,facebook,instagram,reddit,work,history,phone,telephone,email,terms,policy,message}
 
 
 // Main.jsx
