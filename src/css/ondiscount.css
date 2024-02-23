@@ -29,12 +29,33 @@
     /* box-shadow: 5px 5px 10px 0px black; */
     transition: all .5s ease-in-out;
     background-color: black;
+
+
+    /* padding: ; */
+    transition: all .3s;
+    background-color: black;
+    --shine-deg: 45deg;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    background-repeat: no-repeat;
+    background-position: -100% 0, 0 0;
+    background-image: linear-gradient(var(--shine-deg),
+            transparent 20%,
+            transparent 40%,
+            rgba(124, 124, 124, 0.479) 50%,
+            rgba(123, 123, 123, 0.432) 55%,
+            transparent 70%,
+            transparent 100%);
+    background-size: 400% 300%, 200% 100%;
+    transition: background-position 2s ease;
+    transition: all .2s;
 }
 
 .discount_content:hover {
-    box-shadow: 5px 5px 20px 0px black, -5px -5px 20px 0px black;
+    box-shadow: 5px 5px 20px 0px rgba(0, 0, 0, 0.5), -5px -5px 20px 0px rgba(0, 0, 0, 0.5);
     /* border: 2px solid black; */
     cursor: pointer;
+    background-position: 100%0, 0 0;
+    transition-duration: .5s;
 }
 
 .discount_content img {
@@ -45,8 +66,8 @@
     opacity: .5;
 }
 
-.discount_content img:hover {
-    transform: scale(1.2);
+.discount_content:hover {
+    transform: scale(1.05);
 
 }
 
@@ -61,7 +82,10 @@
 .discount_location_name {
     position: absolute;
     top: 20px;
-    left: 25%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    width: fit-content;
     color: var(--color1);
     font-size: 30px;
     font-weight: 600;
@@ -70,7 +94,10 @@
 .discount_book_now {
     position: absolute;
     bottom: 20px;
-    left: 36%;
+    left: 0%;
+    right: 0%;
+    margin: auto;
+    width: fit-content;
     color: var(--color1);
     font-size: 25px;
     font-weight: 600;

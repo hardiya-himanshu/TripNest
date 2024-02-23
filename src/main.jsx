@@ -14,6 +14,7 @@ import Tour_Full_Page from './components/Tour_Full_Page'
 import Destination_Full_Page from './components/Destination_Full_Page'
 import Categories_Full_Card from './components/Categories_Full_Page'
 import Account_Settings from './components/Account_Settings'
+import OnDiscount_FullPage from './components/onDiscount_FullPage'
 import Acc_Set_PD from './components/Acc_Set_PD'
 import Acc_Sett_SD from './components/Acc_Sett_SD'
 import Acc_Sett_RV from './components/Acc_Sett_RV'
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
     {
       path:"/categories",
       element:<Categories_Full_Card/>,
+      errorElement:<ErrorPage/>,
+    },
+    {
+      path:"/discount",
+      element:<OnDiscount_FullPage/>,
       errorElement:<ErrorPage/>,
     },
 

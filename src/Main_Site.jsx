@@ -9,15 +9,15 @@ import Footer from './components/Footer'
 
 function Main_Site() {
 
-  window.addEventListener("load", () => {
-    const loader = document.querySelector(".loader");
+  // window.addEventListener("load", () => {
+  //   const loader = document.querySelector(".loader");
   
-    loader.classList.add("loader--hidden");
+  //   loader.classList.add("loader--hidden");
   
-    loader.addEventListener("onload", () => {
-      document.body.removeChild(loader);
-    });
-  });
+  //   loader.addEventListener("onload", () => {
+  //     document.body.removeChild(loader);
+  //   });
+  // });
 
   
   return (

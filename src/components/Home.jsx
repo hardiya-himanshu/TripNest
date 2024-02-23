@@ -6,7 +6,8 @@ import '../css/home.css'
 import '../css/style.css'
 import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
 import user from "../assets/white_user.png"
-
+import bg_video from "../assets/bg_video.mp4"
+import bg_audio from "../assets/bg_audio2.mp3"
 
 
 function Home() {
@@ -16,10 +17,15 @@ function Home() {
 
   return (      
     <>
-<div className="progressbar"></div>
-<div className="scrollpath"></div>
 <section className="home" id='home'>
-    <div className='black_opacity'></div>
+
+    <audio
+        id="autoplay"
+        autoPlay loop preload='auto'>
+        <source src={bg_audio} type="audio/mp3"/>
+    </audio>
+
+    <video autoPlay muted loop src={bg_video} className='bg_video'/>
     <div className="navbar">
 
     <nav>
