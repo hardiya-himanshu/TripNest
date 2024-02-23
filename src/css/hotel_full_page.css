@@ -125,7 +125,7 @@
 
 .hpf_number img {
     width: 25px;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
     border-radius: 5px;
     padding: 2px;
 }
@@ -137,7 +137,7 @@
 
 .hpf_email img {
     width: 25px;
-    background-color: var(--color1);
+    /* background-color: var(--color1); */
     border-radius: 5px;
     padding: 2px;
 }

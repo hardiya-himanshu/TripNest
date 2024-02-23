@@ -101,8 +101,20 @@ export{ahmdbd,beijing,jerusalem2,rio,mexicocity,miami,sydney,antarctica2,london,
 
 
 import abad_c from '../assets/abad_lg.jpeg'
+import athens_c from '../assets/athens_c.jpg'
+import auckland_c from '../assets/auckland_c.avif'
+import beijing_c from '../assets/beijing_c.jpg'
+import berlin_c from '../assets/berlin_c.jpg'
+import cairo_c from '../assets/cairo_c.jpg'
+import london_c from '../assets/london_c.jpg'
+import mcmurdo_c from '../assets/mcmurdo_c.jpg'
+import mexicocity_c from '../assets/mexicocity_c.jpg'
+import miami_c from '../assets/miami_c.jpg'
+import nairobi_c from '../assets/nairobi_c.jpg'
+import rio_c from '../assets/rio_c.jpg'
+import sydney_c from '../assets/sydney_c.jpg'
 
-export{abad_c}
+export{abad_c,athens_c,auckland_c,beijing_c,berlin_c,cairo_c,london_c,mcmurdo_c,mexicocity_c,miami_c,nairobi_c,rio_c,sydney_c}
 
 
 // FOOTER

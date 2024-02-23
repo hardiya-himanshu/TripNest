@@ -68,11 +68,11 @@ html::-webkit-scrollbar-track {
 
 [data-theme='3'] {
     --color1: white;
-    --primary: rgb(31, 31, 31);
+    --primary: rgb(21, 21, 21);
     /* --primary: #545454; */
     --hcolor: white;
     --color2: black;
-    --secondary: #4b4b4b;
+    --secondary: #323232;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
 }
