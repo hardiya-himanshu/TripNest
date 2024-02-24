@@ -92,32 +92,18 @@ html::-webkit-scrollbar-track {
     --secondary: #5dbef7; */
 }
 
-.loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color2);
-    transition: opacity 0.75s, visibility 0.75s;
-}
+/* for smooth fade animation of each section */
 
-.loader--hidden {
+.reveal {
+    position: relative;
+    transform: translateY(100px);
     opacity: 0;
-    visibility: hidden;
+    transition: .5s all ease;
 }
 
-.loader::after {
-    content: "";
-    width: 75px;
-    height: 75px;
-    border: 15px solid #bababa;
-    border-top-color: var(--color1);
-    border-radius: 50%;
-    animation: loading 0.75s ease infinite;
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 @keyframes loading {

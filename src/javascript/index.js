@@ -1,4 +1,39 @@
+// JS LOGICS
+
+
+export function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+
+ 
+
+
+
 //  TOP DESTINATION
+
+
+import paris from "../assets/paris.webp"
+import seoul from "../assets/seoul.jpg"
+import tokyo from "../assets/tokyo.jpg"
+import lakshadweep from "../assets/lakshadweep.jpg"
+import bali from "../assets/bali.jpg"
+import left_arrow from "../assets/left-arrow.png"
+import right_arrow from "../assets/right-arrow.png"
+
+export{paris,seoul,tokyo,lakshadweep,bali,left_arrow,right_arrow}
+
 
 import seoul_lg from "../assets/seoul_lg.jpg"
 import d1att1 from "../assets/att1.jpeg"
@@ -61,7 +96,7 @@ import close from "../assets/close.png"
 import sound_on from '../assets/sound_on.png'
 import sound_off from '../assets/sound_off.png'
 import user from "../assets/white_user.png"
-import bg_video from "../assets/bg_video.mp4"
+import bg_video from "../assets/bg_video2.mp4"
 import bg_audio from "../assets/bg_audio2.mp3"
 import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
 export {close,sound_on,sound_off,user,bg_audio,bg_video,logo}

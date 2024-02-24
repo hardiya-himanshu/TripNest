@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 function Categories_section() {
   return (
-    <div className='categories_section' id='categories_section'>
+    <div className='categories_section reveal' id='categories_section'>
         <div className="categories_title">
             CATEGORIES
         </div>

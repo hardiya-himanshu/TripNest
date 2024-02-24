@@ -2,15 +2,12 @@ import React from 'react'
 import Card from './destination_card.jsx'
 import '../css/topdestination.css'
 import '../css/style.css'
-import paris from "../assets/paris.webp"
-import seoul from "../assets/seoul.jpg"
-import tokyo from "../assets/tokyo.jpg"
-import lakshadweep from "../assets/lakshadweep.jpg"
-import bali from "../assets/bali.jpg"
-import left_arrow from "../assets/left-arrow.png"
-import right_arrow from "../assets/right-arrow.png"
+import {paris,seoul,tokyo,lakshadweep,bali,left_arrow,right_arrow} from '../javascript/index.js'
 import {Link} from 'react-router-dom'
 import { useRef } from 'react'
+
+import {reveal} from '../javascript/index.js'
+
 
 
 function TopDestination() {
@@ -22,9 +19,11 @@ function TopDestination() {
     console.log(e.pageX)
     
     }
+    
+    window.addEventListener("scroll", reveal);
 
   return (
-    <section className='top_destination' id='top_destination'>
+    <section className='top_destination reveal' id='top_destination'>
         <div className="title">
         TOP DESTINATION
         </div>

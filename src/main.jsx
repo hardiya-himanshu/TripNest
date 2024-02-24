@@ -87,18 +87,13 @@ const router = createBrowserRouter([
     },
     {
       path:"/destination/bali",
-      element:<Destination_Full_Page d_image={bali_lg} d_name="SEOUL, SOUTH KOREA" d_desc={d4_desc} d_a_i_1={d4att1} d_a_i_2={d4att2} d_a_n_1="Sacred Monkey Forest" d_a_n_2="Besakih Great Temple" d_h_i_1={d4hotel1} d_h_i_2={d4hotel2} d_h_n_1=" The Poovath Beachfront" d_h_n_2="The Elephant Court
+      element:<Destination_Full_Page d_image={bali_lg} d_name="BALI, INDONESIA" d_desc={d4_desc} d_a_i_1={d4att1} d_a_i_2={d4att2} d_a_n_1="Sacred Monkey Forest" d_a_n_2="Besakih Great Temple" d_h_i_1={d4hotel1} d_h_i_2={d4hotel2} d_h_n_1=" The Poovath Beachfront" d_h_n_2="The Elephant Court
       " dest_to="/"/>,
     },
     {
       path:"/destination/paris",
-      element:<Destination_Full_Page d_image={paris_lg} d_name="SEOUL, SOUTH KOREA" d_desc={d5_desc} d_a_i_1={d5att1} d_a_i_2={d5att2} d_a_n_1="Louvre Museum" d_a_n_2="Arc de Triomphe" d_h_i_1={d5hotel1} d_h_i_2={d5hotel2} d_h_n_1="Grand Hotel du Palais" d_h_n_2="Hotel Marceau Elysees" dest_to="/"/>,
+      element:<Destination_Full_Page d_image={paris_lg} d_name="PARIS, FRANCE" d_desc={d5_desc} d_a_i_1={d5att1} d_a_i_2={d5att2} d_a_n_1="Louvre Museum" d_a_n_2="Arc de Triomphe" d_h_i_1={d5hotel1} d_h_i_2={d5hotel2} d_h_n_1="Grand Hotel du Palais" d_h_n_2="Hotel Marceau Elysees" dest_to="/"/>,
     },
-    {
-      path:"/destination/paris",
-      element:<Tour_Full_Page/>,
-    },
-
 
 
 
