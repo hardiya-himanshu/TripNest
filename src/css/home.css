@@ -268,6 +268,19 @@ nav .logo img {
     cursor: pointer;
 }
 
+/* .tagline::selection {
+    background-color: var(--primary);
+} */
+
+
+.song_btn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    cursor: pointer;
+    /* color: white; */
+    width: 30px;
+}
 
 @media screen and (max-width:1150px) {
     .nav_content ul {

@@ -30,7 +30,7 @@ function Footer() {
         </div>
         <div className="contact flex flex-col gap-5 text-lg">
             <div className="ctitle">
-                CONTACT
+                CONTACT US
             </div>
             <div className="c_content flex flex-col gap-4">
             <div className='alignment'>
@@ -47,7 +47,7 @@ function Footer() {
                 </div>
                 <div className='alignment'>
                     <span className=' rounded-md'><img src={message}alt="X.com" className='w-8 p-1' /></span>
-                    <span className="line">Message Us</span>
+                    <span className="line">Message</span>
                 </div>
                
             </div>

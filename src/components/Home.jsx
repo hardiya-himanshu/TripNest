@@ -4,17 +4,18 @@ import { useRef, useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../css/home.css'
 import '../css/style.css'
-import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
-import user from "../assets/white_user.png"
-import bg_video from "../assets/bg_video.mp4"
-import bg_audio from "../assets/bg_audio2.mp3"
+import {sound_on,sound_off,user,bg_audio,bg_video,logo} from '../javascript/index'
 
 
 function Home() {
 
-    window.addEventListener("load", ()=>{
-        document.getElementById("autoplay").volume = .2
-    })
+    const[sound, setSound] = useState(false)
+    const[soundimg, setSoundImg] = useState(sound_on)
+
+    const songState = () =>{
+        setSound(!sound)
+        setSoundImg(soundimg==sound_on?sound_off:sound_on)
+    }
 
     const[user_opt, user_opt_show] = useState(false)
     const[login_sts, set_login_sts] = useState(true)
@@ -23,7 +24,8 @@ function Home() {
     <>
 <section className="home" id='home'>
 
-    <audio
+    <audio muted={sound}
+        voloume="1"
         id="autoplay"
         autoPlay loop preload='auto'>
         <source src={bg_audio} type="audio/mp3"/>
@@ -94,6 +96,9 @@ function Home() {
     <div className="tagline">
    EXPERIENCE THE WORLD YOUR WAY
 <br/>WITH TRIPNEST
+    </div>
+    <div className="song_btn" onClick={songState}>
+        <img id='song_image' src={soundimg} alt="" />
     </div>
 </section>
     </>
