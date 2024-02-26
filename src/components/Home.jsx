@@ -4,7 +4,7 @@ import { useRef, useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../css/home.css'
 import '../css/style.css'
-import {sound_on,sound_off,user,bg_audio,bg_video,logo} from '../javascript/index'
+import {sound_on,sound_off,user,bg_audio,bg_video,logo, menu} from '../javascript/index'
 
 
 function Home() {
@@ -17,8 +17,13 @@ function Home() {
         setSoundImg(soundimg==sound_on?sound_off:sound_on)
     }
 
+    const showMenu = () =>{
+
+    }
+
     const[user_opt, user_opt_show] = useState(false)
     const[login_sts, set_login_sts] = useState(true)
+    const[menu_opt, show_menu_opt] = useState(false)
 
   return (      
     <>
@@ -58,9 +63,30 @@ function Home() {
                 <li>Discount</li>
                 </ScrollLink>
             </ul>
-                <div className="user_settings">
 
-                    <img onClick={()=>user_opt_show(!user_opt)} src={user} alt=""/>
+            <div className="menu_option" onClick={showMenu}>
+                <img src={menu} alt="menu_image" onClick={()=>{show_menu_opt(!menu_opt), user_opt_show(false)}}/>
+
+                {menu_opt?
+
+                    <div className="home_menu_section">
+                        
+                        <ScrollLink to='top_destination' offset={-70} spy={true} smooth={true} className='home_menu_list'>Top Destinations</ScrollLink>
+                        <ScrollLink to='tour_packages' offset={-70} spy={true} smooth={true} className='home_menu_list'>Packages</ScrollLink>
+                        <ScrollLink to='hotel_section' offset={-70} spy={true} smooth={true} className='home_menu_list'>Hotels</ScrollLink>
+                        <ScrollLink to='categories_section' offset={-70} spy={true} smooth={true} className='home_menu_list'>Categories</ScrollLink>
+                        <ScrollLink to='ondiscount_section' offset={-70} spy={true} smooth={true} className='home_menu_list'>Discount</ScrollLink>
+                        
+                    </div>
+                    
+                    :
+                    null
+                }
+            </div>
+
+            <div className="user_settings">
+
+                    <img onClick={()=>{user_opt_show(!user_opt),show_menu_opt(false)}} src={user} alt=""/>
 
                      {login_sts?
                 user_opt?
@@ -84,8 +110,8 @@ function Home() {
                 :null
             }             
 
-                </div>
-                </div>
+            </div>
+        </div>
                 
             
         

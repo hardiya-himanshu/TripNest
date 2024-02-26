@@ -92,14 +92,15 @@ export{ladakh_cover, pl_c,la_c,jerusalem_c,brasilia_c,tokyo_c}
 
 // General
 
+import menu from '../assets/menu.png'
 import close from "../assets/close.png"
 import sound_on from '../assets/sound_on.png'
 import sound_off from '../assets/sound_off.png'
 import user from "../assets/white_user.png"
 import bg_video from "../assets/bg_video2.mp4"
-import bg_audio from "../assets/bg_audio2.mp3"
+import bg_audio from "../assets/bg_audio.mp3"
 import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
-export {close,sound_on,sound_off,user,bg_audio,bg_video,logo}
+export {menu,close,sound_on,sound_off,user,bg_audio,bg_video,logo}
 
 
 // Categories
