@@ -10,8 +10,6 @@ function Categories_section() {
         <div className="categories_title">
             CATEGORIES
         </div>
-        <div className="categories_content">
-            
             <div className="categories_grid grid grid-cols-4 grid-rows-3 gap-4">
                 <Link to='/categories' className='col-span-3 '>
                 <Categories_card className="categories_card_section col-span-3 " categories_card_name="ASIA" categories_card_image={asia} categories_card_nameclass="categories_card_name categories_card_name_asia"/>
@@ -42,7 +40,6 @@ function Categories_section() {
                 </Link>
 
             </div>
-        </div>
     </div>
   )
 }

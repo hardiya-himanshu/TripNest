@@ -1,11 +1,14 @@
 .tour_packages {
     width: 100%;
-    height: 105vh;
+    /* min-height: 900px; */
+    height: 100%;
+    margin-top: 2rem;
     background-color: var(--secondary);
     /* border: 2px solid red; */
-    padding: 5vh;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5vh;
 }
 
@@ -14,7 +17,21 @@
     justify-content: center;
     font-size: 30px;
     font-weight: 600;
+    width: 100%;
     color: var(--hcolor);
+}
+
+.tour_cards {
+    /* max-width: 1300px; */
+    /* border: 2px solid red; */
+    /* padding: 0vh 5rem; */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    /* min-width: 700px; */
 }
 
 .more_tour {
@@ -22,4 +39,30 @@
     font-weight: 700;
     text-align: end;
     padding: 0vh 15vw;
+}
+
+.tour_first {
+    grid-row: 1/3;
+}
+
+.tour_third {
+    grid-column: 3/5;
+}
+
+@media screen and (max-width:800px) {
+    .tour_cards {
+        display: block;
+    }
+
+    .tour_card {
+        height: 250px;
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .tour_packages {
+        padding: 1rem;
+    }
+
 }

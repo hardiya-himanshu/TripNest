@@ -30,27 +30,27 @@ function TopDestination() {
         <div className='for_arrow'>
           <div className="gradient1"></div>
               <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
-          <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
-              <Link to="/destination/seoul" className="dcard">
-                <Card image={seoul} destination_name="SEOUL"/>
-              </Link>
-              <Link to="/destination/tokyo" className="dcard">
-                <Card image={tokyo} destination_name="TOKYO"/>
-              </Link>
-              <Link to="/destination/lakshadweep"  className="dcard">
-                <Card image={lakshadweep} destination_name="LAKSHADWEEP"/>
-              </Link>
-              <Link to="/destination/bali" className="dcard">
-                <Card image={bali}  destination_name="BALI"/>
-              </Link>
-              <Link to="/destination/paris" className="dcard">
-                <Card image={paris} destination_name="PARIS"/>
-              </Link>
-              
-        </div>
+                <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
+                    <Link to="/destination/seoul" className="dcard">
+                      <Card image={seoul} destination_name="SEOUL"/>
+                    </Link>
+                    <Link to="/destination/tokyo" className="dcard">
+                      <Card image={tokyo} destination_name="TOKYO"/>
+                    </Link>
+                    <Link to="/destination/lakshadweep"  className="dcard">
+                      <Card image={lakshadweep} destination_name="LAKSHADWEEP"/>
+                    </Link>
+                    <Link to="/destination/bali" className="dcard">
+                      <Card image={bali}  destination_name="BALI"/>
+                    </Link>
+                    <Link to="/destination/paris" className="dcard">
+                      <Card image={paris} destination_name="PARIS"/>
+                    </Link>
+                    
+              </div>
               <div className='card_arrow_right card_arrow'><img src={right_arrow} alt="" /></div>
+            <div className="gradient2"></div>
           </div>
-          <div className="gradient2"></div>
     </section>
   )
 }

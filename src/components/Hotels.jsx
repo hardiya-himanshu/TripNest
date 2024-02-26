@@ -11,8 +11,8 @@ function Hotels() {
       <div className="title_hotels">HOTELS</div>
       <div className="hotel_cards">
 
-        <div className="gradient1"></div>
-        <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
+        <div className="hgradient1"></div>
+        <div className='hcard_arrow_left hcard_arrow'><img src={left_arrow} alt="" /></div>
 
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
@@ -20,8 +20,8 @@ function Hotels() {
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
 
-        <div className='card_arrow_right card_arrow'><img src={right_arrow} alt="" /></div>
-        <div className="gradient2"></div>
+        <div className='hcard_arrow_right hcard_arrow'><img src={right_arrow} alt="" /></div>
+        <div className="hgradient2"></div>
 
 
       </div>
