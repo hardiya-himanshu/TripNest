@@ -24,11 +24,11 @@ function Acc_Sett_TH() {
   }
 
   return (
-    <div className='p-7 flex flex-col justify-start gap-12 w-full h-full overflow-y-scroll acth' >
+    <div className=' asth_main p-7 flex flex-col justify-start gap-12 w-full h-full overflow-y-scroll acth' >
       <div className="acth_title text-3xl">
             THEMES
       </div>
-      <div className="acth_content grid grid-cols-2 gap-5 rounded-lg w-fit">
+      <div className="theme_cards acth_content grid grid-cols-2 gap-5 rounded-lg w-fit">
             <div onClick={theme1}>
                 <Theme_Card primary="bg-primary1" ColorName="COOL" secondary="bg-secondary1" />
             </div>

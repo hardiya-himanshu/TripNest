@@ -8,7 +8,7 @@ function OnDiscount_FullPage() {
   return (
     <div className="discount_fullpage">
         <div className="dcfp_content">
-            <Link to='/' className='hfp_close'>
+            <Link to='/' className='dcfp_close'>
                 <img  src={close} alt="" />
             </Link>
             <div className="dcfp_title">

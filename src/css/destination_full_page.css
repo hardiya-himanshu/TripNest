@@ -22,8 +22,8 @@
     position: fixed;
     top: 40px;
     right: 40px;
-    z-index: 2;
     width: 30px;
+    z-index: 2;
 
 }
 
@@ -78,7 +78,7 @@
 
 .dfp_others {
     color: var(--color1);
-    padding: 40px;
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -273,4 +273,26 @@
 .dpf_btn:hover {
     transform: scale(1.1);
     font-weight: 800;
+}
+
+@media screen and (min-width:2000px) {
+
+    .dfp_close {
+        top: 60px;
+        right: 60px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .dfp_others {
+        padding: 1rem;
+    }
+
+    .dfp_close {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+    }
 }

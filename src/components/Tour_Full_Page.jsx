@@ -11,8 +11,8 @@ function Tour_Full_Page({image_cover,tour_name,tour_desc,tour_duration,tour_pric
   return (
     <div className='tour_fullpage_section'>
         <div className="tfp_content">
-        <Link to='/'>
-            <img className='tfp_close' src={close} alt="" />
+        <Link to='/' className='tfp_close'>
+            <img  src={close} alt="" />
         </Link>
         
             <div className="tfp_image">

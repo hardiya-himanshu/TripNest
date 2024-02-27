@@ -157,3 +157,26 @@
     font-weight: 800;
     cursor: pointer;
 }
+
+
+@media screen and (min-width:2000px) {
+
+    .hfp_close {
+        top: 60px;
+        right: 60px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .hfp_others {
+        padding: 1rem;
+    }
+
+    .hfp_close {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+    }
+}

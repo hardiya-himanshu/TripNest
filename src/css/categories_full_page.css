@@ -34,7 +34,9 @@
     display: flex;
     flex-direction: column;
     gap: 30px;
-    padding: 20px 40px;
+    padding: 20px 2rem;
+    /* border: 2px solid red; */
+
 }
 
 .continent {
@@ -50,6 +52,7 @@
 }
 
 .conti_cards {
+    /* border: 2px solid red; */
     display: flex;
     grid-area: 0px;
     flex-wrap: wrap;
@@ -92,6 +95,31 @@
     right: 0%;
     margin: auto;
     font-size: 22px;
-    font-weight: 550;
+    font-weight: 600;
+    width: fit-content;
     color: var(--color1);
+}
+
+
+
+@media screen and (min-width:2000px) {
+
+    .cfp_close {
+        top: 60px;
+        right: 60px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .continents {
+        padding: 1rem;
+    }
+
+    .cfp_close {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+    }
 }

@@ -23,6 +23,7 @@
     right: 40px;
     z-index: 2;
     width: 30px;
+
     /* width: 40px; */
 }
 
@@ -128,4 +129,27 @@
 .tpf_btn:hover {
     transform: scale(1.1);
     font-weight: 800;
+}
+
+
+@media screen and (min-width:2000px) {
+
+    .tfp_close {
+        top: 60px;
+        right: 60px;
+        width: 30px;
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .tfp_others {
+        padding: 1rem;
+    }
+
+    .tfp_close {
+        top: 20px;
+        right: 20px;
+        width: 30px;
+    }
 }

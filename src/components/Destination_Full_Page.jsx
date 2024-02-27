@@ -9,8 +9,8 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
-       <Link to={dest_to}>
-            <img className='dfp_close' src={close} alt="" />
+       <Link to={dest_to} className='dfp_close'>
+            <img  src={close} alt="" />
        </Link>
 
             <div className="dfp_image">
