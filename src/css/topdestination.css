@@ -29,12 +29,11 @@
 .cards_section {
     display: flex;
     gap: 30px;
-    justify-content: center;
     align-items: center;
     /* border: 2px solid rgb(0, 0, 0); */
     position: relative;
     height: 100%;
-    overflow-x: hidden;
+    overflow-x: scroll;
     border-radius: 10px;
     /* padding: 20px; */
     /* margin: 2vh; */

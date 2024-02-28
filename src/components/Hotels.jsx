@@ -19,7 +19,6 @@ function Hotels() {
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
         <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
-        <Hotel_Card hotelImage={hotel1} hotelName="The Oberoi Cecil" hotelLocation="Shimla,  India" hotelType="Chill" hotelPrice=" 12,999/Night"/>
 
         <div className='hcard_arrow_right hcard_arrow'><img src={right_arrow} alt="" /></div>
         <div className="hgradient2"></div>

@@ -11,15 +11,21 @@ import {reveal} from '../javascript/index.js'
 
 
 function TopDestination() {
-  
-  let cardSectionRef = useRef(0);
 
-  const Move = (e)=>{
-    cardSectionRef.scrollLeft = 1
-    console.log(e.pageX)
-    
+
+  let cardsection = document.querySelector(".cards_section")
+  let left_btn = document.getElementsByClassName("card_arrow_left")
+  let right_btn = document.getElementsByClassName("card_arrow_right")
+
+    const leftScroll = () =>{
+      cardsection.scrollLeft-=300
+
     }
-    
+    const rightScroll = () =>{
+      cardsection.scrollLeft+=300
+    }
+  
+
     window.addEventListener("scroll", reveal);
 
   return (
@@ -29,8 +35,8 @@ function TopDestination() {
         </div>
         <div className='for_arrow'>
           <div className="gradient1"></div>
-              <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
-                <div className="cards_section" onMouseMove={Move} ref={cardSectionRef}>
+              <div className='card_arrow_left card_arrow' onClick={leftScroll}><img src={left_arrow} alt="" /></div>
+                <div className="cards_section"  >
                     <Link to="/destination/seoul" className="dcard">
                       <Card image={seoul} destination_name="SEOUL"/>
                     </Link>
@@ -48,7 +54,7 @@ function TopDestination() {
                     </Link>
                     
               </div>
-              <div className='card_arrow_right card_arrow'><img src={right_arrow} alt="" /></div>
+              <div className='card_arrow_right card_arrow' onClick={rightScroll}><img src={right_arrow} alt="" /></div>
             <div className="gradient2"></div>
           </div>
     </section>
