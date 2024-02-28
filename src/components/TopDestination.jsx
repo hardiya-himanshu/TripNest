@@ -4,27 +4,14 @@ import '../css/topdestination.css'
 import '../css/style.css'
 import {paris,seoul,tokyo,lakshadweep,bali,left_arrow,right_arrow} from '../javascript/index.js'
 import {Link} from 'react-router-dom'
-import { useRef } from 'react'
-
+import '../javascript/index.js'
 import {reveal} from '../javascript/index.js'
 
 
 
 function TopDestination() {
 
-
-  let cardsection = document.querySelector(".cards_section")
-  let left_btn = document.getElementsByClassName("card_arrow_left")
-  let right_btn = document.getElementsByClassName("card_arrow_right")
-
-    const leftScroll = () =>{
-      cardsection.scrollLeft-=300
-
-    }
-    const rightScroll = () =>{
-      cardsection.scrollLeft+=300
-    }
-  
+  const cardSection = document.querySelector(".cards_section")
 
     window.addEventListener("scroll", reveal);
 
@@ -35,8 +22,8 @@ function TopDestination() {
         </div>
         <div className='for_arrow'>
           <div className="gradient1"></div>
-              <div className='card_arrow_left card_arrow' onClick={leftScroll}><img src={left_arrow} alt="" /></div>
-                <div className="cards_section"  >
+              <div className='card_arrow_left card_arrow'><img src={left_arrow} alt="" /></div>
+                <div className="cards_section">
                     <Link to="/destination/seoul" className="dcard">
                       <Card image={seoul} destination_name="SEOUL"/>
                     </Link>
@@ -54,11 +41,12 @@ function TopDestination() {
                     </Link>
                     
               </div>
-              <div className='card_arrow_right card_arrow' onClick={rightScroll}><img src={right_arrow} alt="" /></div>
+              <div className='card_arrow_right card_arrow'><img src={right_arrow} alt="" /></div>
             <div className="gradient2"></div>
           </div>
     </section>
   )
+  
 }
 
 export default TopDestination

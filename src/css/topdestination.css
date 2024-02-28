@@ -30,14 +30,24 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    white-space: nowrap;
     /* border: 2px solid rgb(0, 0, 0); */
     position: relative;
     height: 100%;
+    width: 100%;
     overflow-x: scroll;
     border-radius: 10px;
+    scroll-behavior: smooth;
+
+   
+
     /* padding: 20px; */
     /* margin: 2vh; */
     /* animation: 2s slide_card infinite linear; */
+}
+
+.cards_section::-webkit-scrollbar {
+    display: none;
 }
 
 .cards_section .dcard {

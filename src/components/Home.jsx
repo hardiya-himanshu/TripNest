@@ -9,8 +9,8 @@ import {sound_on,sound_off,user,bg_audio,bg_video,logo, menu} from '../javascrip
 
 function Home() {
 
-    const[sound, setSound] = useState(false)
-    const[soundimg, setSoundImg] = useState(sound_on)
+    const[sound, setSound] = useState(true)
+    const[soundimg, setSoundImg] = useState(sound_off)
 
     const songState = () =>{
         setSound(!sound)
@@ -18,7 +18,7 @@ function Home() {
     }
 
     const showMenu = () =>{
-
+        
     }
 
     const[user_opt, user_opt_show] = useState(false)

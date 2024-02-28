@@ -5,22 +5,19 @@ import "../css/style.css"
 
 
 function Acc_Sett_TH() {
+  
 
   const theme1 = () =>{
     document.querySelector("body").setAttribute('data-theme', '1')
-    // console.log("hi")
   }
   const theme2 = () =>{
     document.querySelector("body").setAttribute('data-theme', '2')
-    // console.log("hi")
   }
   const theme3 = () =>{
     document.querySelector("body").setAttribute('data-theme', '3')
-    // console.log("hi")
   }
   const theme4 = () =>{
     document.querySelector("body").setAttribute('data-theme', '4')
-    // console.log("hi")
   }
 
   return (

@@ -24,6 +24,7 @@ function Hotel_Full_Page() {
                 <div className="hfp_details">
                     <div className="hfp_city_name">The Oberoi Cecil</div>
                     <div className="hfp_city_location">Shimla, India</div>
+                    <div className="hotel_price">₹12,999/Night</div>
                     <div className="hfp_btns">
                         <div className="hfp_btn">Calm</div>
                         <div className="hfp_btn">Chill</div>
