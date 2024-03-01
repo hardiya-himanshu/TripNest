@@ -1,11 +1,16 @@
-import Main_Site from './Main_Site'
+import { RouterProvider,createBrowserRouter } from "react-router-dom";
+import React from 'react'
+import { allRoutes } from "./routes";
+
 
 function App() {
-  
+  const router = createBrowserRouter(
+      allRoutes    
+  )
   return (
     
     <>
-      <Main_Site/>
+    <RouterProvider router={router}/>
     </>
     
   )

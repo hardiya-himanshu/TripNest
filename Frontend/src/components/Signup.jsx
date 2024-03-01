@@ -4,26 +4,23 @@ import '../css/style.css'
 import signupimg from '../assets/login-signup-bg.jpg'
 import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Signup() {
 
-  const[username, setUsername] = useState("")
-  const[email, setEmail] = useState("")
-  const[password, setPassword] = useState("")
+  const[username, setUsername] = useState()
+  const[email, setEmail] = useState()
+  const[password, setPassword] = useState()
+  const navigate = useNavigate()
 
-
-  async function submit(e){
-    e.preventDefault()
-    try{
-        await axios.post("http://localhost:5174/signup",{
-          username, email, password
-        })
-    }
-    catch{
-        console.log(e);
-    }
+  const handleSubmit = (e) => {
+      e.preventDefault()
+      axios.post('http://localhost:3001/register', {username, email, password}).then(res=>{console.log(res)
+      navigate("/login")
+    }).catch(err=>console.log(err))
   }
-
 
   return (
     <>
@@ -37,16 +34,16 @@ function Signup() {
             SIGN UP
         </div>
 
-        <form action='POST' onSubmit={submit}>
-            <input type="name" placeholder='Name' value={username} onChange={(e)=>{setUsername(e.target.value)}}/>
-            <input type="email" placeholder='Email'  value={email} onChange={(e)=>{setEmail(e.target.value)}} />
-            <input type="password" placeholder='Password' value={password} onChange={(e)=>{setPassword(e.target.value)}}/>
+        <form onSubmit={handleSubmit}>
+            <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}}/>
+            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} />
+            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
             <div className="t_c">
                 <label htmlFor="t_c">I accept the Terms & Conditions</label>
                 <input type="checkbox" name="t_c" id="t_c" />
             </div>
-            <Link to="/login" className='w-fit relative left-0 right-0 m-auto'><button type='submit' className='signup_btn'>SIGN UP</button>
-            </Link>
+            <button type='submit' className=' signup_btn w-fit relative left-0 right-0 m-auto'>SIGN UP
+            </button>
             <Link to="/login" >
             <div className="gotologin font-bold underline cursor-pointer">Login?</div>
 

@@ -20,9 +20,10 @@ function Home() {
     const showMenu = () =>{
         
     }
+    
+    const[login_sts, set_login_sts] = useState(true)
 
     const[user_opt, user_opt_show] = useState(false)
-    const[login_sts, set_login_sts] = useState(true)
     const[menu_opt, show_menu_opt] = useState(false)
 
   return (      
