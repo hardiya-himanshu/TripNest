@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link as ScrollLink} from 'react-scroll'
 import { useRef, useState} from 'react'
 import {Link} from 'react-router-dom'
 import '../css/home.css'
 import '../css/style.css'
 import {sound_on,sound_off,user,bg_audio,bg_video,logo, menu} from '../javascript/index'
+import { useUserAccess } from '../contexts/UserAccessContext'
 
-
+     
 function Home() {
 
     const[sound, setSound] = useState(true)
@@ -21,7 +22,7 @@ function Home() {
         
     }
     
-    const[login_sts, set_login_sts] = useState(true)
+    const [loginStatus, setLoginStatus] = useState(false)
 
     const[user_opt, user_opt_show] = useState(false)
     const[menu_opt, show_menu_opt] = useState(false)
@@ -89,7 +90,7 @@ function Home() {
 
                     <img onClick={()=>{user_opt_show(!user_opt),show_menu_opt(false)}} src={user} alt=""/>
 
-                     {login_sts?
+                     {loginStatus?
                 user_opt?
                 
                     <div className='user_options'>

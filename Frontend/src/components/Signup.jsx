@@ -6,7 +6,8 @@ import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'  
+
 
 function Signup() {
 
@@ -18,9 +19,13 @@ function Signup() {
   const handleSubmit = (e) => {
       e.preventDefault()
       axios.post('http://localhost:3001/register', {username, email, password}).then(res=>{console.log(res)
-      navigate("/login")
+      if(res.data==="Success"){
+        
+        navigate("/login")
+      }
     }).catch(err=>console.log(err))
   }
+
 
   return (
     <>
@@ -49,7 +54,6 @@ function Signup() {
 
             </Link>
         </form>
-        
       </div>
     </div>
     </>

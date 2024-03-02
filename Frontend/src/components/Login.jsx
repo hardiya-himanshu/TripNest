@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect} from 'react'
 import '../css/login.css'
 import '../css/style.css'
 import loginimg from '../assets/login-signup-bg.jpg'
@@ -7,22 +7,24 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-
 function Login() {
 
   const[email, setEmail] = useState()
   const[password, setPassword] = useState()
   const navigate = useNavigate()
 
+
   const handleSubmit = (e) => {
       e.preventDefault()
       axios.post('http://localhost:3001/login', { email, password}).then(res=>{console.log(res)
       if(res.data==="Success"){
-
+        
         navigate("/")
       }
     }).catch(err=>console.log(err))
   }
+
+  const notify = () => toast("Registered Successfully!");
 
 
   return (
@@ -47,7 +49,7 @@ function Login() {
             </div>
             <button type="submit" className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
             </button>
-            <Link to='/signup'>
+            <Link to='/signup' >
             <div className="gotologin font-bold underline cursor-pointer">Sign Up?</div>
             </Link>
 
