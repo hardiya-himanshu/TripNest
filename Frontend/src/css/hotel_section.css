@@ -21,23 +21,36 @@
 }
 
 .hotel_cards {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(6, 1fr);
+
     justify-content: center;
     /* align-items: center; */
     /* border: 5px solid red; */
     position: relative;
     width: 100%;
-    column-gap: 10px;
     /* width: 100%; */
-    overflow: hidden;
+    /* overflow: scroll; */
 }
 
+
+
+
+.hotels_cards_section {
+    display: grid;
+    grid-auto-rows: auto;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 10px;
+    /* border: 2px solid red; */
+    overflow: scroll;
+}
+
+.hotels_cards_section::-webkit-scrollbar {
+    display: none;
+}
 
 .hgradient1 {
     position: absolute;
     left: 0px;
+    top: 0px;
     z-index: 1;
     height: 100%;
     /* border: 2px solid rgb(0, 0, 0); */
@@ -47,6 +60,7 @@
 
 .hgradient2 {
     position: absolute;
+    top: 0px;
     right: 0px;
     z-index: 1;
     height: 100%;

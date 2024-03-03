@@ -26,6 +26,15 @@ import { bali_lg, d1_desc, d1att1, d1att2, d1hotel1, d1hotel2,  d2_desc,  d2att1
 
 import {ladakh_cover, pl_c,la_c,jerusalem_c,brasilia_c,tokyo_c} from './javascript/index'
 
+// hotels
+
+import shimla_full from "./assets/shimla_full.jpg"
+import uae_full from "./assets/uae_full.jpg"
+import paris_full from "./assets/paris_full.webp"
+import bangkok_full from "./assets/bangkok_full.jpg"
+import goa_full from "./assets/goa_full.jpg"
+
+
 // categories
 import {abad_c,athens_c,auckland_c,beijing_c,berlin_c,cairo_c,london_c,mcmurdo_c,mexicocity_c,miami_c,nairobi_c,rio_c,sydney_c} from './javascript/index'
 import Categories_City_FullPage from './components/Categories_City_FullPage'
@@ -49,11 +58,6 @@ export const allRoutes= [
     {
       path:"/signup",
       element:<Signup/>,
-      errorElement:<ErrorPage/>
-    },
-    {
-      path:"/hotelpage",
-      element:<Hotel_Full_Page/>,
       errorElement:<ErrorPage/>
     },
     {
@@ -124,6 +128,35 @@ export const allRoutes= [
       element:<Tour_Full_Page image_cover={brasilia_c} tour_name="BRASILIA, BRAZIL" tour_desc="Brasília, Brazil's visionary capital, captivates with its modernist architecture and urban design. Designed by Oscar Niemeyer and Lucio Costa, its striking landmarks include the futuristic Cathedral of Brasília and the soaring Congresso Nacional. The city's planned layout, with its expansive boulevards and geometric shapes, reflects a bold vision of progress and ambition. " tour_duration="5 Nights" tour_price="109,999"/>,errorElement:<ErrorPage/>
     },
 
+
+  // HOTELS
+
+  {
+    path:"/hotels/1",
+    errorElement:<ErrorPage/>,
+    element:<Hotel_Full_Page h_i={shimla_full} h_n="The Oberoi Cecil" h_l="Shimla, India" h_t="Calm" h_p="₹12,999/Night" h_d="Nestled in the heart of Shimla, our hotel offers a perfect blend of comfort and elegance. Enjoy breathtaking views of the lush green valleys and majestic mountains from the cozy rooms. Immerse yourself in the serene ambiance, relish delectable cuisine, and experience unmatched hospitality for an unforgettable stay in Shimla."/>,
+  },
+  {
+    path:"/hotels/2",
+    errorElement:<ErrorPage/>,
+    element:<Hotel_Full_Page h_i={goa_full} h_n="ITC Grand Goa" h_l="Goa, India" h_t="Fun" h_p="₹ 22,999/Night" h_d="The ITC Grand Goa Resort & Spa is a luxurious five-star property located in South Goa, India. Set amidst lush green landscapes and overlooking the Arabian Sea, it offers a serene and tranquil retreat for guests seeking relaxation and indulgence."/>,
+  },
+  {
+    path:"/hotels/3",
+    errorElement:<ErrorPage/>,
+    element:<Hotel_Full_Page h_i={bangkok_full} h_n="Ibis Bangkok Sathorn" h_l="Bangkok, Thailand" h_t="Relax" h_p="₹ 18,999/Night" h_d="
+    The Ibis Bangkok Sathorn is a contemporary and stylish hotel situated in the heart of Bangkok's bustling business district. Catering to both business and leisure travelers, it offers comfortable accommodations, modern amenities, and convenient access to the city's key attractions."/>,
+  },
+  {
+    path:"/hotels/4",
+    errorElement:<ErrorPage/>,
+    element:<Hotel_Full_Page h_i={uae_full} h_n="Mövenpick Resort Al Marjan" h_l="Ras al Khaimah, UAE" h_t="Royal" h_p="₹ 13,999/Night" h_d="The Mövenpick Resort Al Marjan is a luxurious beachfront retreat located on the stunning Al Marjan Island in Ras Al Khaimah, United Arab Emirates. Boasting contemporary architecture and breathtaking views of the Arabian Gulf, the resort offers a perfect blend of relaxation and adventure. Guests can indulge in spacious and elegantly appointed rooms. "/>,
+  },
+  {
+    path:"/hotels/5",
+    errorElement:<ErrorPage/>,
+    element:<Hotel_Full_Page h_i={paris_full} h_n="Hyatt Regency Paris Étoile" h_l="Paris, France" h_t="Cozy" h_p="₹ 12,999/Night" h_d="The Hyatt Regency Paris Étoile stands tall as a beacon of modern elegance in the heart of Paris, overlooking the iconic Eiffel Tower. Offering unparalleled views of the city skyline and easy access to Paris' renowned attractions, this hotel caters to both leisure and business travelers alike. With expansive windows showcasing panoramic city vistas, each accommodation provides a serene oasis amidst the bustling cityscape."/>,
+  },
 
 
   // CATEGORIES

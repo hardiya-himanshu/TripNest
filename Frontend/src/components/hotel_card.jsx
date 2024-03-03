@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/hotel_card.css'
 import {Link} from 'react-router-dom'
 
-function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice}) {
+function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice,to}) {
   return (
     <div className='main_hotel_card'>
         <div className="hotel_image">
@@ -18,7 +18,7 @@ function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice
 
             <div className='hotel_div2'>
                 <div className="hotel_price">₹{hotelPrice}</div>
-                <Link to='/hotelpage'>
+                <Link to={to}>
                 <button className='btn'>BOOK NOW</button>
                 </Link>
                 
