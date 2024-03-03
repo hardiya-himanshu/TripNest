@@ -1,7 +1,8 @@
 import React, { useState , useEffect} from 'react'
 import '../css/login.css'
 import '../css/style.css'
-import loginimg from '../assets/login-signup-bg.jpg'
+import loginimg from '../assets/bglogin.jpg'
+// import loginvideo from '../assets/login-signup-video.mp4'
 import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
@@ -29,6 +30,7 @@ function Login() {
 
   return (
     <div className='main'>
+    {/* <video src={loginvideo} autoPlay loop muted className='absolute h-screen w-full object-cover'/> */}
     <img className='bg_login' src={loginimg} alt="" />
     <div className="form">
         <Link to='/'>
