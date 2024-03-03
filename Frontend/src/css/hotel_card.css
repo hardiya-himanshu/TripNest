@@ -120,6 +120,10 @@
 
 @media screen and (max-width:500px) {
 
+    .main_hotel_card {
+        width: fit-content;
+    }
+
     .hotel_image img {
         height: 12rem;
         width: 12rem;

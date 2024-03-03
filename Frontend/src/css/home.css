@@ -136,6 +136,7 @@ nav .logo img {
 
 
 .user_settings {
+    /* border: 2px solid red; */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -163,8 +164,9 @@ nav .logo img {
 }
 
 .logup_option {
-    top: 60px;
-    right: 20px;
+    position: absolute;
+    top: 70px;
+    right: 0px;
     width: 220px;
     min-width: 200px;
     display: flex;
@@ -183,7 +185,7 @@ nav .logo img {
 .logout,
 .login-signup {
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     padding: 5px 10px;
 
 }

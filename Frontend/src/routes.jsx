@@ -144,18 +144,18 @@ export const allRoutes= [
   {
     path:"/hotels/3",
     errorElement:<ErrorPage/>,
-    element:<Hotel_Full_Page h_i={bangkok_full} h_n="Ibis Bangkok Sathorn" h_l="Bangkok, Thailand" h_t="Relax" h_p="₹ 18,999/Night" h_d="
+    element:<Hotel_Full_Page h_i={bangkok_full} h_n="Ibis Sathorn" h_l="Bangkok, Thailand" h_t="Relax" h_p="₹ 18,999/Night" h_d="
     The Ibis Bangkok Sathorn is a contemporary and stylish hotel situated in the heart of Bangkok's bustling business district. Catering to both business and leisure travelers, it offers comfortable accommodations, modern amenities, and convenient access to the city's key attractions."/>,
   },
   {
     path:"/hotels/4",
     errorElement:<ErrorPage/>,
-    element:<Hotel_Full_Page h_i={uae_full} h_n="Mövenpick Resort Al Marjan" h_l="Ras al Khaimah, UAE" h_t="Royal" h_p="₹ 13,999/Night" h_d="The Mövenpick Resort Al Marjan is a luxurious beachfront retreat located on the stunning Al Marjan Island in Ras Al Khaimah, United Arab Emirates. Boasting contemporary architecture and breathtaking views of the Arabian Gulf, the resort offers a perfect blend of relaxation and adventure. Guests can indulge in spacious and elegantly appointed rooms. "/>,
+    element:<Hotel_Full_Page h_i={uae_full} h_n="Mövenpick Resort" h_l="Ras al Khaimah, UAE" h_t="Royal" h_p="₹ 13,999/Night" h_d="The Mövenpick Resort Al Marjan is a luxurious beachfront retreat located on the stunning Al Marjan Island in Ras Al Khaimah, United Arab Emirates. Boasting contemporary architecture and breathtaking views of the Arabian Gulf, the resort offers a perfect blend of relaxation and adventure. Guests can indulge in spacious and elegantly appointed rooms. "/>,
   },
   {
     path:"/hotels/5",
     errorElement:<ErrorPage/>,
-    element:<Hotel_Full_Page h_i={paris_full} h_n="Hyatt Regency Paris Étoile" h_l="Paris, France" h_t="Cozy" h_p="₹ 12,999/Night" h_d="The Hyatt Regency Paris Étoile stands tall as a beacon of modern elegance in the heart of Paris, overlooking the iconic Eiffel Tower. Offering unparalleled views of the city skyline and easy access to Paris' renowned attractions, this hotel caters to both leisure and business travelers alike. With expansive windows showcasing panoramic city vistas, each accommodation provides a serene oasis amidst the bustling cityscape."/>,
+    element:<Hotel_Full_Page h_i={paris_full} h_n="Hyatt RegencyZ" h_l="Paris, France" h_t="Cozy" h_p="₹ 12,999/Night" h_d="The Hyatt Regency Paris Étoile stands tall as a beacon of modern elegance in the heart of Paris, overlooking the iconic Eiffel Tower. Offering unparalleled views of the city skyline and easy access to Paris' renowned attractions, this hotel caters to both leisure and business travelers alike. With expansive windows showcasing panoramic city vistas, each accommodation provides a serene oasis amidst the bustling cityscape."/>,
   },
 
 

@@ -35,12 +35,31 @@
 
 
 .hotels_cards_section {
-    display: grid;
-    grid-auto-rows: auto;
-    grid-template-columns: repeat(6, 1fr);
-    column-gap: 10px;
+    display: flex;
+    /* grid-auto-rows: auto; */
+    /* grid-template-columns: repeat(6, 1fr); */
+    gap: 10px;
     /* border: 2px solid red; */
-    overflow: scroll;
+    width: calc(400px * 10);
+    /* overflow: scroll; */
+    animation: 40s scrollhotel linear infinite;
+
+}
+
+
+.hotels_cards_section:hover {
+
+    animation-play-state: paused;
+}
+
+@keyframes scrollhotel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-780px*5));
+    }
 }
 
 .hotels_cards_section::-webkit-scrollbar {
@@ -89,6 +108,18 @@
 
 
 
+@media screen and (max-width:1400px) {
+    @keyframes scrollhotel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-400px*5));
+        }
+    }
+}
+
 @media screen and (max-width:500px) {
 
     .hgradient1,
@@ -98,5 +129,15 @@
 
     .hotel_section {
         padding: 1rem;
+    }
+
+    @keyframes scrollhotel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-282px*5));
+        }
     }
 }
