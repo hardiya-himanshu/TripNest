@@ -8,12 +8,14 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
+import { useUserAccess } from '../contexts/UserAccessContext'
 
 function Login() {
 
   const[email, setEmail] = useState()
   const[password, setPassword] = useState()
   const navigate = useNavigate()
+  const {loginStatus, setLoginStatus} = useUserAccess()
 
   const handleSubmit = (e) => {
       e.preventDefault()
@@ -21,7 +23,7 @@ function Login() {
         
         console.log(res)
       if(res.data==="Success"){
-        
+        setLoginStatus(prev=>!prev)
         navigate("/")
       }
     }).catch(err=>console.log(err))
@@ -53,7 +55,9 @@ function Login() {
                 <label htmlFor="remember">Remember Me</label>
                 <input type="checkbox" name="remember" id="remember" />
             </div>
-            <button type="submit" onClick={()=>toast.error("Please Check your Email or Password")} className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
+            <button type="submit" onClick={()=>{
+              
+              toast.error("Please Check your Email or Password")}} className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
             </button>
             <Link to='/signup' >
             <div className="gotologin font-bold underline cursor-pointer">Sign Up?</div>

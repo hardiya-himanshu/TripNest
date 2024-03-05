@@ -2,14 +2,19 @@ import React from 'react'
 import '../css/ondiscount.css'
 import Lakshadweep from '../assets/Lakshadweep.webp'
 import { Link } from 'react-router-dom'
+import { useUserAccess } from '../contexts/UserAccessContext'
+
 
 function OnDiscount() {
+
+  const {loginStatus, setLoginStatus} = useUserAccess()
+
   return (
     <div className='ondiscount_section reveal' id='ondiscount_section'>
         <div className="discount_title">
             ON DISCOUNT
         </div>
-        <Link to='/discount' className="discount_content">
+        <Link to={loginStatus?"/discount":null} className="discount_content">
             {/* <div className="dark_bg"></div> */}
             <img src={Lakshadweep} alt="" />
             <div className="percentage_discount"></div>

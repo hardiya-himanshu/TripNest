@@ -22,7 +22,7 @@ function Home() {
         
     }
     
-    const [loginStatus, setLoginStatus] = useState(false)
+    const {loginStatus, setLoginStatus} = useUserAccess()
 
     const[user_opt, user_opt_show] = useState(false)
     const[menu_opt, show_menu_opt] = useState(false)
