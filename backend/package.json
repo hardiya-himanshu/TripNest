@@ -2,10 +2,11 @@
   "name": "tripnest-backend",
   "version": "1.0.0",
   "description": "",
+  "type": "module" ,
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "himanshu hardiya",

@@ -2,7 +2,6 @@ import React, { useState , useEffect} from 'react'
 import '../css/login.css'
 import '../css/style.css'
 import loginimg from '../assets/bglogin.jpg'
-// import loginvideo from '../assets/login-signup-video.mp4'
 import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
@@ -17,20 +16,26 @@ function Login() {
   const navigate = useNavigate()
   const {loginStatus, setLoginStatus} = useUserAccess()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
       e.preventDefault()
-      axios.post('http://localhost:3000/login', { email, password}).then(res=>{
-        
-        console.log(res)
-      if(res.data==="Success"){
-        setLoginStatus(prev=>!prev)
-        navigate("/")
-      }
-    }).catch(err=>console.log(err))
-  }
+      
+      await axios.post('http://localhost:3000/login', { email, password})
+      .then(res=>
+        {
+          console.log(res)
+          const response = res.data
+          if(response==="exist")
+          {
+            setLoginStatus(prev=>!prev)
+            navigate("/")
+          }
+        }).catch (error) 
+        {
+            console.log(error);
+        }
+}
 
   const notify = () => toast("Registered Successfully!");
-
 
 
   return (
@@ -48,8 +53,8 @@ function Login() {
         </div>
         
         <form onSubmit={handleSubmit}>
-            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}}/>
-            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
+            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
+            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             
             <div className="remember">
                 <label htmlFor="remember">Remember Me</label>

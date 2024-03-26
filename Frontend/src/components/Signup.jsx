@@ -16,14 +16,21 @@ function Signup() {
   const[password, setPassword] = useState()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
       e.preventDefault()
-      axios.post('http://localhost:3000/register', {username, email, password}).then(res=>{console.log(res)
-      if(res.data==="Success"){
-        
-        navigate("/login")
+     
+      await axios.post('http://localhost:3000/register', {username, email, password})
+      .then(res=>
+      {
+        console.log(res)
+        const response = res.data
+        if(response==="notexist"){
+        navigate("/login")}
+      }). catch (error) 
+      {
+        console.log(error)
       }
-    }).catch(err=>console.log(err))
+      
   }
 
 
@@ -40,14 +47,15 @@ function Signup() {
         </div>
 
         <form onSubmit={handleSubmit}>
-            <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}}/>
-            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} />
-            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}}/>
+            <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}} required/>
+            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
+            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             <div className="t_c">
                 <label htmlFor="t_c">I accept the Terms & Conditions</label>
-                <input type="checkbox" name="t_c" id="t_c" />
+                <input type="checkbox" name="t_c" id="t_c" required/>
             </div>
-            <button type='submit' onClick={()=>toast.error("Please Login")} className=' signup_btn w-fit relative left-0 right-0 m-auto'>SIGN UP
+            <button type='submit' 
+            onClick={()=>toast.error("Please Login")} className=' signup_btn w-fit relative left-0 right-0 m-auto'>SIGN UP
             </button>
             <Link to="/login" >
             <div className="gotologin font-bold underline cursor-pointer">Login?</div>

@@ -34,7 +34,7 @@ function Home() {
     <audio muted={sound}
         voloume="1"
         id="autoplay"
-        autoPlay loop preload='auto'>
+        autoPlay loop preload='auto' style={{pointerEvents:"none"}}>
         <source src={bg_audio} type="audio/mp3"/>
     </audio>
 
