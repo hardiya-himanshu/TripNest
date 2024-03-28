@@ -8,15 +8,19 @@ function Acc_Sett_TH() {
   
 
   const theme1 = () =>{
+    localStorage.setItem("theme", 1)
     document.querySelector("body").setAttribute('data-theme', '1')
   }
   const theme2 = () =>{
+    localStorage.setItem("theme", 2)
     document.querySelector("body").setAttribute('data-theme', '2')
   }
   const theme3 = () =>{
+    localStorage.setItem("theme", 3)
     document.querySelector("body").setAttribute('data-theme', '3')
   }
   const theme4 = () =>{
+    localStorage.setItem("theme", 4)
     document.querySelector("body").setAttribute('data-theme', '4')
   }
 

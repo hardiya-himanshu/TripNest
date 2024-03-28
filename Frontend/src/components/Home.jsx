@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link as ScrollLink} from 'react-scroll'
 import { useRef, useState} from 'react'
 import {Link} from 'react-router-dom'
@@ -9,6 +9,13 @@ import { useUserAccess } from '../contexts/UserAccessContext'
 
      
 function Home() {
+    const {loginStatus, setLoginStatus} = useUserAccess()
+   
+
+    useEffect(()=>{
+        const login = localStorage.getItem("loginstatus")
+        setLoginStatus(login)
+    },[])
 
     const[sound, setSound] = useState(true)
     const[soundimg, setSoundImg] = useState(sound_off)
@@ -22,10 +29,13 @@ function Home() {
         
     }
     
-    const {loginStatus, setLoginStatus} = useUserAccess()
-
     const[user_opt, user_opt_show] = useState(false)
     const[menu_opt, show_menu_opt] = useState(false)
+
+    const logout = ()=>{
+        setLoginStatus(false)
+        {localStorage.setItem("loginstatus", loginStatus)}
+    }
 
   return (      
     <>
@@ -96,9 +106,9 @@ function Home() {
                     <div className='user_options'>
                         <Link to='/account' className='account_setting'>Account           Setting
                         </Link>
-                        <Link to='/login' className='logout'>
+                        <Link to='/login' className='logout' onClick={logout}>
                             Logout
-                        
+                           
                         </Link>
                     </div>
                 :null

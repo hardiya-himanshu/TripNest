@@ -16,6 +16,9 @@ function Login() {
   const navigate = useNavigate()
   const {loginStatus, setLoginStatus} = useUserAccess()
 
+ 
+
+
   const handleSubmit = async(e) => {
       e.preventDefault()
       
@@ -27,7 +30,9 @@ function Login() {
           const response = res.data
           if(response.status==="exist")
           {
-            setLoginStatus(prev=>!prev)
+            
+            setLoginStatus(true)
+            localStorage.setItem("loginstatus", loginStatus)
             navigate("/")
             window.localStorage.setItem("token", response.data)
             // window.location.href = "./Acc_Set_PD"
