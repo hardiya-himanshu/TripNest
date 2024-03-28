@@ -19,20 +19,26 @@ function Login() {
   const handleSubmit = async(e) => {
       e.preventDefault()
       
-      await axios.post('http://localhost:3000/login', { email, password})
+      try {
+        await axios.post('http://localhost:3000/login', { email, password})
       .then(res=>
         {
           console.log(res)
           const response = res.data
-          if(response==="exist")
+          if(response.status==="exist")
           {
             setLoginStatus(prev=>!prev)
             navigate("/")
+            window.localStorage.setItem("token", response.data)
+            // window.location.href = "./Acc_Set_PD"
           }
-        }).catch (error) 
-        {
-            console.log(error);
-        }
+        })
+      } catch (error) {
+        console.log(error);
+        
+      }
+
+      
 }
 
   const notify = () => toast("Registered Successfully!");

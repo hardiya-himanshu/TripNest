@@ -18,19 +18,19 @@ function Signup() {
 
   const handleSubmit = async(e) => {
       e.preventDefault()
-     
-      await axios.post('http://localhost:3000/register', {username, email, password})
+      try {
+        await axios.post('http://localhost:3000/register', {username, email, password})
       .then(res=>
       {
         console.log(res)
         const response = res.data
         if(response==="notexist"){
         navigate("/login")}
-      }). catch (error) 
-      {
+      })
+      } catch (error) {
         console.log(error)
+        
       }
-      
   }
 
 
