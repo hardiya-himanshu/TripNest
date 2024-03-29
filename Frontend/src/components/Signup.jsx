@@ -14,12 +14,13 @@ function Signup() {
   const[username, setUsername] = useState()
   const[email, setEmail] = useState()
   const[password, setPassword] = useState()
+  const[phone, setPhone] = useState()
   const navigate = useNavigate()
 
   const handleSubmit = async(e) => {
       e.preventDefault()
       try {
-        await axios.post('http://localhost:3000/register', {username, email, password})
+        await axios.post('http://localhost:3000/register', {username, email, password, phone})
       .then(res=>
       {
         console.log(res)
@@ -50,6 +51,7 @@ function Signup() {
             <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}} required/>
             <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
             <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
             <div className="t_c">
                 <label htmlFor="t_c">I accept the Terms & Conditions</label>
                 <input type="checkbox" name="t_c" id="t_c" required/>

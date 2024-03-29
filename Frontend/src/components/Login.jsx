@@ -14,7 +14,7 @@ function Login() {
   const[email, setEmail] = useState()
   const[password, setPassword] = useState()
   const navigate = useNavigate()
-  const {loginStatus, setLoginStatus} = useUserAccess()
+  // const {loginStatus, setLoginStatus} = useUserAccess()
 
  
 
@@ -31,10 +31,10 @@ function Login() {
           if(response.status==="exist")
           {
             
-            setLoginStatus(true)
-            localStorage.setItem("loginstatus", loginStatus)
-            navigate("/")
+            // setLoginStatus(true)
+            window.localStorage.setItem("loginStatus", true)
             window.localStorage.setItem("token", response.data)
+            navigate("/")
             // window.location.href = "./Acc_Set_PD"
           }
         })

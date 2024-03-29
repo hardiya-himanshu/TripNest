@@ -9,13 +9,16 @@ import { useUserAccess } from '../contexts/UserAccessContext'
 
      
 function Home() {
+    // window.localStorage.setItem("loginStatus", false)
+    const isLooggedIn = window.localStorage.getItem("loginStatus")
     const {loginStatus, setLoginStatus} = useUserAccess()
+    setLoginStatus(isLooggedIn)
    
 
-    useEffect(()=>{
-        const login = localStorage.getItem("loginstatus")
-        setLoginStatus(login)
-    },[])
+    // useEffect(()=>{
+    //     const login = localStorage.getItem("loginstatus")
+    //     setLoginStatus(login)
+    // },[])
 
     const[sound, setSound] = useState(true)
     const[soundimg, setSoundImg] = useState(sound_off)
@@ -33,8 +36,11 @@ function Home() {
     const[menu_opt, show_menu_opt] = useState(false)
 
     const logout = ()=>{
-        setLoginStatus(false)
-        {localStorage.setItem("loginstatus", loginStatus)}
+        // setLoginStatus(false)
+        {window.localStorage.removeItem("loginStatus")
+        window.localStorage.removeItem("token")
+        }
+        
     }
 
   return (      
@@ -108,7 +114,6 @@ function Home() {
                         </Link>
                         <Link to='/login' className='logout' onClick={logout}>
                             Logout
-                           
                         </Link>
                     </div>
                 :null

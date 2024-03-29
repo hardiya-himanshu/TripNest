@@ -39,7 +39,7 @@ app.post("/login", async(req,res)=>{
 })
 
 app.post("/register", async(req,res)=>{
-    const{username, email, password} =req.body
+    const{username, email, password, phone} =req.body
 
     const encryptedPassword = await bcrypt.hash(password,10)
 
@@ -51,7 +51,8 @@ app.post("/register", async(req,res)=>{
             await UserModels.create({
                 username:username,
                 email:email,
-                password:encryptedPassword
+                password:encryptedPassword,
+                phone:phone
             })
         }
     } catch (error) {
@@ -60,6 +61,23 @@ app.post("/register", async(req,res)=>{
 })
 
 app.post("/account/", async(req,res)=>{
+    const {token} = req.body
+    try {
+        const user  = jwt.verify(token, jwt_secret)
+        const email = user.email
+        UserModels.findOne({email:email})
+        .then(data=>{
+            res.send({status:"exist", data:data})
+        })
+        .catch(error=>{
+            res.send({status:"error", data:error})
+        })
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+app.post("/account/security", async(req,res)=>{
     const {token} = req.body
     try {
         const user  = jwt.verify(token, jwt_secret)

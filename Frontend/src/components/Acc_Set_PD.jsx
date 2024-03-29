@@ -4,17 +4,21 @@ import axios from 'axios'
 
 function Acc_Set_PD() {
   
-  const [userData, setUserData] = useState("")
+  const [userEmail, setUserEmail] = useState("")
+  const [userName, setUserName] = useState("")
+  const [userPhone, setUserPhone] = useState("")
 
   useEffect(()=>{
     try {
       axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
     .then(res=>
       {
-        console.log(res.data)
+        // console.log(res.data)
         const response = res.data.data
-        console.log(response);
-        setUserData(response)
+        // console.log(response);
+        setUserName(response.username)
+        setUserEmail(response.email)
+        setUserPhone(response.phone)
 
         // const response = res.data
         // setUserData(res.data)
@@ -26,6 +30,12 @@ function Acc_Set_PD() {
 
   },[])
 
+
+  const updateData = ()=>{
+    console.log(userName ,userEmail, userPhone);
+  }
+
+
   return (
     <div className='aspd_main p-7 flex flex-col gap-12 max-w-96' >
       <div className="acpd_title text-3xl">
@@ -33,12 +43,12 @@ function Acc_Set_PD() {
       </div>
       <div className="acpd_content flex flex-col justify-center items-center gap-5 rounded-lg w-full">
         <img alt=""  className='rounded-full bg-slate-700 border w-32 h-32'/>
-        <input type="text" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='NAME' value={userData.username}/>
-        <input type="email" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='EMAIL' value={userData.email}/>
-        <input type="number" name="" id="" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' />
-        <input type="date" className='rounded-lg w-full h-10 p-2 text-gray-500 placeholder' placeholder='DOB'/>
+        <input type="text" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='NAME'  defaultValue={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
+        <input type="email" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='EMAIL' defaultValue={userEmail} onChange={(e)=>{setUserEmail(e.target.value)}} />
+        <input type="number" name="number" id="number" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' defaultValue={userPhone} onChange={(e)=>{setUserPhone(e.target.value)}}/>
+        {/* <input type="date" className='rounded-lg w-full h-10 p-2 text-gray-500 placeholder' placeholder='DOB'/> */}
       </div>
-        <input type="button" value="APPLY" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
+        <input onClick={updateData} type="button" value="APPLY" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
     </div>
   )
 }
