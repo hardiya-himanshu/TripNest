@@ -26,7 +26,7 @@ function Login() {
         await axios.post('http://localhost:3000/login', { email, password})
       .then(res=>
         {
-          console.log(res)
+          // console.log(res)
           const response = res.data
           if(response.status==="exist")
           {

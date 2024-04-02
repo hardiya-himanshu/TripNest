@@ -14,6 +14,8 @@ const jwt_secret = process.env.JWT_SECRET
 
 connectDB()
 
+// for login
+
 app.post("/login", async(req,res)=>{
     const{email, password} =req.body
 
@@ -22,7 +24,7 @@ app.post("/login", async(req,res)=>{
         // const check2 = await UserModels.findOne({password:password}) 
         if(user) 
         {
-            if(await bcrypt.compare(password, user.password))
+            if(await bcrypt.compare(password, user.encryptedPassword))
             { 
                 // creating token using jwt
                 const token = jwt.sign({email:user.email}, jwt_secret)
@@ -38,6 +40,8 @@ app.post("/login", async(req,res)=>{
     }
 })
 
+// for register
+
 app.post("/register", async(req,res)=>{
     const{username, email, password, phone} =req.body
 
@@ -51,7 +55,8 @@ app.post("/register", async(req,res)=>{
             await UserModels.create({
                 username:username,
                 email:email,
-                password:encryptedPassword,
+                password:password,
+                encryptedPassword:encryptedPassword,
                 phone:phone
             })
         }
@@ -60,86 +65,86 @@ app.post("/register", async(req,res)=>{
     }
 })
 
+// to reflect and update personal details
+
 app.post("/account/", async(req,res)=>{
-    const {token} = req.body
-    try {
-        const user  = jwt.verify(token, jwt_secret)
-        const email = user.email
-        UserModels.findOne({email:email})
-        .then(data=>{
-            res.send({status:"exist", data:data})
-        })
-        .catch(error=>{
+    if(req.body.token){
+        const {token} = req.body
+        try {
+            const user  = jwt.verify(token, jwt_secret)
+            const email = user.email
+            await UserModels.findOne({email:email})
+            .then(data=>{
+                res.send({status:"exist", data:data})
+            })
+            .catch(error=>{
+                res.send({status:"error", data:error})
+            })
+        } catch (error) {
             res.send({status:"error", data:error})
-        })
-    } catch (error) {
-        console.log(error);
+    
+        }
     }
+    else{
+        const {id,username,email,phone} = req.body
+
+        try {
+            await UserModels.updateOne({_id:id},{
+                $set:{
+                    username,
+                    email,
+                    phone
+                }
+            })
+            res.json({status:"ok", data:"updated"});
+    
+        } catch (error) {
+            res.json({status:"error", data:error});
+        }
+    }
+    
 })
 
+// to reflect and update security details
+
 app.post("/account/security", async(req,res)=>{
-    const {token} = req.body
-    try {
-        const user  = jwt.verify(token, jwt_secret)
-        const email = user.email
-        UserModels.findOne({email:email})
-        .then(data=>{
-            res.send({status:"exist", data:data})
-        })
-        .catch(error=>{
+    if(req.body.token){
+        const {token} = req.body
+        try {
+            const user  = jwt.verify(token, jwt_secret)
+            const email = user.email
+            UserModels.findOne({email:email})
+            .then(data=>{
+                res.send({status:"exist", data:data})
+            })
+            .catch(error=>{
+                res.send({status:"error", data:error})
+            })
+        } catch (error) {
             res.send({status:"error", data:error})
-        })
-    } catch (error) {
-        console.log(error);
+
+        }
     }
-})
+    else{
+        const {id,password} = req.body
+
+        try {
+            await UserModels.updateOne({_id:id},{
+                $set:{
+                    password
+                }
+            })
+            res.json({status:"ok", data:"updated"});
+    
+        } catch (error) {
+            res.json({status:"error", data:error});
+        }
+    }
+    }
+)
 
 
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
 })
-
-
-
-// app.post("/login", (req,res)=>{
-//     const {email, password} = req.body
-//     UserModels.findOne({email:email})
-//     .then(user=>{
-//         if(user){
-//             if(user.password===password){
-//                 res.json("Success")
-//             }
-//             else{
-//                 res.json("The password is incorrect")
-//             }
-//             }
-//         else
-//         {
-//             res.json("No record existed")
-//         }
-//         })
-        
-// })
-
-// app.post("/register", (req,res)=>{
-//     const {email} = req.body
-//     UserModels.findOne({email:email})
-//     .then(user=>{
-//         if(user){
-//             if(user.email===email){
-//                 res.json("Please Login")
-//             }
-            
-//             }
-//         else
-//         {
-//             res.json("Success")
-//             UserModels.create(req.body).then(user=>res.json(user)).catch(err=>res.json(err))
-//         }
-//         })
-// })
-
-// app.listen(port, ()=>{
-//     console.log(`Server is running on ${port}`);
-// })
 

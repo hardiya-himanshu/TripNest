@@ -23,7 +23,7 @@ function Signup() {
         await axios.post('http://localhost:3000/register', {username, email, password, phone})
       .then(res=>
       {
-        console.log(res)
+        // console.log(res)
         const response = res.data
         if(response==="notexist"){
         navigate("/login")}

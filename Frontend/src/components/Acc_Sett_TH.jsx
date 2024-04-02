@@ -44,7 +44,7 @@ function Acc_Sett_TH() {
             </div>
         
       </div>
-        <input type="button" value="APPLY" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
+        {/* <input type="button" value="APPLY" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' /> */}
     </div>
   )
 }

@@ -1,28 +1,32 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
+// import {useLocation } from 'react-router-dom'
+import { Toaster, toast } from 'sonner'
+
 
 
 function Acc_Set_PD() {
-  
+  // const location =useLocation()
+ 
   const [userEmail, setUserEmail] = useState("")
   const [userName, setUserName] = useState("")
   const [userPhone, setUserPhone] = useState("")
+  const [userPassword, setUserPassword] = useState("")
+  const [uid,setUid] = useState("")
 
   useEffect(()=>{
     try {
+
       axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
     .then(res=>
       {
-        // console.log(res.data)
+        const state_id = String(res.data.data._id)
+        setUid(state_id)
         const response = res.data.data
-        // console.log(response);
         setUserName(response.username)
         setUserEmail(response.email)
         setUserPhone(response.phone)
-
-        // const response = res.data
-        // setUserData(res.data)
-        // console.log(userData.data.email);
+        setUserPassword(response.password)
       })
     } catch (error) {
       console.log(error);
@@ -30,9 +34,27 @@ function Acc_Set_PD() {
 
   },[])
 
+  const updateData = async()=>{
+    try {
+      await axios.post('http://localhost:3000/account/', {id:uid, username:userName ,email:userEmail, phone:userPhone, password:userPassword})
+      
+    .then(res=>
+    {
+      // console.log(res.data);
+    })
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
 
-  const updateData = ()=>{
-    console.log(userName ,userEmail, userPhone);
+  const toastNotify =()=>{
+    toast.success("Updated Successfully")
+  }
+
+  const submitDataAndNotify=()=>{
+    updateData();
+    toastNotify()
   }
 
 
@@ -48,7 +70,8 @@ function Acc_Set_PD() {
         <input type="number" name="number" id="number" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' defaultValue={userPhone} onChange={(e)=>{setUserPhone(e.target.value)}}/>
         {/* <input type="date" className='rounded-lg w-full h-10 p-2 text-gray-500 placeholder' placeholder='DOB'/> */}
       </div>
-        <input onClick={updateData} type="button" value="APPLY" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
+        <input onClick={submitDataAndNotify} type="button" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
+        <Toaster richColors/>
     </div>
   )
 }

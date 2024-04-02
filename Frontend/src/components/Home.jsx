@@ -10,15 +10,15 @@ import { useUserAccess } from '../contexts/UserAccessContext'
      
 function Home() {
     // window.localStorage.setItem("loginStatus", false)
+
     const isLooggedIn = window.localStorage.getItem("loginStatus")
     const {loginStatus, setLoginStatus} = useUserAccess()
-    setLoginStatus(isLooggedIn)
    
 
-    // useEffect(()=>{
-    //     const login = localStorage.getItem("loginstatus")
-    //     setLoginStatus(login)
-    // },[])
+    useEffect(()=>{
+    setLoginStatus(isLooggedIn)
+       
+    },[])
 
     const[sound, setSound] = useState(true)
     const[soundimg, setSoundImg] = useState(sound_off)
