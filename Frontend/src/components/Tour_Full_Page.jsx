@@ -36,7 +36,7 @@ function Tour_Full_Page({image_cover,tour_name,tour_desc,tour_duration,tour_pric
                     </div>
                     <div className="tpf_email">
                         <img src={email} alt="" />
-                        <div>help.tripnest@gmail.com</div>
+                        <div>tripnest.help@gmail.com</div>
                     </div>
                 </div>
 

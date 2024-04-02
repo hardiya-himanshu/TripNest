@@ -27,7 +27,7 @@ function Footer() {
                     </div>
                     <div className='alignment'>
                         <span className=' rounded-md'><img src={reddit}alt="X.com" className='w-8' /></span>
-                        <span className="line">Reddit</span>
+                        <span className="line"><a href="https://www.reddit.com/user/TripNest24/" target='_blank'>Reddit</a></span>
                     </div>
                 </div>
             </div>

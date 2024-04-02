@@ -24,11 +24,11 @@ function Account_Settings() {
                 </div>
 
                 </Link>
-                <Link to="/account/reviews">
+                {/* <Link to="/account/reviews">
                 <div className="asfp_mr aspf_sbc">
                     MY REVIEWS
                 </div>
-                </Link>
+                </Link> */}
                 <Link to="/account/themes">
                 <div className="asfp_t aspf_sbc">
                     THEMES

@@ -28,7 +28,7 @@ function Categories_City_FullPage({cc_image_cover,city_name,city_desc}) {
                     </div>
                     <div className="tpf_email">
                         <img src={email} alt="" />
-                        <div>help.tripnest@gmail.com</div>
+                        <div>tripnest.help@gmail.com</div>
                     </div>
                 </div>
 

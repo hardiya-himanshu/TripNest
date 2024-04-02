@@ -58,7 +58,7 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
                     </div>
 
                 </div>
-                <div className="dfp_reviews">
+                {/* <div className="dfp_reviews">
                     <div className="dpf_reviews_title">
                         REVIEW
                     </div>
@@ -68,15 +68,18 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
 
                     </form>
                     </div>
-                </div>
+                </div> */}
                 <div className="dpf_contacts">
+                    <div className="dpf_contacts_title">
+                        CONTACTS
+                    </div>
                     <div className="dpf_number">
                         <img src={phone} alt="" />
                         <div>91XXXXXXXX</div>
                     </div>
                     <div className="dpf_email">
                         <img src={email} alt="" />
-                        <div>help.tripnest@gmail.com</div>
+                        <div>tripnest.help@gmail.com</div>
                     </div>
                 </div>
                 <div className="dpf_btn">

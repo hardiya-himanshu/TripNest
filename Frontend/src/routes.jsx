@@ -254,10 +254,10 @@ export const allRoutes= [
             path:"/account/security",
             element:<Acc_Sett_SD/>
         },
-        {
-            path:"/account/reviews",
-            element:<Acc_Sett_RV/>
-        },
+        // {
+        //     path:"/account/reviews",
+        //     element:<Acc_Sett_RV/>
+        // },
         {
             path:"/account/themes",
             element:<Acc_Sett_TH/>

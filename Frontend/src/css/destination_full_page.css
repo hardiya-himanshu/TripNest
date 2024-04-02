@@ -228,6 +228,12 @@
     color: rgb(83, 83, 83);
 }
 
+.dpf_contacts_title {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
 .dpf_contacts {
     display: flex;
     gap: 15px;

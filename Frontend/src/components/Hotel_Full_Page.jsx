@@ -38,7 +38,7 @@ function Hotel_Full_Page({h_i,h_n,h_p,h_l,h_t,h_d}) {
                         </div>
                         <div className="hpf_email">
                             <img src={email} alt="" />
-                            <div>help.tripnest@gmail.com</div>
+                            <div>tripnest.help@gmail.com</div>
                         </div>
                     </div>
                     <div className="hpf_btn_book">
