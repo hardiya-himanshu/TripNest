@@ -127,11 +127,13 @@ app.post("/account/security", async(req,res)=>{
     }
     else{
         const {id,password} = req.body
+        const encryptedPassword = await bcrypt.hash(password,10)
 
         try {
             await UserModels.updateOne({_id:id},{
                 $set:{
-                    password
+                    password,
+                    encryptedPassword
                 }
             })
             res.json({status:"ok", data:"updated"});

@@ -55,8 +55,8 @@ function Acc_Sett_SD() {
       <div className="acsd_content flex flex-col justify-center items-center gap-5 rounded-lg w-full">
     
         <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CURRENT PASSWORD' defaultValue={userPassword} onChange={(e)=>{setUserPassword(e.target.value)}}/>
-        <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='NEW PASSWORD'/>
-        <input type="text" name="" id="" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CONFIRM PASSWORD' />
+        {/* <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='NEW PASSWORD'/>
+        <input type="text" name="" id="" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CONFIRM PASSWORD' /> */}
       </div>
         <input onClick={submitDataAndNotify} type="button" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white' />
         <Toaster richColors/>
