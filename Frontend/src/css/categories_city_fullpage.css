@@ -26,6 +26,12 @@
 
 }
 
+.ccfp_price {
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
 .ccfp_content::-webkit-scrollbar {
     display: none;
 }

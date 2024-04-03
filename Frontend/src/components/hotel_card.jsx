@@ -19,7 +19,7 @@ function Hotel_Card({hotelImage, hotelName, hotelLocation, hotelType, hotelPrice
             <div className='hotel_div2'>
                 <div className="hotel_price">₹{hotelPrice}</div>
                 <Link to={to}>
-                <button className='btn'>BOOK NOW</button>
+                <button className='btn'>VIEW DETAILS</button>
                 </Link>
                 
             </div>

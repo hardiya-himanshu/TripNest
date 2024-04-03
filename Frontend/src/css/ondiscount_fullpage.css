@@ -62,14 +62,14 @@
 }
 
 .dcfp_card {
-    /* height: 500px; */
-    height: fit-content;
+    min-height: 500px;
+    /* height: fit-content; */
     max-width: 500px;
     /* min-width: 250px; */
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
     justify-content: space-between;
     background-color: var(--primary);
     padding: 20px;

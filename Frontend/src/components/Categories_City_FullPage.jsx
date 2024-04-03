@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import {close} from '../javascript/index'
 import { phone, email } from '../javascript/index'
 
-function Categories_City_FullPage({cc_image_cover,city_name,city_desc}) {
+function Categories_City_FullPage({cc_image_cover,city_name,city_desc,city_price}) {
   return (
     <div className='categories_city_fullpage'>
       <div className="ccfp_content">
@@ -30,6 +30,10 @@ function Categories_City_FullPage({cc_image_cover,city_name,city_desc}) {
                         <img src={email} alt="" />
                         <div>tripnest.help@gmail.com</div>
                     </div>
+                </div>
+
+                <div className="ccfp_price">
+                ₹ {city_price}/Night
                 </div>
 
                 <div className=" tpf_btn">

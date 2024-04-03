@@ -265,6 +265,11 @@
     padding: 2px;
 }
 
+.dpf_price {
+    font-size: 25px;
+    font-weight: 600;
+}
+
 .dpf_btn {
     border-radius: 10px;
     padding: 10px;

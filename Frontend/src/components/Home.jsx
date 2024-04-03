@@ -6,10 +6,10 @@ import '../css/home.css'
 import '../css/style.css'
 import {sound_on,sound_off,user,bg_audio,bg_video,logo, menu} from '../javascript/index'
 import { useUserAccess } from '../contexts/UserAccessContext'
+import { gsap } from "gsap";
 
      
 function Home() {
-    // window.localStorage.setItem("loginStatus", false)
 
     const isLooggedIn = window.localStorage.getItem("loginStatus")
     const {loginStatus, setLoginStatus} = useUserAccess()
@@ -55,9 +55,8 @@ function Home() {
     </audio>
 
     <video autoPlay muted loop src={bg_video} className='bg_video'/>
-    <div className="navbar">
+    <nav id="navbar">
 
-    <nav>
         <div className="logo">
             <ScrollLink to='home' spy={true} smooth={true}>
                 <img src={logo} alt="Image" />
@@ -129,12 +128,8 @@ function Home() {
 
             </div>
         </div>
-                
-            
-        
         
     </nav>
-    </div>
 
     <div className="tagline">
    EXPERIENCE THE WORLD YOUR WAY

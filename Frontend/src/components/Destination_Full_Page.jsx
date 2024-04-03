@@ -5,7 +5,7 @@ import { phone,close,email } from '../javascript'
 import {Link} from 'react-router-dom'
 
 
-function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2}) {
+function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
@@ -81,6 +81,9 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
                         <img src={email} alt="" />
                         <div>tripnest.help@gmail.com</div>
                     </div>
+                </div>
+                <div className="dpf_price">
+                ₹ {dest_price}/Night
                 </div>
                 <div className="dpf_btn">
                    BOOK NOW

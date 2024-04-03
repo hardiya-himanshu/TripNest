@@ -30,8 +30,11 @@ function OnDiscount_FullPage() {
                     <div className="dcfp_city_duartion">
                     6 Days | 5 Nights
                     </div>
+                    <div className="dcfp_city_duartion">
+                    ₹ 49,999
+                    </div>
                     <div className="dcfp_city_description">
-                    Discover the pristine beauty of Lakshadweep with our exclusive discount offer! Enjoy breathtaking beaches, vibrant coral reefs, and tranquil lagoons at unbeatable prices. Immerse yourself in the rich culture and warm hospitality of this tropical paradise while saving big. Book now and experience luxury for less!
+                    Discover the pristine beauty of Lakshadweep with our exclusive discount offer! Enjoy breathtaking beaches, vibrant coral reefs, and tranquil lagoons at unbeatable prices. Immerse yourself in the rich culture and warm hospitality. Book now and experience luxury for less!
                     </div>
                     <div className="dcfp_btns">
                         <div className="dcfp_btn">

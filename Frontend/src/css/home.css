@@ -23,7 +23,7 @@
     object-fit: cover;
 }
 
-.navbar {
+#navbar {
     position: fixed;
     top: 0px;
     z-index: 10;
