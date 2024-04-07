@@ -14,7 +14,6 @@ function Home() {
     const isLooggedIn = window.localStorage.getItem("loginStatus")
     const {loginStatus, setLoginStatus} = useUserAccess()
    
-
     useEffect(()=>{
     setLoginStatus(isLooggedIn)
        

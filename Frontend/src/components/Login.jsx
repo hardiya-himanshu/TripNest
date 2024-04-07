@@ -46,7 +46,11 @@ function Login() {
       
 }
 
-  const notify = () => toast("Registered Successfully!");
+  const showToast = ()=>{
+    setTimeout(() => {
+      toast.error("Please Check your Email or Password") 
+    }, 1000);
+    }
 
 
   return (
@@ -67,13 +71,11 @@ function Login() {
             <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
             <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             
-            <div className="remember">
+            {/* <div className="remember">
                 <label htmlFor="remember">Remember Me</label>
                 <input type="checkbox" name="remember" id="remember" />
-            </div>
-            <button type="submit" onClick={()=>{
-              
-              toast.error("Please Check your Email or Password")}} className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
+            </div> */}
+            <button type="submit" onClick={showToast} className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
             </button>
             <Link to='/signup' >
             <div className="gotologin font-bold underline cursor-pointer">Sign Up?</div>

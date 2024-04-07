@@ -142,6 +142,25 @@
     padding: 2px;
 }
 
+.hpf_date_range {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.hpf_date_range>input {
+    border: none;
+    background: none;
+    color: white;
+}
+
+.hpf_date_range>input::-webkit-calendar-picker-indicator {
+    opacity: 1;
+    background: url("../assets/datepicker.png") no-repeat;
+    width: 20px;
+    height: 15px;
+}
+
 .hpf_btn_book {
     background-color: var(--color1);
     width: fit-content;

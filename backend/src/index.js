@@ -4,6 +4,7 @@ import connectDB from './db/db.js'
 import {UserModels} from './models/user.models.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import paymentRoutes from './routes/payment.route.js'
 
 dotenv.config({
     path:'./.env'
@@ -144,6 +145,11 @@ app.post("/account/security", async(req,res)=>{
     }
     }
 )
+
+// Payment Gateway
+
+app.use("/api/payment",paymentRoutes)
+
 
 
 app.listen(port, ()=>{

@@ -11,10 +11,11 @@ import { Toaster, toast } from 'sonner'
 
 function Signup() {
 
-  const[username, setUsername] = useState()
-  const[email, setEmail] = useState()
-  const[password, setPassword] = useState()
-  const[phone, setPhone] = useState()
+  const[username, setUsername] = useState("")
+  const[email, setEmail] = useState("")
+  const[password, setPassword] = useState("")
+  const[phone, setPhone] = useState("")
+  const[tnc, setTnC] = useState(true)
   const navigate = useNavigate()
 
   const handleSubmit = async(e) => {
@@ -34,6 +35,19 @@ function Signup() {
       }
   }
 
+  const showToast = ()=>{
+    setTimeout(() => {
+      if(username=="" || !email.includes("@") || email=="" || phone=="" || password=="" || tnc==false){
+        toast.error("Please enter details") 
+        return null
+      }
+      toast.error("Please Login") 
+    }, 1000);
+    }
+
+    const changeCheck = () =>{
+      setTnC(!tnc)
+    }
 
   return (
     <>
@@ -53,11 +67,11 @@ function Signup() {
             <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
             <div className="t_c">
-                <label htmlFor="t_c">I accept the Terms & Conditions</label>
-                <input type="checkbox" name="t_c" id="t_c" required/>
+                <label htmlFor="t_c">I accept the <Link to="/terms" className='underline hover:text-blue-400' >Terms & Conditions</Link></label>
+                <input type="checkbox" name="t_c" id="t_c" checked={tnc} onChange={changeCheck} required/>
             </div>
             <button type='submit' 
-            onClick={()=>toast.error("Please Login")} className=' signup_btn w-fit relative left-0 right-0 m-auto'>SIGN UP
+            onClick={showToast} className=' signup_btn w-fit relative left-0 right-0 m-auto'>SIGN UP
             </button>
             <Link to="/login" >
             <div className="gotologin font-bold underline cursor-pointer">Login?</div>
