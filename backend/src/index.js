@@ -2,6 +2,7 @@ import dotenv from 'dotenv'
 import app from './app.js'
 import connectDB from './db/db.js'
 import {UserModels} from './models/user.models.js'
+import {MessageModel} from './models/message.models.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import paymentRoutes from './routes/payment.route.js'
@@ -137,7 +138,7 @@ app.post("/account/security", async(req,res)=>{
                     encryptedPassword
                 }
             })
-            res.json({status:"ok", data:"updated"});
+            res.json({status:"ok", data:"Updated Successfully"});
     
         } catch (error) {
             res.json({status:"error", data:error});
@@ -151,6 +152,41 @@ app.post("/account/security", async(req,res)=>{
 app.use("/api/payment",paymentRoutes)
 
 
+// for submitting message us details
+
+app.post("/message", async(req,res)=>{
+    if(req.body.token){
+        const {token} = req.body
+        try {
+            const user  = jwt.verify(token, jwt_secret)
+            const email = user.email
+            UserModels.findOne({email:email})
+            .then(data=>{
+                res.send({status:"exist", data:data})
+            })
+            .catch(error=>{
+                res.send({status:"error", data:error})
+            })
+        } catch (error) {
+            res.send({status:"error", data:error})
+
+        }
+    }
+    else{
+    const{email, message} = req.body
+
+    try {
+            await MessageModel.create({
+                email:email,
+                message:message
+            })
+            res.json({status:"ok", data:"Submitted Successfully"});
+
+    }
+    catch (error) {
+        res.json({status:"error", message:error})
+    }}
+})
 
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
