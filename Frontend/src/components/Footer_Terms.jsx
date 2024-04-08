@@ -7,7 +7,7 @@ function Footer_Terms() {
 
   return (
     <div className='destination_fullpage_section'>
-        <div className="footer_items_content">
+        <div className="footer_items_content footer_items_pages">
             <Link to="/" className='dfp_close'>
                 <img  src={close} alt="" />
             </Link>

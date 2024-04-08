@@ -56,7 +56,7 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
     let yr =  date.getFullYear()
     let mo = date.getMonth()+1
     let da = date.getDate()
-    let da2 = date.getDate()+2
+    let da2 = date.getDate()+1
 
     if(mo <10){
         mo = '0'+mo
@@ -101,6 +101,9 @@ useEffect(()=>{
     let date2 = new Date(formattedDate2)
     
     let totaldays =  date2.getDate() - date1.getDate() +1;
+    if(totaldays!=1){
+        totaldays=totaldays-1
+      }
     const finalAmt = totaldays*amount
     setCheckoutPrice(finalAmt)
 }, [inputdate1, inputdate2]
@@ -187,9 +190,9 @@ useEffect(()=>{
                 {/* {setAmount(Number(dest_price))} */}
                 </div>
                 <div className="hpf_date_range">
-                             <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
-                            <input type="date" name="dateto" id="dateto" value={inputdate2} min={inputdate1} onChange={e=>{setInputdate2(e.target.value)}} max={maxDate} required/>
-                        </div>
+                    <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
+                    <input type="date" name="dateto" id="dateto" value={inputdate2} min={inputdate1} onChange={e=>{setInputdate2(e.target.value)}} max={maxDate} required/>
+                </div>
                 <div className="dpf_btn" onClick={handlePayment}>
                    BOOK NOW
                 </div>

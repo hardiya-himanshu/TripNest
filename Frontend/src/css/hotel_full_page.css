@@ -193,6 +193,14 @@
         padding: 1rem;
     }
 
+    .footer_items_pages {
+        padding: 2rem;
+    }
+
+    .footer_message_us {
+        padding: 1rem;
+    }
+
     .hfp_close {
         top: 20px;
         right: 20px;

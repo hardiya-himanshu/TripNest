@@ -60,7 +60,7 @@ function Hotel_Full_Page({h_i,h_n,h_p,h_l,h_t,h_d}) {
     let yr =  date.getFullYear()
     let mo = date.getMonth()+1
     let da = date.getDate()
-    let da2 = date.getDate()+2
+    let da2 = date.getDate()+1
 
     if(mo <10){
         mo = '0'+mo
@@ -105,6 +105,9 @@ useEffect(()=>{
     let date2 = new Date(formattedDate2)
     
     let totaldays =  date2.getDate() - date1.getDate() +1;
+    if(totaldays!=1){
+        totaldays=totaldays-1
+      }
     const finalAmt = totaldays*amount
     setCheckoutPrice(finalAmt)
 }, [inputdate1, inputdate2]
