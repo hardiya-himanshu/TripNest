@@ -44,6 +44,7 @@ import Footer_History from './components/Footer_History'
 import Footer_Policy from './components/Footer_Policy'
 import Footer_Terms from './components/Footer_Terms'
 import Payment_Gateway from './components/Payment_Gateway'
+import Forget_Password_Page from './components/Forget_password_Page'
 
 
 
@@ -77,8 +78,8 @@ export const allRoutes= [
       errorElement:<ErrorPage/>,
     },
     {
-      path:"/payment",
-      element:<Payment_Gateway/>,
+      path:"/forget_password_page",
+      element:<Forget_Password_Page/>,
       errorElement:<ErrorPage/>,
     },
     {

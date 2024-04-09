@@ -14,10 +14,7 @@ function Login() {
   const[email, setEmail] = useState()
   const[password, setPassword] = useState()
   const navigate = useNavigate()
-  // const {loginStatus, setLoginStatus} = useUserAccess()
-
  
-
 
   const handleSubmit = async(e) => {
       e.preventDefault()
@@ -26,16 +23,13 @@ function Login() {
         await axios.post('http://localhost:3000/login', { email, password})
       .then(res=>
         {
-          // console.log(res)
           const response = res.data
           if(response.status==="exist")
           {
             
-            // setLoginStatus(true)
             window.localStorage.setItem("loginStatus", true)
             window.localStorage.setItem("token", response.data)
             navigate("/")
-            // window.location.href = "./Acc_Set_PD"
           }
         })
       } catch (error) {
@@ -55,7 +49,6 @@ function Login() {
 
   return (
     <div className='main'>
-    {/* <video src={loginvideo} autoPlay loop muted className='absolute h-screen w-full object-cover'/> */}
     <img className='bg_login' src={loginimg} alt="" />
     <div className="form">
         <Link to='/'>
@@ -63,7 +56,7 @@ function Login() {
 
         </Link>
 
-        <div className="title">
+        <div className="login_title">
             LOGIN
         </div>
         
@@ -75,6 +68,10 @@ function Login() {
                 <label htmlFor="remember">Remember Me</label>
                 <input type="checkbox" name="remember" id="remember" />
             </div> */}
+            
+            <Link to="/forget_password_page" className=" hover:underline hover:text-blue-700 font-semibold cursor-pointer mt-4 w-fit m-auto">
+              Forget Password?
+            </Link>
             <button type="submit" onClick={showToast} className='login_btn w-fit relative left-0 right-0 m-auto'>LOGIN
             </button>
             <Link to='/signup' >

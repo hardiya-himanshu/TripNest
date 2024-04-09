@@ -57,7 +57,7 @@ function Signup() {
       <Link to='/login'>
         <img src={back} alt="" />
       </Link>
-        <div className="title">
+        <div className="login_title">
             SIGN UP
         </div>
 
@@ -67,7 +67,7 @@ function Signup() {
             <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
             <div className="t_c">
-                <label htmlFor="t_c">I accept the <Link to="/terms" className='underline hover:text-blue-400' >Terms & Conditions</Link></label>
+                <label htmlFor="t_c">I accept the <Link to="/terms" className='hover:underline font-semibold hover:text-blue-800' >Terms & Conditions</Link></label>
                 <input type="checkbox" name="t_c" id="t_c" checked={tnc} onChange={changeCheck} required/>
             </div>
             <button type='submit' 
