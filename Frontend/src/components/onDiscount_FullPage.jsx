@@ -139,7 +139,7 @@ useEffect(()=>{
                     ₹ {discountPrice}
                     </div>
                     <div className="dcfp_city_description">
-                    Discover the pristine beauty of Lakshadweep with our exclusive discount offer! Enjoy breathtaking beaches, vibrant coral reefs, and tranquil lagoons at unbeatable prices. Immerse yourself in the rich culture and warm hospitality. Book now and experience luxury for less!
+                    Discover the pristine beauty of Lakshadweep with our exclusive discount offer! Enjoy breathtaking beaches, vibrant coral reefs at unbeatable prices. Immerse yourself in the rich culture and warm hospitality. Book now and experience luxury for less!
                     </div>
                     <div className="dcfp_btns">
                         <div className="dcfp_btn">
@@ -166,10 +166,16 @@ useEffect(()=>{
                             </div>
                      
                     </div>
-                    <div className="hpf_date_range">
-                             <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
+                    <div  className='hpf_date_range'>
+                        <fieldset className='border p-2'>
+                        <legend>Check-In</legend>
+                            <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
+                        </fieldset>
+                        <fieldset className='border p-2'>
+                        <legend>Check-Out</legend>
                             <input type="date" name="dateto" id="dateto" value={inputdate2} min={inputdate1} onChange={e=>{setInputdate2(e.target.value)}} max={maxDate} required/>
-                        </div>
+                        </fieldset>
+                    </div>
                     <div className="dcfp_btn_book" onClick={handlePayment}>
                         BOOK NOW
                     </div>

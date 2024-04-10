@@ -139,9 +139,15 @@ useEffect(()=>{
                 ₹ {city_price}/Night
                 </div>
 
-                <div className="hpf_date_range">
-                    <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
-                    <input type="date" name="dateto" id="dateto" value={inputdate2} min={inputdate1} onChange={e=>{setInputdate2(e.target.value)}} max={maxDate} required/>
+                <div  className='hpf_date_range'>
+                    <fieldset className='border p-2'>
+                    <legend>Check-In</legend>
+                        <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>
+                    </fieldset>
+                    <fieldset className='border p-2'>
+                    <legend>Check-Out</legend>
+                        <input type="date" name="dateto" id="dateto" value={inputdate2} min={inputdate1} onChange={e=>{setInputdate2(e.target.value)}} max={maxDate} required/>
+                    </fieldset>
                 </div>
 
                 <div className=" tpf_btn" onClick={handlePayment}>

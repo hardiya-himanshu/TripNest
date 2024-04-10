@@ -50,7 +50,7 @@
 .line:after {
     content: "";
     position: absolute;
-    height: 3px;
+    height: 2px;
     background-color: var(--color1);
     width: 0%;
     left: 0;

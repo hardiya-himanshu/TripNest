@@ -148,13 +148,19 @@
     flex-wrap: wrap;
 }
 
-.hpf_date_range>input {
+.hpf_date_range>fieldset>input {
     border: none;
     background: none;
-    color: white;
+    /* color: white; */
 }
 
-.hpf_date_range>input::-webkit-calendar-picker-indicator {
+.hpf_date_range>fieldset>::-webkit-calendar-picker-indicator:hover {
+
+    cursor: pointer;
+}
+
+
+.hpf_date_range>fieldset>::-webkit-calendar-picker-indicator {
     opacity: 1;
     background: url("../assets/datepicker.png") no-repeat;
     width: 20px;

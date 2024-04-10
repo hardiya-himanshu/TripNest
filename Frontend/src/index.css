@@ -28,13 +28,10 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-/* html::-webkit-scrollbar-thumb {
-    background-color: var(--primary);
+.main_section {
+    background-color: var(--secondary);
 }
 
-html::-webkit-scrollbar-track {
-    background-color: var(--secondary);
-} */
 
 :root {
     --d: 700ms;
@@ -46,6 +43,7 @@ html::-webkit-scrollbar-track {
     --primary2: rgb(13, 0, 94);
     /* --primary: #002160; */
     --secondary: #b8cfff;
+    --secondary1: #85acfe;
     --secondary2: 184, 207, 255;
     --alpha: .5;
     /* --primary: #1573ff;
@@ -60,6 +58,7 @@ html::-webkit-scrollbar-track {
     /* --primary: #002160; */
     --color2: black;
     --secondary: #b8cfff;
+    --secondary1: #0051ff;
     --secondary2: 184, 207, 255;
 
     /* --secondary: #B2CCFF; */
@@ -73,6 +72,8 @@ html::-webkit-scrollbar-track {
     --primary2: #424242;
     --color2: black;
     --secondary: #dfdfdf;
+    --secondary1: #c5c5c5;
+
     --secondary2: 223, 223, 223;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -87,6 +88,8 @@ html::-webkit-scrollbar-track {
     --hcolor: white;
     --color2: black;
     --secondary: #323232;
+    --secondary1: #232323;
+
     --secondary2: 50, 50, 50;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */
@@ -98,6 +101,7 @@ html::-webkit-scrollbar-track {
     --primary2: #005423;
     --color2: black;
     --secondary: #ceffad;
+    --secondary1: #32b000;
     --secondary2: 206, 255, 173;
     /* --primary: #1573ff;
     --secondary: #5dbef7; */

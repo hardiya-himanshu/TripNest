@@ -3,13 +3,33 @@ import loginimg from '../assets/bglogin.jpg'
 import back from '../assets/back.png'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
-
+import { Toaster, toast } from 'sonner'
 
 
 function Forget_Password_Page() {
 
 
   const[email, setEmail] = useState("")
+  const[password, setPassword] = useState("")
+
+  const showToast=()=>{
+    toast.warning("Email Not Found!")
+  }
+
+
+  function sendPass() {
+    
+      // console.log(password);
+      try {
+      axios.post("http://localhost:3000/send_email", {
+          password,
+          recipient_email: email,
+        }).then(res=>console.log(res.data))
+      } catch (error) {
+        console.log(error);
+      }
+    
+  }
 
 
 
@@ -17,7 +37,15 @@ function Forget_Password_Page() {
     e.preventDefault()
     
     try {
-      
+      await axios.post("http://localhost:3000/forget_password_page", {email}).then(res=>{
+        const response = res.data
+        if(response==="notexist"){
+          showToast()
+          return
+        }
+        setPassword(response);
+        sendPass()
+      })
     } catch (error) {
       console.log(error); 
     }
@@ -43,6 +71,7 @@ function Forget_Password_Page() {
         </form>
         
       </div>
+      <Toaster richColors/>
     </div>
   )
 }
