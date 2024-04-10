@@ -1,9 +1,13 @@
-import React from 'react'
+import React,{ useEffect} from 'react'
 import '../css/signup.css'
 import '../css/style.css'
 import back from '../assets/back.png'
 import {Link} from 'react-router-dom'
 import loginimg from '../assets/bglogin.jpg'
+import loginimg1 from '../assets/bglogin.jpg'
+import loginimg2 from '../assets/bglogin2.jpg'
+import loginimg3 from '../assets/bglogin3.jpg'
+import loginimg4 from '../assets/bglogin4.jpg'
 import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'  
@@ -17,6 +21,26 @@ function Signup() {
   const[phone, setPhone] = useState("")
   const[tnc, setTnC] = useState(true)
   const navigate = useNavigate()
+
+  const [loginBg, setLoginBg] = useState(loginimg)
+ 
+  const themeNo = localStorage.getItem("theme")
+
+  useEffect(()=>{
+    if(themeNo==1){
+      setLoginBg(loginimg1)
+    }
+    if(themeNo==2){
+      setLoginBg(loginimg2)
+    }
+    if(themeNo==3){
+      setLoginBg(loginimg3)
+    }
+    if(themeNo==4){
+      setLoginBg(loginimg4)
+    }
+  },[themeNo])
+  
 
   const handleSubmit = async(e) => {
       e.preventDefault()
@@ -52,7 +76,7 @@ function Signup() {
   return (
     <>
       <div className='main'>
-      <img className='signup_bg' src={loginimg} alt="" />
+      <img className='signup_bg' src={loginBg} alt="" />
       <div className="form">
       <Link to='/login'>
         <img src={back} alt="" />
@@ -67,7 +91,7 @@ function Signup() {
             <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
             <div className="t_c">
-                <label htmlFor="t_c">I accept the <Link to="/terms" className='hover:underline font-semibold hover:text-blue-800' >Terms & Conditions</Link></label>
+                <label htmlFor="t_c">I accept the <Link to="/terms" className='hover:underline font-semibold hover:text-blue-600' >Terms & Conditions</Link></label>
                 <input type="checkbox" name="t_c" id="t_c" checked={tnc} onChange={changeCheck} required/>
             </div>
             <button type='submit' 

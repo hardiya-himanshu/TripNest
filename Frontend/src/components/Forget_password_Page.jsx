@@ -1,5 +1,9 @@
 import React, { useState , useEffect} from 'react'
 import loginimg from '../assets/bglogin.jpg'
+import loginimg1 from '../assets/bglogin.jpg'
+import loginimg2 from '../assets/bglogin2.jpg'
+import loginimg3 from '../assets/bglogin3.jpg'
+import loginimg4 from '../assets/bglogin4.jpg'
 import back from '../assets/back.png'
 import {Link, useNavigate} from 'react-router-dom'
 import axios from 'axios'
@@ -11,6 +15,26 @@ function Forget_Password_Page() {
 
   const[email, setEmail] = useState("")
   const[password, setPassword] = useState("")
+
+  const [loginBg, setLoginBg] = useState(loginimg)
+ 
+  const themeNo = localStorage.getItem("theme")
+
+  useEffect(()=>{
+    if(themeNo==1){
+      setLoginBg(loginimg1)
+    }
+    if(themeNo==2){
+      setLoginBg(loginimg2)
+    }
+    if(themeNo==3){
+      setLoginBg(loginimg3)
+    }
+    if(themeNo==4){
+      setLoginBg(loginimg4)
+    }
+  },[themeNo])
+  
 
   const showToast=()=>{
     toast.warning("Email Not Found!")
@@ -53,7 +77,7 @@ function Forget_Password_Page() {
 
   return (
     <div className='main'>
-    <img className='bg_login' src={loginimg} alt="" />
+    <img className='bg_login' src={loginBg} alt="" />
     <div className="form ">
         <Link to='/login' className='border w-fit '>
             <img src={back} alt="" />

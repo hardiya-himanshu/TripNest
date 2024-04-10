@@ -6,7 +6,6 @@ import '../css/home.css'
 import '../css/style.css'
 import {sound_on,sound_off,user,bg_audio,bg_video,logo, menu} from '../javascript/index'
 import { useUserAccess } from '../contexts/UserAccessContext'
-import { gsap } from "gsap";
 
      
 function Home() {

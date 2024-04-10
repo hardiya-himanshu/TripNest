@@ -5,8 +5,8 @@ export const UserAccessContext = createContext()
 export const UserAccessProvider = ({ children }) => {
   const [loginStatus, setLoginStatus] = useState(false)
   const [checkoutPrice, setCheckoutPrice] = useState()
-  
-
+ 
+ 
   return (
       <UserAccessContext.Provider value={{loginStatus, setLoginStatus, checkoutPrice, setCheckoutPrice}}>
           {children}
