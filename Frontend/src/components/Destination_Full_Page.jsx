@@ -8,7 +8,6 @@ import axios from 'axios'
 
 function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
 
-
     let date = new Date()
     const amount = parseFloat(dest_price.replace(/,/g, ''))
 

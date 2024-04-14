@@ -84,7 +84,7 @@ function Forget_Password_Page() {
         </Link>
 
         <div className="login_title mt-5" >
-            FORGET PASSWORD
+            FORGOT PASSWORD
         </div>
         
         <form className='mt-5' onSubmit={handleSubmit}>

@@ -117,7 +117,7 @@ useEffect(()=>{
                 <img  src={close} alt="" />
             </Link>
             <div className="dcfp_title">
-            SPECIAL DISCOUNT THIS FORTNITE
+            SPECIAL DISCOUNT THIS FORTNIGHT
             </div>
             <div className="dcfp_cards">
                 <div className="discount_content dcfp_card1">

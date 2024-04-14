@@ -29,7 +29,7 @@ function TopDestination() {
 
                  <div className="cards_section" >
                     <Link to={loginStatus?"/destination/seoul":null} className="dcard">
-                      <Card image={seoul} destination_name="SEOUL"/>
+                      <Card image={seoul} destination_name="SEOUL" />
                     </Link>
                     <Link to={loginStatus?"/destination/tokyo":null} className="dcard">
                       <Card image={tokyo} destination_name="TOKYO"/>
