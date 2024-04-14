@@ -8,6 +8,7 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import paymentRoutes from './routes/payment.route.js'
 import { text } from 'express'
+import { ReviewModel } from './models/review.model.js'
 
 dotenv.config({
     path:'./.env'
@@ -268,6 +269,37 @@ app.post("/send_email", async(req,res)=>{
     const{password, recipient_email}=req.body
     sendEmail(password,recipient_email).then(data=>res.json(data)).catch(error=>error.message)
 })
+
+app.post("/destination/", async(req,res)=>{
+    const{userId,destinationName,review,date}=req.body
+    
+    try {
+        // const isReview = await ReviewModel.findOne({_id:userId}) 
+        // if(isReview) {
+        //     res.json("user review exist")
+            await ReviewModel.create({
+                userId,
+                destinationName,
+                review,
+                date
+            })
+        // }
+        // else {
+        //     await ReviewModel.create({
+        //         userId,
+        //         destinationName,
+        //         review,
+        //         date
+        //     })
+        //     res.json("user review does not exist")
+
+        // }   
+    } catch (error) {
+        res.json({status:"error", message: error})
+    }
+})
+
+
 
 
 app.listen(port, ()=>{

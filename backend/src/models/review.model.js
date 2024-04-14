@@ -1,26 +1,27 @@
 import mongoose from 'mongoose'
 
 const ReviewSchema = new mongoose.Schema({
-    userid:
+    userId:
     {
-        type:String,
-        required:true,
-        unique:true
+        type:String,uniqueItems:false
     },
     destinationName:
     {
         type:String,
         required:true,
+        duplicate:true
     },
     review:
     {
         type:String,
-        required:true
+        required:true,
+        duplicate:true
     },
     date:
     {
         type:Date,
-        required:true
+        required:true,
+        duplicate:true
     },
 },{timestamps:true})
 

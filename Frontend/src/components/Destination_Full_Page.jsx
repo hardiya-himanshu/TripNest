@@ -108,6 +108,42 @@ useEffect(()=>{
 }, [inputdate1, inputdate2]
 )
 
+// Setup Reviews
+
+    const[review, setReview] = useState("")
+    const[uid, setUid] = useState("")
+    const[reviewDate, setReviewDate] = useState("")
+
+    
+    useEffect(()=>{
+        try {
+    
+          axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
+        .then(res=>
+          {
+            const userid = String(res.data.data._id)
+            setUid(userid)
+            setReviewDate(date.toLocaleDateString("en-US",{dateStyle:"medium"}));
+          })
+        } catch (error) {
+          console.log(error);
+        }
+    },[review])
+
+    
+    const sendReview =(e)=>{
+        
+        e.preventDefault()
+        try {
+            axios.post(`http://localhost:3000/destination/`,{userId:uid,destinationName:d_name,review,date:reviewDate}).then(res=>{
+                console.log(res.data);
+            })
+            setReview("")
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
@@ -160,17 +196,17 @@ useEffect(()=>{
                     </div>
 
                 </div>
-                {/* <div className="dfp_reviews">
+                <div className="dfp_reviews">
                     <div className="dpf_reviews_title">
                         REVIEW
                     </div>
                     <div className="dfp_reviews_content">
-                    <form action="">
-                        <textarea name="" id="" cols="100" rows="4" placeholder='My Review...'/>
-
+                    <form className='flex flex-col gap-5' onSubmit={sendReview}>
+                        <textarea name="" id="" cols="100" rows="4" value={review} onChange={e=>setReview(e.target.value)} placeholder='Write Your Review...' required/>
+                        <button type="submit" className='btn'>SUBMIT</button>
                     </form>
                     </div>
-                </div> */}
+                </div>
                 <div className="dpf_contacts">
                     <div className="dpf_contacts_title">
                         CONTACTS
