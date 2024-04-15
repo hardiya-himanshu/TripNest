@@ -96,3 +96,19 @@
     }
 
 }
+
+@media screen and (max-width:350px) {
+
+    .footer_Section {
+        padding: 1rem;
+    }
+
+    .alignment {
+
+        gap: 5px;
+    }
+
+    .mail {
+        font-size: medium;
+    }
+}

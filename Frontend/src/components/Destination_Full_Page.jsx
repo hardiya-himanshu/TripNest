@@ -4,7 +4,8 @@ import "../css/style.css"
 import { phone,close,email } from '../javascript'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-
+import { Toaster, toast } from 'sonner'
+import { nanoid } from 'nanoid';
 
 function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
 
@@ -112,6 +113,7 @@ useEffect(()=>{
 
     const[review, setReview] = useState("")
     const[uid, setUid] = useState("")
+    const[uname, setUsername] = useState("")
     const[reviewDate, setReviewDate] = useState("")
 
     
@@ -121,29 +123,74 @@ useEffect(()=>{
           axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
         .then(res=>
           {
+            const dateInstance = new Date()
             const userid = String(res.data.data._id)
+            const username = String(res.data.data.username)
             setUid(userid)
-            setReviewDate(date.toLocaleDateString("en-US",{dateStyle:"medium"}));
+            setUsername(username)
+            setReviewDate(dateInstance.toLocaleDateString("en-IN",{dateStyle:"short"}));
           })
         } catch (error) {
           console.log(error);
         }
     },[review])
 
-    
-    const sendReview =(e)=>{
+    const showToast1 = ()=>{
+        toast.warning("Please enter a review between 10 to 40 words")
+     }
+
+    const showToast2 = ()=>{
+        toast.success("Submitted Successfully")  
+      }
+
+    const sendReview = async(e)=>{
         
         e.preventDefault()
+        const wordCount = review.trim().split(/\s+/).filter(Boolean).length;
+        // console.log(wordCount);
+        if(wordCount<10 || wordCount>40){
+        showToast1()
+        return
+        }
         try {
-            axios.post(`http://localhost:3000/destination/`,{userId:uid,destinationName:d_name,review,date:reviewDate}).then(res=>{
-                console.log(res.data);
-            })
+           
+            await axios.post(`http://localhost:3000/destination/`,{userId:uid,userName:uname,destinationName:d_name,review,date:reviewDate}).then(res=>{
+                // console.log(res.data);
+            showToast2()
             setReview("")
+
+            })
         } catch (error) {
             console.log(error);
         }
     }
 
+    const[userName, setUserName] = useState("")
+
+
+    const [reviewList, setReviewList] = useState([])
+    // const response
+      useEffect(()=>{
+        try {
+    
+          axios.post('http://localhost:3000/destination/', {destinationName:d_name})
+        .then(res=>
+          {
+             setReviewList(res.data)
+            // response.forEach(element => {
+                // const rev= element.review
+                // const rname= element.userName
+                // const rdat= element.date
+                // setReviewList(prev=>[{rev,rname,rdat },...prev])
+                // console.log(reviewList);
+            // });
+          })
+        } catch (error) {
+          console.log(error);
+        }
+    },[])
+    // console.log(reviewList);
+     
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
@@ -196,11 +243,25 @@ useEffect(()=>{
                     </div>
 
                 </div>
-                <div className="dfp_reviews">
+                <div className="dfp_reviews ">
                     <div className="dpf_reviews_title">
                         REVIEW
                     </div>
-                    <div className="dfp_reviews_content">
+                    <div className='dfp_show_review_section ' id="dfp_show_review_section">
+                    {
+                        reviewList.map((element,index) => (
+                            <div key={index} className='dfp_show_review'>
+                                <div className='text-xl'>{element.review}</div>
+                                <div className='flex justify-between text-lg'>
+                                    <div>{element.date}</div>
+                                    <div>-{element.userName}</div>
+
+                                </div>
+                            </div>
+                        ))
+                    }
+                    </div>
+                    <div className="dfp_reviews_content ">
                     <form className='flex flex-col gap-5' onSubmit={sendReview}>
                         <textarea name="" id="" cols="100" rows="4" value={review} onChange={e=>setReview(e.target.value)} placeholder='Write Your Review...' required/>
                         <button type="submit" className='btn'>SUBMIT</button>
@@ -239,6 +300,7 @@ useEffect(()=>{
                 </div>
             </div>
         </div>
+        <Toaster richColors/>
     </div>
   )
 }

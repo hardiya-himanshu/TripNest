@@ -5,6 +5,10 @@ const ReviewSchema = new mongoose.Schema({
     {
         type:String,uniqueItems:false
     },
+    userName:
+    {
+        type:String
+    },
     destinationName:
     {
         type:String,
@@ -19,7 +23,7 @@ const ReviewSchema = new mongoose.Schema({
     },
     date:
     {
-        type:Date,
+        type:String,
         required:true,
         duplicate:true
     },

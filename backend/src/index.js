@@ -53,8 +53,10 @@ app.post("/register", async(req,res)=>{
     const encryptedPassword = await bcrypt.hash(password,10)
 
     try {
-        const user = await UserModels.findOne({email:email}) 
-        if(user) res.json("exist")
+        const user = await UserModels.findOne({email}) 
+        // const usern = await UserModels.findOne({username}) 
+        // if(user || usern) res.json("exist")
+        if(user ) res.json("exist")
         else {
             res.json("notexist")
             await UserModels.create({
@@ -270,32 +272,50 @@ app.post("/send_email", async(req,res)=>{
     sendEmail(password,recipient_email).then(data=>res.json(data)).catch(error=>error.message)
 })
 
+
+
+// toget submit user reviews
+
 app.post("/destination/", async(req,res)=>{
-    const{userId,destinationName,review,date}=req.body
+    if(req.body.review){
+    const{userId,userName,destinationName,review,date}=req.body
     
     try {
-        // const isReview = await ReviewModel.findOne({_id:userId}) 
-        // if(isReview) {
-        //     res.json("user review exist")
+            res.json("user review does not exist")
             await ReviewModel.create({
                 userId,
+                userName,
                 destinationName,
                 review,
                 date
             })
-        // }
-        // else {
-        //     await ReviewModel.create({
-        //         userId,
-        //         destinationName,
-        //         review,
-        //         date
-        //     })
-        //     res.json("user review does not exist")
-
-        // }   
+        
     } catch (error) {
         res.json({status:"error", message: error})
+    }
+    }
+
+    // else if(req.body.userId){
+    //     const {userId} = req.body
+
+    //     try {
+    //         const userName = await UserModels.findOne({_id:userId}) 
+                
+    //             res.json(userName)
+                
+    //     } catch (error) {
+    //         res.json(error.message)
+    //     }
+    // }
+    
+    else{
+        const {destinationName} = req.body
+        try {
+            const reviews = await ReviewModel.find({destinationName}) 
+            res.json(reviews)
+        } catch (error) {
+            res.json(error.message)
+        }
     }
 })
 

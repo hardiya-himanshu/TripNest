@@ -39,7 +39,7 @@ function Message_Form() {
     const handleFormSubmit = async(e)=>{
         e.preventDefault()
         const wordCount = userMessage.trim().split(/\s+/).filter(Boolean).length;
-        console.log(wordCount);
+        // console.log(wordCount);
         if(wordCount<minLength){
           showToast1()
           return

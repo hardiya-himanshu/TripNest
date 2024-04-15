@@ -204,6 +204,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 }
 
 .dpf_reviews_title {
@@ -213,8 +214,49 @@
     /* margin-top: 10px; */
 }
 
+.dfp_show_review_section {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    overflow-x: scroll;
+    padding: 10px 0px;
+}
+
+#dfp_show_review_section::-webkit-scrollbar {
+    width: 20px;
+}
+
+#dfp_show_review_section::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+#dfp_show_review_section::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+    background-color: var(--primary);
+}
+
+
+.dfp_show_review {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    justify-content: space-between;
+    background-color: var(--secondary);
+    color: var(--hcolor);
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 10px;
+    width: 600px;
+    min-width: 300px;
+}
+
 .dfp_reviews_content textarea {
     resize: none;
+    width: fit-content;
     padding: 10px;
     border-radius: 10px;
     -webkit-box-sizing: border-box;
@@ -223,10 +265,12 @@
     max-width: 830px;
     width: 100%;
     color: black;
+    font-size: 20px;
 }
 
 .dfp_reviews_content textarea::placeholder {
     color: rgb(83, 83, 83);
+    font-size: 20px;
 }
 
 .dpf_contacts_title {

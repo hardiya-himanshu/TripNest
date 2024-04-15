@@ -12,6 +12,7 @@
   "dependencies": {
     "axios": "^1.6.7",
     "gsap": "^3.12.5",
+    "nanoid": "^5.0.7",
     "react": "^18.2.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-audio-player": "^0.17.0",

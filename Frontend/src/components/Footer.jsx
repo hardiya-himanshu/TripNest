@@ -48,7 +48,7 @@ function Footer() {
                     </div>
                     <div className='alignment'>
                         <span className=' rounded-md'><img src={email}alt="X.com" className='w-8 p-1' /></span>
-                        <span className="line text-wrap"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=tripnest.help@gmail.com" target='_blank'>tripnest.help@gmail.com</a></span>
+                        <span className="line text-wrap mail"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=tripnest.help@gmail.com" target='_blank'>tripnest.help@gmail.com</a></span>
                     </div>
                     <div className='alignment'>
                         <span className=' rounded-md'><img src={message}alt="X.com" className='w-8 p-1' /></span>
