@@ -1,0 +1,123 @@
+.main {
+    /* background-image: url(../assets/login_bg.jpg); */
+    width: 100%;
+    height: 100vh;
+    /* background-position: center center; */
+    /* background-size: cover; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.signup_bg {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 
+.form {
+    background: var(--secondary);
+    box-shadow: 0 8px 32px 00px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    color: var(--color2);
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+} */
+
+
+.form img {
+    position: absolute;
+    top: 15px;
+    left: 10px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.close_img {
+    position: absolute;
+    z-index: 2;
+    width: 5px;
+}
+
+.login_title {
+    font-size: 30px;
+    font-weight: 600;
+    /* margin-bottom: 20px; */
+    /* border: 2px solid red; */
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    gap: 20px;
+    /* width: 300px; */
+    /* border: 2px solid red; */
+
+}
+
+.form form input::placeholder {
+    color: var(--hcolor);
+}
+
+.form>form>input {
+    font-size: 18px;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border: none;
+    background: none;
+    outline: none;
+    color: var(--hcolor);
+    border-bottom: 2px solid var(--hcolor);
+    /* width: 200px; */
+    /* color: var(--color1); */
+}
+
+.t_c {
+    display: flex;
+    gap: 10px;
+    color: var(--hcolor);
+    /* border: 2px solid red; */
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 
+.btn {
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100px;
+    border: 2px solid red;
+} */
+
+.signup_btn {
+    background-color: var(--primary);
+    box-shadow: 1px 1px 10px black;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--color1);
+    /* transition: all .5s ease-in-out; */
+}
+
+/* 
+.signup_btn:hover {
+    box-shadow: 1px 1px 20px black;
+
+} */

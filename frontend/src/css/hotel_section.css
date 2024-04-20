@@ -1,0 +1,143 @@
+.hotel_section {
+    width: 100%;
+    height: 100%;
+    /* background-color: var(--secondary); */
+    /* border: 2px solid red; */
+    padding: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    /* border: 2px solid red; */
+    align-items: center;
+}
+
+.title_hotels {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    color: var(--hcolor);
+    font-weight: 600;
+}
+
+.hotel_cards {
+
+    justify-content: center;
+    /* align-items: center; */
+    /* border: 5px solid red; */
+    position: relative;
+    width: 100%;
+    /* width: 100%; */
+    /* overflow: scroll; */
+}
+
+
+
+
+.hotels_cards_section {
+    display: flex;
+    /* grid-auto-rows: auto; */
+    /* grid-template-columns: repeat(6, 1fr); */
+    gap: 10px;
+    /* border: 2px solid red; */
+    width: calc(400px * 10);
+    /* overflow: scroll; */
+    animation: 40s scrollhotel linear infinite;
+
+}
+
+
+.hotels_cards_section:hover {
+
+    animation-play-state: paused;
+}
+
+@keyframes scrollhotel {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-780px*5));
+    }
+}
+
+.hotels_cards_section::-webkit-scrollbar {
+    display: none;
+}
+
+.hgradient1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    height: 100%;
+    /* border: 2px solid rgb(0, 0, 0); */
+    width: 15%;
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
+}
+
+.hgradient2 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 1;
+    height: 100%;
+    /* border: 2px solid rgb(0, 0, 0); */
+    width: 15%;
+    background-image: linear-gradient(to right, var(--secondary), var(--secondary), rgba(255, 255, 0, 0));
+    transform: rotate(180deg);
+}
+
+.hcard_arrow img {
+    width: 50px;
+    position: absolute;
+    top: 47%;
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.hcard_arrow_left img {
+    left: 0px;
+}
+
+.hcard_arrow_right img {
+    right: 0px;
+}
+
+
+
+@media screen and (max-width:1400px) {
+    @keyframes scrollhotel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-400px*5));
+        }
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .hgradient1,
+    .hgradient2 {
+        width: 10%;
+    }
+
+    .hotel_section {
+        padding: 1rem;
+    }
+
+    @keyframes scrollhotel {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-282px*5));
+        }
+    }
+}

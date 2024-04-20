@@ -1,0 +1,150 @@
+.main_hotel_card {
+    display: flex;
+    background-color: var(--primary);
+    padding: 40px;
+    /* width: 80vw; */
+    min-width: max-content;
+    justify-content: center;
+    /* border: 2px solid red; */
+    gap: 20px;
+    border-radius: 20px;
+
+}
+
+.hotel_image {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform .3s;
+}
+
+.hotel_image img {
+    height: 25rem;
+    width: 25rem;
+
+}
+
+.hotel_card_content {
+    display: flex;
+    padding: 0px 30px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+}
+
+.hotel_div1,
+.hotel_div2 {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.hotel_card_name,
+.hotel_location,
+.hotel_type,
+.hotel_price {
+    font-weight: 600;
+    color: var(--color1);
+    /* border: 2px solid red; */
+    width: fit-content;
+}
+
+.hotel_card_name {
+    font-size: 30px;
+}
+
+.hotel_location {
+    font-size: 20px;
+}
+
+.hotel_type {
+    background-color: var(--color1);
+    color: var(--primary);
+    width: fit-content;
+    padding: 0px 10px;
+    border-radius: 15px;
+
+}
+
+
+.hotel_price {
+    font-size: 25px;
+}
+
+.btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--primary);
+    background-color: var(--color1);
+    border-radius: 10px;
+    font-weight: 600;
+    width: fit-content;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform .3s;
+    /* border: 2px solid red; */
+}
+
+
+.btn:hover {
+    transform: scale(1.1);
+    font-weight: 800;
+
+}
+
+.hotel_image:hover {
+    transform: scale(1.05);
+}
+
+
+
+@media screen and (max-width:1400px) {
+    .main_hotel_card {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .hotel_card_content {
+        align-items: flex-start;
+        /* border: 2px solid red; */
+        padding: 0;
+        gap: 20px;
+    }
+
+    .hotel_image img {
+        height: 18rem;
+        width: 18rem;
+
+    }
+}
+
+@media screen and (max-width:500px) {
+
+    .main_hotel_card {
+        width: fit-content;
+    }
+
+    .hotel_image img {
+        height: 12rem;
+        width: 12rem;
+
+    }
+
+    .hotel_card_name {
+        font-size: 22px;
+    }
+
+    .hotel_location {
+        font-size: 15px;
+    }
+
+    .hotel_price {
+        font-size: 20px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+}
