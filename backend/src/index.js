@@ -7,7 +7,6 @@ import {MessageModel} from './models/message.models.js'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import paymentRoutes from './routes/payment.route.js'
-import { text } from 'express'
 import { ReviewModel } from './models/review.model.js'
 
 dotenv.config({
@@ -111,8 +110,6 @@ app.post("/account/", async(req,res)=>{
     }
     
 })
-
-// to reflect and update security details
 
 app.post("/account/security", async(req,res)=>{
     if(req.body.token){
@@ -317,6 +314,56 @@ app.post("/destination/", async(req,res)=>{
             res.json(error.message)
         }
     }
+})
+
+app.post("/getMyReviews", async(req,res)=>{
+    
+    const{userName}=req.body
+    
+    try {
+        const userReviewsDetails = await ReviewModel.find({userName})
+        
+        res.send(userReviewsDetails)
+        
+    }  catch (error) {
+        res.json({status:"error", message: error})
+    }
+    
+
+})
+
+app.post("/updateReview", async(req,res)=>{
+    
+    const{id,review}=req.body
+    
+    try {
+        await ReviewModel.updateOne({_id:id},{
+            $set:{
+                review
+            }
+        })
+        res.json({status:"ok", data:" Review Updated Successfully"});
+        
+    }  catch (error) {
+        res.json({status:"error", message: error})
+    }
+    
+
+})
+
+app.post("/deleteReview", async(req,res)=>{
+    
+    const{id}=req.body
+    
+    try {
+        await ReviewModel.deleteOne({_id:id})
+        res.json({status:"ok", data:" Review Deleted Successfully"});
+        
+    }  catch (error) {
+        res.json({status:"error", message: error})
+    }
+    
+
 })
 
 

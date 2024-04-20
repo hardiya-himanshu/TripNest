@@ -32,6 +32,9 @@ input::-webkit-inner-spin-button {
     background-color: var(--secondary);
 }
 
+.review_box::-webkit-scrollbar{
+    display: none;
+}
 
 :root {
     --d: 700ms;

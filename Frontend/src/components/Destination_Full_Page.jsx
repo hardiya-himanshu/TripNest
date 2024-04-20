@@ -247,12 +247,12 @@ useEffect(()=>{
                     <div className="dpf_reviews_title">
                         REVIEW
                     </div>
-                    <div className='dfp_show_review_section ' id="dfp_show_review_section">
+                    <div className='dfp_show_review_section  ' id="dfp_show_review_section">
                     {
                         reviewList.map((element,index) => (
                             <div key={index} className='dfp_show_review'>
                                 <div className='text-xl'>{element.review}</div>
-                                <div className='flex justify-between text-lg'>
+                                <div className='flex justify-between text-lg flex-wrap'>
                                     <div>{element.date}</div>
                                     <div>-{element.userName}</div>
 

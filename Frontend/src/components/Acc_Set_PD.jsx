@@ -6,7 +6,6 @@ import { Toaster, toast } from 'sonner'
 
 
 function Acc_Set_PD() {
-  // const location =useLocation()
  
   const [userEmail, setUserEmail] = useState("")
   const [userName, setUserName] = useState("")
@@ -48,12 +47,41 @@ function Acc_Set_PD() {
     }
   }
 
+  const [avatar, setAvatar] = useState()
+
+  const onInputChange = (e) =>{
+    // console.log(e.target.files[0]);
+    setAvatar(e.target.files[0])
+  
+  }
+
+  const updateAvatar = async()=>{
+    const formData = new FormData()
+    formData.append("avatar", avatar) 
+    try {
+      await axios.post('http://localhost:3000/account/upload_image', formData, {headers:{
+        "Content-Type":"multipart/form-data"
+      }})
+      
+    .then(res=>
+    {
+      console.log(res.data);
+    })
+    } catch (error) {
+      console.log(error)
+      
+    }
+  }
+
   const toastNotify =()=>{
     toast.success("Updated Successfully")
   }
 
-  const submitDataAndNotify=()=>{
+
+  const submitDataAndNotify=(e)=>{
+    e.preventDefault()
     updateData();
+    // updateAvatar()
     toastNotify()
   }
 
@@ -63,15 +91,19 @@ function Acc_Set_PD() {
       <div className="acpd_title text-3xl">
             PERSONAL DETAILS
       </div>
+      <form encType="multipart/form-data" onSubmit={submitDataAndNotify} className='flex flex-col gap-12'>
       <div className="acpd_content flex flex-col justify-center items-center gap-5 rounded-lg w-full">
+
         <img alt=""  className='rounded-full bg-slate-700 border w-32 h-32'/>
+        <input type="file" name="avatar" id="avatar" accept='image/*' onChange={onInputChange} title=''/>
         <input type="text" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='NAME'  defaultValue={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
         <input type="email" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='EMAIL' defaultValue={userEmail} onChange={(e)=>{setUserEmail(e.target.value)}} />
         <input type="number" name="number" id="number" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' defaultValue={userPhone} onChange={(e)=>{setUserPhone(e.target.value)}}/>
         {/* <input type="date" className='rounded-lg w-full h-10 p-2 text-gray-500 placeholder' placeholder='DOB'/> */}
       </div>
-        <input onClick={submitDataAndNotify} type="button" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
-        <Toaster richColors/>
+        <input  type="submit" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
+      </form>
+        <Toaster richColors className='absolute'/>
     </div>
   )
 }

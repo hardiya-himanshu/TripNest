@@ -223,7 +223,7 @@
 }
 
 #dfp_show_review_section::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 
 #dfp_show_review_section::-webkit-scrollbar-track {
@@ -243,7 +243,7 @@
 .dfp_show_review {
     display: flex;
     flex-direction: column;
-    height: 150px;
+    min-height: 150px;
     justify-content: space-between;
     background-color: var(--secondary);
     color: var(--hcolor);
@@ -251,7 +251,8 @@
     padding: 10px;
     border-radius: 10px;
     width: 600px;
-    min-width: 300px;
+    min-width: 250px;
+    gap: 20px;
 }
 
 .dfp_reviews_content textarea {

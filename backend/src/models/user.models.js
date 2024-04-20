@@ -29,6 +29,20 @@ const UserSchema = new mongoose.Schema({
         type:Number,
         required:true,
     },
+    avatar:
+    {
+        type:String,
+        unique:true
+    },
+    cloudinaryId: 
+    {
+        type: String,
+    },
+    transactionHistory:[
+        {
+            
+        }
+    ]
 },{timestamps:true})
 
 export const UserModels = mongoose.model("user", UserSchema)

@@ -1,32 +1,63 @@
-import React from 'react'
-import lkdwp from '../assets/rv_bg.webp'
+import React, {useState, useEffect} from 'react'
+import axios from 'axios'
+import ReviewBox from './ReviewBox'
 
 function Acc_Sett_RV() {
+
+  const[userName, setUserName] = useState("")
+  const[order, setOrder] = useState(0)
+  const [reviewList, setReviewList] = useState([])
+
+
+  useEffect(()=>{
+    try {
+
+      axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
+    .then(res=>
+      {
+        const username = String(res.data.data.username)
+        setUserName(username)
+        setOrder(order+1)
+      })
+      } catch (error) {
+        console.log(error);
+        setOrder(order+1)
+
+      }
+},[])
+
+  useEffect(()=>{
+    try {
+
+      axios.post('http://localhost:3000/getMyReviews', {userName})
+    .then(res=>
+      {
+        setReviewList(res.data) 
+      })
+      } catch (error) {
+        console.log(error);
+      }
+},[order, setOrder])
+
   return (
-    <div>
-        <div className='asrv_main  p-7 flex flex-col gap-12 justify-center max-w-72' >
-      <div className="acrv_title text-3xl ">
-            MY REVIEWS
-      </div>
-      <div className="acrv_list max-w-96">
-
-      <div className="acrv_content flex flex-col justify-center items-center w-full bg-white rounded-xl overflow-hidden p-2 gap-2">
-    
-        <div className='review_image w-full h-2/3 rounded-t-md'>
-        <img src={lkdwp} alt="Review_Image"  className='rounded-t-md'/>
+      <div className='asrv_main  p-7 flex flex-col gap-8 justify-center' >
+        <div className="acrv_title text-3xl ">
+              MY REVIEWS
         </div>
+        <div className='flex gap-5 py-5 overflow-x-scroll ' id='dfp_show_review_section'>
+        {
+          reviewList.map((element,index) => (
+              <ReviewBox key={index} reviewId={element._id} review={element.review} reviewDate = {element.date} dest = {element.destinationName}>
+                  {/* <div className='text-xl'>{element.review}</div>
+                  <div className='flex justify-between text-lg'>
+                      <div>{element.date}</div>
+                      <div>-{element.userName}</div>
 
-        <div className='review_text rounded-lg w-full'>
-            <textarea type="text" className='resize-none  outline-none rounded-lg text-black placeholder:text-gray-500' placeholder='My Review...' 
-              rows="5" cols="31"
-            />
+                  </div> */}
+              </ReviewBox>
+          )) 
+        }
         </div>
-        
-      </div>
-      </div>
-      <input type="button" value="APPLY" className='rounded-lg text-black font-semibold w-24 h-8 bg-white' />
-
-    </div>
     </div>
   )
 }

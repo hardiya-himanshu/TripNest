@@ -32,6 +32,7 @@ import bali from "../assets/bali.jpg"
 import left_arrow from "../assets/left-arrow.png"
 import right_arrow from "../assets/right-arrow.png"
 
+
 export{paris,seoul,tokyo,lakshadweep,bali,left_arrow,right_arrow}
 
 
@@ -100,9 +101,12 @@ import user from "../assets/white_user.png"
 import bg_video from "../assets/bg_video2.mp4"
 import bg_audio from "../assets/bg_audio.mp3"
 import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
-export {menu,close,sound_on,sound_off,user,bg_audio,bg_video,logo}
+import editbtn from "../assets/edit.svg"
+import deletebtn from "../assets/delete.svg"
+import donebtn from "../assets/done.svg"
+export {menu,close,sound_on,sound_off,user,bg_audio,bg_video,logo,editbtn, deletebtn,donebtn}
 
-
+ 
 // Categories
 
 
