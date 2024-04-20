@@ -40,7 +40,11 @@ const UserSchema = new mongoose.Schema({
     },
     transactionHistory:[
         {
-            
+            date:String,
+            destinationName:String,
+            amount:String,
+            status:String,
+            // receipt:String
         }
     ]
 },{timestamps:true})

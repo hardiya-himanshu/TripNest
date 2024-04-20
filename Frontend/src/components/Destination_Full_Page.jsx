@@ -10,11 +10,41 @@ import { nanoid } from 'nanoid';
 function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
 
     let date = new Date()
+
+    const[uid, setUid] = useState("")
+
     const amount = parseFloat(dest_price.replace(/,/g, ''))
 
     const [checkoutPrice, setCheckoutPrice] = useState(amount)
+    const[reviewDate, setReviewDate] = useState("")
+    const[receiptNo, setReceiptNo] = useState("")
 
-    
+    const[paymentStatus, setPaymentStatus] = useState(true)
+
+    const historyOfSuccess = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:d_name,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const historyOfFailure = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:d_name,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const initPayment = (data) => {
 		const options = {
 			key: import.meta.env.RAZORPAY_ID_KEY,
@@ -29,6 +59,9 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
 					const verifyUrl = "http://localhost:3000/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
 					console.log(data);
+                    setPaymentStatus(true)
+                    historyOfSuccess(true)
+
 				} catch (error) {
 					console.log(error);
 				}
@@ -39,18 +72,26 @@ function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_
 		};
 		const rzp1 = new window.Razorpay(options);
 		rzp1.open();
+        rzp1.on('payment.failed', function (response){
+            setPaymentStatus(false)
+            historyOfFailure(false)
+        })
+        
 	};
+
 
     const handlePayment = async () => {
 		try {
 			const orderUrl = "http://localhost:3000/api/payment/orders";
 			const { data } = await axios.post(orderUrl, { amount: checkoutPrice });
-			// console.log(data);
+            // console.log(data.data);
 			initPayment(data.data);
 		} catch (error) {
 			console.log(error);
 		}
 	};
+
+// Date section
 
 
     let yr =  date.getFullYear()
@@ -112,9 +153,7 @@ useEffect(()=>{
 // Setup Reviews
 
     const[review, setReview] = useState("")
-    const[uid, setUid] = useState("")
     const[uname, setUsername] = useState("")
-    const[reviewDate, setReviewDate] = useState("")
 
     
     useEffect(()=>{

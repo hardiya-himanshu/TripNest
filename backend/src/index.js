@@ -368,6 +368,34 @@ app.post("/deleteReview", async(req,res)=>{
 
 
 
+app.post("/addHistory", async(req,res)=>{
+    
+    const{_id,amount,destinationName,status,date,receipt}=req.body
+    
+    try {
+        await UserModels.updateOne({_id:_id},{
+            $push:{
+                transactionHistory:
+                {
+                    date,
+                    destinationName,
+                    amount,
+                    status,
+                    // receipt,
+                }
+            }
+        })
+        res.json({status:"ok", data:" History Updated Successfully"});
+        
+    }  catch (error) {
+        res.json({status:"error", message: error})
+    }
+    
+
+})
+
+
+
 
 app.listen(port, ()=>{
     console.log(`Server is running on ${port}`);
