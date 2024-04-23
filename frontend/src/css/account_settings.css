@@ -48,12 +48,20 @@
 }
 
 .aspf_sbc {
+    font-size: large;
     padding: 10px 15px;
     display: flex;
     align-items: center;
     background-color: var(--color1);
     color: var(--primary);
     border-radius: 10px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.aspf_sbc:hover {
+    background-color: var(--primary2);
+    color: var(--color1);
 }
 
 
@@ -93,7 +101,7 @@
     }
 
     .aspf_sbc {
-        width: 180px;
+        width: 200px;
 
     }
 
@@ -117,6 +125,10 @@
     .theme_cards {
         grid-template-columns: repeat(1, 1fr);
     }
+    .asfp_sidebar {
+        height: fit-content;
+    }
+
 }
 
 @media screen and (max-width:500px) {

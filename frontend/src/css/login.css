@@ -83,6 +83,18 @@
     /* color: var(--color1); */
 }
 
+.loginInputs {
+    font-size: 18px;
+    padding: 10px;
+    /* border-radius: 10px; */
+    color: var(--hcolor);
+    border: none;
+    background: none;
+    outline: none;
+    width: 100%;
+    border-bottom: 2px solid var(--hcolor);
+}
+
 .remember {
     display: flex;
     color: var(--hcolor);
@@ -95,7 +107,7 @@
     flex-wrap: wrap;
 }
 
-.f_p{
+.f_p {
     color: var(--hcolor);
 }
 

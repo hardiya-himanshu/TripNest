@@ -104,7 +104,9 @@ import logo from '../assets/ट्रिपNest(png)_wo_bg_white.png'
 import editbtn from "../assets/edit.svg"
 import deletebtn from "../assets/delete.svg"
 import donebtn from "../assets/done.svg"
-export {menu,close,sound_on,sound_off,user,bg_audio,bg_video,logo,editbtn, deletebtn,donebtn}
+import eye from "../assets/eye.png"
+import hide from "../assets/hide.png"
+export {eye,hide,menu,close,sound_on,sound_off,user,bg_audio,bg_video,logo,editbtn, deletebtn,donebtn}
 
  
 // Categories

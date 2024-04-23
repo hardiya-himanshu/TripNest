@@ -45,6 +45,7 @@ import Footer_Policy from './components/Footer_Policy'
 import Footer_Terms from './components/Footer_Terms'
 import Payment_Gateway from './components/Payment_Gateway'
 import Forget_Password_Page from './components/Forget_password_Page'
+import Acc_Set_TR from './components/Acc_Set_TR'
 
 
 
@@ -114,26 +115,26 @@ export const allRoutes= [
 
     {
       path:"/destination/seoul",
-      element:<Destination_Full_Page d_image={seoul_lg} d_name="SEOUL, SOUTH KOREA" d_desc={d1_desc} d_a_i_1={d1att1} d_a_i_2={d1att2} d_a_n_1="Gyeongbokgung Palace" d_a_n_2="N Seoul Tower" d_h_i_1={d1hotel1} d_h_i_2={d1hotel2} d_h_n_1="L7 Hongdae" d_h_n_2="GLAD Hotel Mapor" dest_to="/" dest_price="28,999"/>,
+      element:<Destination_Full_Page lati="37.568291" longi="126.997780" d_image={seoul_lg} d_name="SEOUL, SOUTH KOREA" d_desc={d1_desc} d_a_i_1={d1att1} d_a_i_2={d1att2} d_a_n_1="Gyeongbokgung Palace" d_a_n_2="N Seoul Tower" d_h_i_1={d1hotel1} d_h_i_2={d1hotel2} d_h_n_1="L7 Hongdae" d_h_n_2="GLAD Hotel Mapor" dest_to="/" dest_price="28,999"/>,
     },
     {
       path:"/destination/tokyo",
-      element:<Destination_Full_Page d_image={tokyo_lg} d_name="TOKYO, JAPAN" d_desc={d2_desc} d_a_i_1={d2att1} d_a_i_2={d2att2} d_a_n_1="Sensō-ji" d_a_n_2="N Seoul Tower" d_h_i_1={d2hotel1} d_h_i_2={d2hotel2} d_h_n_1="Shibuya Excel Hotel" d_h_n_2="Hotel Sunroute Plaza" dest_to="/" dest_price="33,999"/>,
+      element:<Destination_Full_Page lati="35.686958" longi="139.749466" d_image={tokyo_lg} d_name="TOKYO, JAPAN" d_desc={d2_desc} d_a_i_1={d2att1} d_a_i_2={d2att2} d_a_n_1="Sensō-ji" d_a_n_2="N Seoul Tower" d_h_i_1={d2hotel1} d_h_i_2={d2hotel2} d_h_n_1="Shibuya Excel Hotel" d_h_n_2="Hotel Sunroute Plaza" dest_to="/" dest_price="33,999"/>,
     },
     {
       path:"/destination/lakshadweep",
-      element:<Destination_Full_Page d_image={lakshadweep_lg} d_name="LAKSHADWEEP, INDIA" d_desc={d3_desc} d_a_i_1={d3att1} d_a_i_2={d3att2} d_a_n_1="Minicoy Island Lighthouse" d_a_n_2="Agatti Island" d_h_i_1={d3hotel1} d_h_i_2={d3hotel2} d_h_n_1="Kadmat Beach Resort
+      element:<Destination_Full_Page lati="10.567800" longi="72.637600" d_image={lakshadweep_lg} d_name="LAKSHADWEEP, INDIA" d_desc={d3_desc} d_a_i_1={d3att1} d_a_i_2={d3att2} d_a_n_1="Minicoy Island Lighthouse" d_a_n_2="Agatti Island" d_h_i_1={d3hotel1} d_h_i_2={d3hotel2} d_h_n_1="Kadmat Beach Resort
       " d_h_n_2="ATS Willingdon Hotel
       " dest_to="/" dest_price="9,999"/>,
     },
     {
       path:"/destination/bali",
-      element:<Destination_Full_Page d_image={bali_lg} d_name="BALI, INDONESIA" d_desc={d4_desc} d_a_i_1={d4att1} d_a_i_2={d4att2} d_a_n_1="Sacred Monkey Forest" d_a_n_2="Besakih Great Temple" d_h_i_1={d4hotel1} d_h_i_2={d4hotel2} d_h_n_1=" The Poovath Beachfront" d_h_n_2="The Elephant Court
+      element:<Destination_Full_Page lati="-8.455470" longi="115.071579" d_image={bali_lg} d_name="BALI, INDONESIA" d_desc={d4_desc} d_a_i_1={d4att1} d_a_i_2={d4att2} d_a_n_1="Sacred Monkey Forest" d_a_n_2="Besakih Great Temple" d_h_i_1={d4hotel1} d_h_i_2={d4hotel2} d_h_n_1=" The Poovath Beachfront" d_h_n_2="The Elephant Court
       " dest_to="/" dest_price="19,999"/>,
     },
     {
       path:"/destination/paris",
-      element:<Destination_Full_Page d_image={paris_lg} d_name="PARIS, FRANCE" d_desc={d5_desc} d_a_i_1={d5att1} d_a_i_2={d5att2} d_a_n_1="Louvre Museum" d_a_n_2="Arc de Triomphe" d_h_i_1={d5hotel1} d_h_i_2={d5hotel2} d_h_n_1="Grand Hotel du Palais" d_h_n_2="Hotel Marceau Elysees" dest_to="/" dest_price="30,999"/>,
+      element:<Destination_Full_Page lati="48.8534951" longi="2.3483915" d_image={paris_lg} d_name="PARIS, FRANCE" d_desc={d5_desc} d_a_i_1={d5att1} d_a_i_2={d5att2} d_a_n_1="Louvre Museum" d_a_n_2="Arc de Triomphe" d_h_i_1={d5hotel1} d_h_i_2={d5hotel2} d_h_n_1="Grand Hotel du Palais" d_h_n_2="Hotel Marceau Elysees" dest_to="/" dest_price="30,999"/>,
     },
 
 
@@ -298,6 +299,10 @@ export const allRoutes= [
         {
             path:"/account/themes",
             element:<Acc_Sett_TH/>
+        },
+        {
+            path:"/account/history",
+            element:<Acc_Set_TR/>
         },
         ]  
     },

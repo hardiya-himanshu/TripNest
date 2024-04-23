@@ -394,6 +394,22 @@ app.post("/addHistory", async(req,res)=>{
 
 })
 
+app.post("/getHistory", async(req,res)=>{
+    
+    const{id}=req.body
+    
+    try {
+        const userTransacHistory = await UserModels.find({_id:id})
+        
+        res.send(userTransacHistory)
+        
+    }  catch (error) {
+        res.json({status:"error", message: error})
+    }
+    
+
+})
+
 
 
 

@@ -12,6 +12,7 @@ changes.md
 dist
 dist-ssr
 *.local
+constants.js
 
 # Editor directories and files
 .vscode/*

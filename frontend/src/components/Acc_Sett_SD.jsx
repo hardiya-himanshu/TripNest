@@ -1,6 +1,8 @@
 import React,{useEffect, useState} from 'react'
 import axios from 'axios'
 import { Toaster, toast } from 'sonner'
+import {eye,hide} from "../javascript/index.js"
+
 
 function Acc_Sett_SD() {
 
@@ -47,14 +49,31 @@ function Acc_Sett_SD() {
   }
 
 
+  const toggleButton = document.querySelector('.passhide');
+  const passwordInput = document.getElementById('password');
+  const showPass =() => {
+    if (passwordInput.type === 'password') {
+       passwordInput.type = 'text';
+       toggleButton.src= hide
+    } else {
+       passwordInput.type = 'password';
+       toggleButton.src= eye
+
+    }
+ }
+
+
   return (
     <div className='assd_main p-7 flex flex-col gap-12 max-w-96 ' >
       <div className="acsd_title text-3xl">
             SECURITY
       </div>
-      <div className="acsd_content flex flex-col justify-center items-center gap-5 rounded-lg w-full">
+      <div className="acsd_content flex justify-center items-center rounded-lg w-full relative">
     
-        <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CURRENT PASSWORD' defaultValue={userPassword} onChange={(e)=>{setUserPassword(e.target.value)}  }/>
+        <input type="password" id="password" className=' rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500 ' placeholder='CURRENT PASSWORD' defaultValue={userPassword} onChange={(e)=>{setUserPassword(e.target.value)}  }/>
+        <span className=" absolute right-3 ">
+        <img src={eye} alt="show" className='passhide' onClick={showPass} />
+        </span>
         {/* <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='NEW PASSWORD'/>
         <input type="text" name="" id="" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CONFIRM PASSWORD' /> */}
       </div>

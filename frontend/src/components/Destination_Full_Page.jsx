@@ -6,8 +6,9 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Toaster, toast } from 'sonner'
 import { nanoid } from 'nanoid';
+import MapComponent from './MapComponent'
 
-function Destination_Full_Page({dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
+function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
 
     let date = new Date()
 
@@ -228,8 +229,9 @@ useEffect(()=>{
           console.log(error);
         }
     },[])
-    // console.log(reviewList);
      
+    const destinationLocation = { lat: Number(lati), lng: Number(longi) };
+
   return (
     <div className='destination_fullpage_section'>
         <div className="dfp_content">
@@ -281,6 +283,13 @@ useEffect(()=>{
                         </div> */}
                     </div>
 
+                </div>
+                <div className="dfp_maps">
+                    <div className="dfp_maps_title">MAPS</div>
+                    
+                    <div className="dfp_maps_main">
+                        <MapComponent location={destinationLocation} />                
+                    </div>
                 </div>
                 <div className="dfp_reviews ">
                     <div className="dpf_reviews_title">

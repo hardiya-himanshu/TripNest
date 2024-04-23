@@ -11,6 +11,7 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { Toaster, toast } from 'sonner'
+import {eye,hide} from "../javascript/index.js"
 
 function Login() {
 
@@ -69,6 +70,19 @@ function Login() {
     }, 1000);
     }
 
+  const toggleButton = document.querySelector('.passhide');
+  const passwordInput = document.getElementById('password');
+  const showPass =() => {
+    if (passwordInput.type === 'password') {
+       passwordInput.type = 'text';
+       toggleButton.src= hide
+    } else {
+       passwordInput.type = 'password';
+       toggleButton.src= eye
+
+    }
+  }
+
 
   return (
     <div className='main'>
@@ -86,7 +100,13 @@ function Login() {
         
         <form onSubmit={handleSubmit}>
             <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
-            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+            
+            <div>
+            <input type="password" id="password" className='loginInputs' placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <span className=" absolute right-10 w-7">
+              <img src={eye} alt="show" className='passhide' onClick={showPass} />
+            </span>
+            </div>
             
             {/* <div className="remember">
                 <label htmlFor="remember">Remember Me</label>

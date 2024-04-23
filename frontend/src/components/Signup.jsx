@@ -12,6 +12,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'  
 import { Toaster, toast } from 'sonner'
+import {eye,hide} from "../javascript/index.js"
 
 function Signup() {
 
@@ -73,6 +74,20 @@ function Signup() {
       setTnC(!tnc)
     }
 
+    
+  const toggleButton = document.querySelector('.passhide');
+  const passwordInput = document.getElementById('password');
+  const showPass =() => {
+    if (passwordInput.type === 'password') {
+       passwordInput.type = 'text';
+       toggleButton.src= hide
+    } else {
+       passwordInput.type = 'password';
+       toggleButton.src= eye
+
+    }
+  }
+
   return (
     <>
       <div className='main'>
@@ -88,7 +103,12 @@ function Signup() {
         <form onSubmit={handleSubmit}>
             <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}} required/>
             <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
-            <input type="password" placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+             <div>
+            <input type="password" id="password" className='loginInputs' placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <span className=" absolute right-10 w-7">
+              <img src={eye} alt="show" className='passhide' onClick={showPass} />
+            </span>
+            </div>
             <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
             <div className="t_c">
                 <label htmlFor="t_c">I accept the <Link to="/terms" className='hover:underline font-semibold hover:text-blue-600' >Terms & Conditions</Link></label>

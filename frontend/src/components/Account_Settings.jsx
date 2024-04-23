@@ -29,6 +29,11 @@ function Account_Settings() {
                     MY REVIEWS
                 </div>
                 </Link>
+                <Link to="/account/history">
+                <div className="asfp_t aspf_sbc">
+                    HISTORY
+                </div>
+                </Link>
                 <Link to="/account/themes">
                 <div className="asfp_t aspf_sbc">
                     THEMES

@@ -199,6 +199,31 @@
     /* border: 2px solid red; */
 }
 
+
+.dfp_maps {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dfp_maps_title {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: 500;
+    /* margin-top: 10px; */
+}
+
+.dfp_maps_main {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    width: 830px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
 .dfp_reviews {
     width: fit-content;
     display: flex;
