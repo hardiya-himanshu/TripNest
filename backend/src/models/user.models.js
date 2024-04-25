@@ -34,10 +34,10 @@ const UserSchema = new mongoose.Schema({
         type:String,
         unique:true
     },
-    cloudinaryId: 
-    {
-        type: String,
-    },
+    // cloudinaryId: 
+    // {
+    //     type: String,
+    // },
     transactionHistory:[
         {
             date:String,

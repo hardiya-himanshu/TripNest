@@ -49,13 +49,13 @@ function Acc_Set_TR() {
         {
           
           historyList.map((element,index) => (
-            <div key={index} className={`p-2 rounded-lg font-bold text-xl  flex justify-between w-full ${element.status=="true"?"bg-green-600":"bg-red-600"}`}>
-            <div className='flex  justify-evenly gap-5 w-1/2 border'>
+            <div key={index} className={`p-2 rounded-lg font-bold text-xl flex flex-wrap justify-around w-full  ${element.status=="true"?"bg-green-600":"bg-red-600"}`}>
+            <div className='flex flex-wrap text-center w-1/2 justify-evenly gap-5 '>
 
                   <div className=''>{element.date}</div>
                   <div className=''>{element.destinationName}</div>
             </div>
-            <div className='flex justify-evenly gap-5 w-1/2'>
+            <div className='flex flex-wrap text-center w-1/2 justify-evenly  gap-5  '>
 
                   <div>Rs. {element.amount}</div>
                   <div>{element.status=="true"?"SUCCESS":"FAILURE"}</div>

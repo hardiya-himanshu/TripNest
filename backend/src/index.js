@@ -111,6 +111,83 @@ app.post("/account/", async(req,res)=>{
     
 })
 
+// to add user image on db
+
+
+app.post("/user_image", async(req,res)=>{
+
+    if(!req.body.base64){
+        const {_id} = req.body
+        try {
+            await UserModels.findOne({_id}).then(data=>{
+                res.send({status:"exist", data:data})
+            })
+            .catch(error=>{
+                res.send({status:"error", data:error})
+            })
+        }
+        catch (error) {
+            res.send({status:"error", data:error}) 
+        }
+    }
+    else{
+
+        const{_id,base64} = req.body
+        
+        try {
+            await UserModels.updateOne({_id:_id},{
+                $set:{
+                    avatar:base64
+                }
+            })
+            res.json("Updated Successfully")
+        } catch (error) {
+            res.json({status:"error", data:error});
+            
+        }
+    }
+})
+
+// To delete stored user's image 
+
+app.post("/delete_user_image", async(req,res)=>{
+
+    const {_id} = req.body
+    try {
+        await UserModels.updateOne({_id},{
+           $unset:{
+            avatar:""
+           }
+        })
+        res.json("Removed Successfully")
+
+    }
+    catch (error) {
+        res.send({status:"error", data:error}) 
+    }
+})
+
+// To get back User Image
+
+// app.post("/get_image", async(req,res)=>{
+//     const{_id,base64} = req.body
+
+//     try {
+//         await UserModels.updateOne({_id:_id},{
+//             $set:{
+//                 avatar:base64
+//             }
+//         })
+//         res.json("Updated Successfully")
+//     } catch (error) {
+//         res.json({status:"error", data:error});
+    
+//     }
+// })
+
+
+// To Update User Password
+
 app.post("/account/security", async(req,res)=>{
     if(req.body.token){
         const {token} = req.body
@@ -273,7 +350,7 @@ app.post("/send_email", async(req,res)=>{
 
 // toget submit user reviews
 
-app.post("/destination/", async(req,res)=>{
+app.post("/sendMyReview", async(req,res)=>{
     if(req.body.review){
     const{userId,userName,destinationName,review,date}=req.body
     

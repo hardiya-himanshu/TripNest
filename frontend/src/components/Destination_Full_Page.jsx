@@ -5,22 +5,19 @@ import { phone,close,email } from '../javascript'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import { Toaster, toast } from 'sonner'
-import { nanoid } from 'nanoid';
 import MapComponent from './MapComponent'
 
 function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_a_i_1, d_a_i_2, d_a_n_1, d_a_n_2, d_h_i_1, d_h_i_2, d_h_n_1, d_h_n_2, dest_price}) {
 
     let date = new Date()
-
-    const[uid, setUid] = useState("")
-
     const amount = parseFloat(dest_price.replace(/,/g, ''))
-
+    const[uid, setUid] = useState("")
     const [checkoutPrice, setCheckoutPrice] = useState(amount)
     const[reviewDate, setReviewDate] = useState("")
     const[receiptNo, setReceiptNo] = useState("")
-
     const[paymentStatus, setPaymentStatus] = useState(true)
+
+    // setup for Transaction History
 
     const historyOfSuccess = async(ps) =>{
         try {
@@ -45,6 +42,8 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
             console.log(error);
         }
     }
+
+    // Setup for Payment Gateway
 
     const initPayment = (data) => {
 		const options = {
@@ -80,7 +79,6 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
         
 	};
 
-
     const handlePayment = async () => {
 		try {
 			const orderUrl = "http://localhost:3000/api/payment/orders";
@@ -92,9 +90,8 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
 		}
 	};
 
-// Date section
-
-
+    //Setup for Dates
+        
     let yr =  date.getFullYear()
     let mo = date.getMonth()+1
     let da = date.getDate()
@@ -103,7 +100,7 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
     if(mo <10){
         mo = '0'+mo
     }
-    
+
     if(da <10){
         da = '0'+da
     }
@@ -126,36 +123,32 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
     let currentDate = `${yr}-${mo}-${da}`
     let currentDate2 = `${yr}-${mo}-${da2}`
     let maxDate = `${maxmoyr}-${maxmo}-${da}`
-
-
         
     const[inputdate1, setInputdate1] = useState(currentDate)
     const[inputdate2, setInputdate2] = useState(currentDate2)
 
+    useEffect(()=>{
+        let components1 = inputdate1.split('-');
+        let components2 = inputdate2.split('-');
+        let formattedDate1 = components1[1] + '/' + components1[2] + '/' + components1[0];
+        let formattedDate2 = components2[1] + '/' + components2[2] + '/' + components2[0];
 
-useEffect(()=>{
-    let components1 = inputdate1.split('-');
-    let components2 = inputdate2.split('-');
-    let formattedDate1 = components1[1] + '/' + components1[2] + '/' + components1[0];
-    let formattedDate2 = components2[1] + '/' + components2[2] + '/' + components2[0];
+        let date1 = new Date(formattedDate1)
+        let date2 = new Date(formattedDate2)
+        
+        let totaldays =  date2.getDate() - date1.getDate() +1;
+        if(totaldays!=1){
+            totaldays=totaldays-1
+        }
+        const finalAmt = totaldays*amount
+        setCheckoutPrice(finalAmt)
+    }, [inputdate1, inputdate2]
+    )
 
-    let date1 = new Date(formattedDate1)
-    let date2 = new Date(formattedDate2)
-    
-    let totaldays =  date2.getDate() - date1.getDate() +1;
-    if(totaldays!=1){
-        totaldays=totaldays-1
-      }
-    const finalAmt = totaldays*amount
-    setCheckoutPrice(finalAmt)
-}, [inputdate1, inputdate2]
-)
-
-// Setup Reviews
+    // Setup for Reviews
 
     const[review, setReview] = useState("")
     const[uname, setUsername] = useState("")
-
     
     useEffect(()=>{
         try {
@@ -194,7 +187,7 @@ useEffect(()=>{
         }
         try {
            
-            await axios.post(`http://localhost:3000/destination/`,{userId:uid,userName:uname,destinationName:d_name,review,date:reviewDate}).then(res=>{
+            await axios.post(`http://localhost:3000/sendMyReview`,{userId:uid,userName:uname,destinationName:d_name,review,date:reviewDate}).then(res=>{
                 // console.log(res.data);
             showToast2()
             setReview("")
@@ -205,15 +198,13 @@ useEffect(()=>{
         }
     }
 
-    const[userName, setUserName] = useState("")
-
+    // const[userName, setUserName] = useState("")
 
     const [reviewList, setReviewList] = useState([])
-    // const response
       useEffect(()=>{
         try {
     
-          axios.post('http://localhost:3000/destination/', {destinationName:d_name})
+          axios.post('http://localhost:3000/sendMyReview', {destinationName:d_name})
         .then(res=>
           {
              setReviewList(res.data)
@@ -229,6 +220,8 @@ useEffect(()=>{
           console.log(error);
         }
     },[])
+
+    // Setup for Maps
      
     const destinationLocation = { lat: Number(lati), lng: Number(longi) };
 

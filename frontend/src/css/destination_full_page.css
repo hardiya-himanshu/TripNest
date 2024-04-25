@@ -219,7 +219,7 @@
     flex-wrap: wrap;
     gap: 40px;
     align-items: center;
-    width: 830px;
+    max-width: 830px;
     border-radius: 10px;
     overflow: hidden;
 }

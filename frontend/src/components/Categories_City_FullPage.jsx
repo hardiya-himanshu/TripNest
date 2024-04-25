@@ -1,19 +1,49 @@
 import React ,{useState, useEffect} from 'react'
 import '../css/categories_city_fullpage.css'
 import { Link } from 'react-router-dom'
-import {close} from '../javascript/index'
-import { phone, email } from '../javascript/index'
+import {close, phone, email } from '../javascript/index'
 import axios from 'axios'
+import { Toaster, toast } from 'sonner'
+import MapComponent from './MapComponent'
 
-
-function Categories_City_FullPage({cc_image_cover,city_name,city_desc,city_price}) {
+function Categories_City_FullPage({lati, longi,cc_image_cover,city_name,city_desc,city_price}) {
 
   
     let date = new Date()
     const amount = parseFloat(city_price.replace(/,/g, ''))
-
+    const[uid, setUid] = useState("")
     const [checkoutPrice, setCheckoutPrice] = useState(amount)
+    const[reviewDate, setReviewDate] = useState("")
+    const[receiptNo, setReceiptNo] = useState("")
+    const[paymentStatus, setPaymentStatus] = useState(true)
 
+    // setup for Transaction History
+
+    const historyOfSuccess = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:city_name,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const historyOfFailure = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:city_name,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // Setup for Payment Gateway
     
     const initPayment = (data) => {
 		const options = {
@@ -29,6 +59,9 @@ function Categories_City_FullPage({cc_image_cover,city_name,city_desc,city_price
 					const verifyUrl = "http://localhost:3000/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
 					console.log(data);
+                    setPaymentStatus(true)
+                    historyOfSuccess(true)
+
 				} catch (error) {
 					console.log(error);
 				}
@@ -39,6 +72,10 @@ function Categories_City_FullPage({cc_image_cover,city_name,city_desc,city_price
 		};
 		const rzp1 = new window.Razorpay(options);
 		rzp1.open();
+        rzp1.on('payment.failed', function (response){
+            setPaymentStatus(false)
+            historyOfFailure(false)
+        })
 	};
 
     const handlePayment = async () => {
@@ -52,6 +89,7 @@ function Categories_City_FullPage({cc_image_cover,city_name,city_desc,city_price
 		}
 	};
 
+    //Setup for Dates
 
     let yr =  date.getFullYear()
     let mo = date.getMonth()+1
@@ -108,6 +146,78 @@ useEffect(()=>{
     setCheckoutPrice(finalAmt)
 }, [inputdate1, inputdate2]
 )
+
+    // Setup for Reviews
+
+    const[review, setReview] = useState("")
+    const[uname, setUsername] = useState("")
+    
+    useEffect(()=>{
+        try {
+    
+          axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
+        .then(res=>
+          {
+            const dateInstance = new Date()
+            const userid = String(res.data.data._id)
+            const username = String(res.data.data.username)
+            setUid(userid)
+            setUsername(username)
+            setReviewDate(dateInstance.toLocaleDateString("en-IN",{dateStyle:"short"}));
+          })
+        } catch (error) {
+          console.log(error);
+        }
+    },[review])
+
+    const showToast1 = ()=>{
+        toast.warning("Please enter a review between 10 to 40 words")
+     }
+
+    const showToast2 = ()=>{
+        toast.success("Submitted Successfully")  
+      }
+
+    const sendReview = async(e)=>{
+        
+        e.preventDefault()
+        const wordCount = review.trim().split(/\s+/).filter(Boolean).length;
+        // console.log(wordCount);
+        if(wordCount<10 || wordCount>40){
+        showToast1()
+        return
+        }
+        try {
+           
+            await axios.post(`http://localhost:3000/sendMyReview`,{userId:uid,userName:uname,destinationName:city_name,review,date:reviewDate}).then(res=>{
+                // console.log(res.data);
+            showToast2()
+            setReview("")
+
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const [reviewList, setReviewList] = useState([])
+      useEffect(()=>{
+        try {
+    
+          axios.post('http://localhost:3000/sendMyReview/', {destinationName:city_name})
+        .then(res=>
+          {
+             setReviewList(res.data)
+          })
+        } catch (error) {
+          console.log(error);
+        }
+    },[])
+
+    // Setup for Maps
+     
+    const destinationLocation = { lat: Number(lati), lng: Number(longi) };
+
   return (
     <div className='categories_city_fullpage'>
       <div className="ccfp_content">
@@ -123,6 +233,40 @@ useEffect(()=>{
                 <div className="tfp_city_name">{city_name}</div>
 
                 <div className="tfp_city_description">{city_desc}</div>
+
+                <div className="dfp_maps">
+                    <div className="dfp_maps_title">MAPS</div>
+                    
+                    <div className="dfp_maps_main">
+                        <MapComponent location={destinationLocation} />                
+                    </div>
+                </div>
+
+                <div className="dfp_reviews ">
+                    <div className="dpf_reviews_title">
+                        REVIEW
+                    </div>
+                    <div className='dfp_show_review_section  ' id="dfp_show_review_section">
+                    {
+                        reviewList.map((element,index) => (
+                            <div key={index} className='dfp_show_review'>
+                                <div className='text-xl'>{element.review}</div>
+                                <div className='flex justify-between text-lg flex-wrap'>
+                                    <div>{element.date}</div>
+                                    <div>-{element.userName}</div>
+
+                                </div>
+                            </div>
+                        ))
+                    }
+                    </div>
+                    <div className="dfp_reviews_content ">
+                    <form className='flex flex-col gap-5' onSubmit={sendReview}>
+                        <textarea name="" id="" cols="100" rows="4" value={review} onChange={e=>setReview(e.target.value)} placeholder='Write Your Review...' required/>
+                        <button type="submit" className='btn'>SUBMIT</button>
+                    </form>
+                    </div>
+                </div>
 
                 <div className="tpf_contacts">
                     <div className="tpf_number">
@@ -155,6 +299,8 @@ useEffect(()=>{
                 </div>
             </div>
        </div>
+       <Toaster richColors/>
+
     </div>
   )
 }
