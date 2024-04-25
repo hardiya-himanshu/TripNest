@@ -90,8 +90,6 @@ function Tour_Full_Page({lati, longi,image_cover,tour_name,tour_desc,tour_durati
 		}
 	};
 
-
-    
     //Setup for Dates
 
     let yr =  date.getFullYear()

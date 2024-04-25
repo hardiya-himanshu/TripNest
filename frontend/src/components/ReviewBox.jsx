@@ -49,11 +49,11 @@ function ReviewBox({reviewId ,review ,reviewDate, dest}) {
         <img src={lkdwp} alt="Review_Image"  className='rounded-t-md'/>
         </div> */}
 
-        <div className=' text-black font-semibold '>
+        <div className=' review_card_titles font-semibold '>
             {reviewDate}
         </div>
 
-        <div className=' text-black font-semibold '>
+        <div className=' review_card_titles font-semibold '>
             {dest}
         </div>
 

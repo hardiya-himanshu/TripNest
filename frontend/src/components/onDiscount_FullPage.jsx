@@ -14,10 +14,57 @@ function OnDiscount_FullPage() {
     let date = new Date()
     const amount = parseFloat(discountPrice.replace(/,/g, ''))
     const [checkoutPrice, setCheckoutPrice] = useState(amount)
+    const[uid, setUid] = useState("")
+    const[reviewDate, setReviewDate] = useState("")
+    const[receiptNo, setReceiptNo] = useState("")
+    const[paymentStatus, setPaymentStatus] = useState(true)
 
 
 
-    // console.log(amount);
+    useEffect(()=>{
+        try {
+    
+          axios.post('http://localhost:3000/account/', {token: window.localStorage.getItem("token")})
+        .then(res=>
+          {
+            const dateInstance = new Date()
+            const userid = String(res.data.data._id)
+            setUid(userid)
+            setReviewDate(dateInstance.toLocaleDateString("en-IN",{dateStyle:"short"}));
+          })
+        } catch (error) {
+          console.log(error);
+        }
+    },[])
+
+    // setup for Transaction History
+
+    const historyOfSuccess = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:discountName,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    const historyOfFailure = async(ps) =>{
+        try {
+           
+            await axios.post(`http://localhost:3000/addHistory`,{_id:uid,amount:checkoutPrice,destinationName:discountName,status:ps,date:reviewDate,receipt:receiptNo})
+            .then(res=>{
+                console.log(res.data);
+            })
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    // Setup for Payment Gateway
+
     const initPayment = (data) => {
 		const options = {
 			key: import.meta.env.RAZORPAY_ID_KEY,
@@ -31,8 +78,10 @@ function OnDiscount_FullPage() {
 				try {
 					const verifyUrl = "http://localhost:3000/api/payment/verify";
 					const { data } = await axios.post(verifyUrl, response);
-					console.log(data);
-				} catch (error) {
+					setPaymentStatus(true)
+                    historyOfSuccess(true)
+
+				    } catch (error) {
 					console.log(error);
 				}
 			},
@@ -42,6 +91,10 @@ function OnDiscount_FullPage() {
 		};
 		const rzp1 = new window.Razorpay(options);
 		rzp1.open();
+        rzp1.on('payment.failed', function (response){
+            setPaymentStatus(false)
+            historyOfFailure(false)
+        })
 	};
 
     const handlePayment = async () => {
@@ -54,6 +107,8 @@ function OnDiscount_FullPage() {
 			console.log(error);
 		}
 	};
+
+    //Setup for Dates
 
     let yr =  date.getFullYear()
     let mo = date.getMonth()+1
