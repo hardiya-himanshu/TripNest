@@ -2,18 +2,25 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import "../index.css"
 import { editbtn,deletebtn,donebtn } from '../javascript/index'
+import { Toaster, toast } from 'sonner'
+
 
 function ReviewBox({reviewId ,review ,reviewDate, dest}) {
 
     const [isReadOnly, setIsReadOnly] = useState(true)
     const [updatedReview, setUpdatedReview] = useState(review)
 
+    const toastNotify =()=>{
+        toast.success("Updated Successfully")
+      }
+
     const updateTheReview = () =>{
     try {
         axios.post('http://localhost:3000/updateReview', {id:reviewId, review:updatedReview})
         .then(res=>
         {
-            console.log(res.data);
+            toastNotify()
+            // console.log(res.data);
         })
         } 
     catch (error) 
@@ -27,7 +34,7 @@ function ReviewBox({reviewId ,review ,reviewDate, dest}) {
         axios.post('http://localhost:3000/deleteReview', {id:reviewId})
         .then(res=>
         {
-            console.log(res.data);
+            // console.log(res.data);
         })
         } 
     catch (error) 
@@ -67,25 +74,27 @@ function ReviewBox({reviewId ,review ,reviewDate, dest}) {
 
         <div className='flex gap-2 mt-1 justify-between flex-wrap'>
             <div>
-                <input type="button" value="SAVE" className='rounded-lg text-black font-semibold w-24  bg-white border-black p-2 hover:bg-gray-700 hover:text-white shadow-md' onClick={updateTheReview}
+                <input type="button" value="SAVE" className='rounded-lg text-black font-semibold w-24  bg-white border-black p-2 hover:bg-gray-700 hover:text-white shadow-md cursor-pointer' onClick={updateTheReview}
                  />
             </div>
             <div className='flex gap-2'>
                 <div>
                 {
                     isReadOnly?
-                    <img src={editbtn} onClick={editButton} alt="edit" className='w-10  p-2 hover:bg-blue-500 rounded-lg shadow-md'  />
+                    <img src={editbtn} onClick={editButton} alt="edit" className='cursor-pointer w-10  p-2 hover:bg-blue-500 rounded-lg shadow-md'  />
                     :
-                    <img src={donebtn} onClick={editButton} alt="edit" className='w-10  p-2 hover:bg-green-500 rounded-lg shadow-md'  />
+                    <img src={donebtn} onClick={editButton} alt="edit" className='cursor-pointer w-10  p-2 hover:bg-green-500 rounded-lg shadow-md'  />
                 }
                 
                 </div>
                 <div>
-                <img src={deletebtn} alt="delete" className='w-10  p-2 hover:bg-red-500 rounded-lg shadow-md' onClick={deleteTheReview}/>
+                <img src={deletebtn} alt="delete" className='cursor-pointer w-10  p-2 hover:bg-red-500 rounded-lg shadow-md' onClick={deleteTheReview}/>
                 </div>
             </div>
         </div>
       </div>
+      <Toaster richColors/>
+
       </div>
   )
 }

@@ -281,6 +281,9 @@ useEffect(()=>{
                 </div>
                     
                     <div className="hpf_contacts">
+                        <div className="dpf_contacts_title">
+                            CONTACTS
+                        </div>
                         <div className="hpf_number">
                             <img src={phone} alt="" />
                             <div>91XXXXXXXX</div>
@@ -289,6 +292,7 @@ useEffect(()=>{
                             <img src={email} alt="" />
                             <div>tripnest.help@gmail.com</div>
                         </div>
+                        
                         <div  className='hpf_date_range'>
                             <fieldset className='border p-2'>
                             <legend>Check-In</legend>

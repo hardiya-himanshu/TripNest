@@ -40,35 +40,41 @@ function Forget_Password_Page() {
     toast.warning("Email Not Found!")
   }
 
+  const showToastSuccess=()=>{
+    toast.success("Email Sent Successfully")
+  }
 
-  function sendPass() {
+
+  function sendPass(response) {
     
-      // console.log(password);
       try {
       axios.post("http://localhost:3000/send_email", {
-          password,
+          password:response,
           recipient_email: email,
-        }).then(res=>console.log(res.data))
+        }).
+        then(res=>{
+          showToastSuccess()
+          // console.log(res.data)
+        })
       } catch (error) {
         console.log(error);
       }
     
   }
 
-
-
   const handleSubmit = async(e) => {
     e.preventDefault()
     
     try {
       await axios.post("http://localhost:3000/forget_password_page", {email}).then(res=>{
-        const response = res.data
-        if(response==="notexist"){
+        const response = res.data.password
+
+        if(res.data==="notexist"){
           showToast()
           return
         }
         setPassword(response);
-        sendPass()
+        sendPass(response)
       })
     } catch (error) {
       console.log(error); 

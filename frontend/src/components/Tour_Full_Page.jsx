@@ -277,6 +277,9 @@ useEffect(()=>{
 
 
                 <div className="tpf_contacts">
+                    <div className="dpf_contacts_title">
+                        CONTACTS
+                    </div>
                     <div className="tpf_number">
                         <img src={phone} alt="" />
                         <div>91XXXXXXXX</div>

@@ -277,7 +277,7 @@ app.post("/forget_password_page", async(req,res)=>{
         if(!user) res.json("notexist")
         else {
             
-            res.json(user.password)
+            res.json(user)
             
         }
     } catch (error) {

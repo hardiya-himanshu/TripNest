@@ -72,12 +72,12 @@ function Acc_Sett_SD() {
     
         <input type="password" id="password" className=' rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500 ' placeholder='CURRENT PASSWORD' defaultValue={userPassword} onChange={(e)=>{setUserPassword(e.target.value)}  }/>
         <span className=" absolute right-3 ">
-        <img src={eye} alt="show" className='passhide' onClick={showPass} />
+        <img src={eye} alt="show" className='passhide cursor-pointer' onClick={showPass} />
         </span>
         {/* <input type="text" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='NEW PASSWORD'/>
         <input type="text" name="" id="" className='rounded-lg w-full h-10 p-3 text-black placeholder:text-gray-500' placeholder='CONFIRM PASSWORD' /> */}
       </div>
-        <input onClick={submitDataAndNotify} type="button" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white' />
+        <input onClick={submitDataAndNotify} type="button" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
         <Toaster richColors/>
     </div>
   )

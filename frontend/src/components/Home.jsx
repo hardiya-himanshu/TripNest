@@ -56,7 +56,7 @@ function Home() {
     <nav id="navbar">
 
         <div className="logo">
-            <ScrollLink to='home' spy={true} smooth={true}>
+            <ScrollLink to='home' className='cursor-pointer' spy={true} smooth={true}>
                 <img src={logo} alt="Image" />
             </ScrollLink>
         </div>

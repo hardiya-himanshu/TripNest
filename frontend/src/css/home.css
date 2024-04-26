@@ -215,10 +215,6 @@ nav .logo img {
     top: 45%;
 }
 
-.tagline:hover {
-    cursor: pointer;
-}
-
 .song_btn {
     position: absolute;
     right: 40px;

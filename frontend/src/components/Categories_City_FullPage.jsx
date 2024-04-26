@@ -269,6 +269,9 @@ useEffect(()=>{
                 </div>
 
                 <div className="tpf_contacts">
+                    <div className="dpf_contacts_title">
+                        CONTACTS
+                    </div>
                     <div className="tpf_number">
                         <img src={phone} alt="" />
                         <div>91XXXXXXXX</div>
@@ -283,7 +286,9 @@ useEffect(()=>{
                 ₹ {city_price}/Night
                 </div>
 
+                    
                 <div  className='hpf_date_range'>
+                
                     <fieldset className='border p-2'>
                     <legend>Check-In</legend>
                         <input type="date" name="datefrom" id="datefrom" defaultValue={currentDate} onChange={e=>{setInputdate1(e.target.value) ,setInputdate2(e.target.value)}} min={currentDate} max={maxDate} required/>

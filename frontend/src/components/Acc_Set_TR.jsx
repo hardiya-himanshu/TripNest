@@ -45,7 +45,7 @@ function Acc_Set_TR() {
         <div className="acrv_title text-3xl ">
               TRANSACTION HISTORY
         </div>
-        <div className='flex flex-col gap-5 py-5 overflow-x-scroll ' id='dfp_show_review_section'>
+        <div className='flex flex-col gap-5 py-5 ' id='dfp_show_review_section'>
         {
           
           historyList.map((element,index) => (

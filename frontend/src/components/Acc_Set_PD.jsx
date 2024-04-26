@@ -13,7 +13,7 @@ function Acc_Set_PD() {
   const [userPhone, setUserPhone] = useState("")
   const [userPassword, setUserPassword] = useState("")
   const [uid,setUid] = useState("")
-  const [avatar, setAvatar] = useState()
+  const [avatar, setAvatar] = useState("")
   const [order,setOrder] = useState()
 
   useEffect(()=>{
@@ -89,8 +89,10 @@ function Acc_Set_PD() {
   }
 
   const updateAvatar = async()=>{
-    if(avatar==""||avatar==null){
+    if(avatar===""||avatar===null){
+      setTimeout(() => {
       toastNotifyImage()
+      }, 3000);
       return
     }
     try {
@@ -99,7 +101,7 @@ function Acc_Set_PD() {
       })
     .then(res=>
     {
-      console.log(res.data);
+      // console.log(res.data);
     })
     } catch (error) {
       console.log(error)
@@ -118,7 +120,7 @@ function Acc_Set_PD() {
       })
     .then(res=>
     {
-      console.log(res);
+      // console.log(res);
     })
     } catch (error) {
       console.log(error)
