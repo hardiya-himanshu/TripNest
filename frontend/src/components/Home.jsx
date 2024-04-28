@@ -107,7 +107,7 @@ function Home() {
                 user_opt?
                 
                     <div className='user_options'>
-                        <Link to='/account' className='account_setting'>Account           Setting
+                        <Link to='/account' className='account_setting'>Account           Settings
                         </Link>
                         <Link to='/login' className='logout' onClick={logout}>
                             Logout

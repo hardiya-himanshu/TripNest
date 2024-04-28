@@ -135,8 +135,37 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
 
         let date1 = new Date(formattedDate1)
         let date2 = new Date(formattedDate2)
-        
-        let totaldays =  date2.getDate() - date1.getDate() +1;
+
+        let totaldays = 1
+        if(date1.getDate()>date2.getDate()){
+            let monthgap = date2.getMonth()-date1.getMonth()
+            if(monthgap==1){
+                totaldays = (30-date1.getDate())+date2.getDate()+1
+            }
+            else if(monthgap==2){
+                totaldays = (30-date1.getDate())+date2.getDate()+31
+            }
+            else{
+                totaldays = (30-date1.getDate())+date2.getDate()+61
+            }
+        }
+        else{
+            let monthgap = date2.getMonth()-date1.getMonth()
+            if(monthgap==0){
+                totaldays  =  date2.getDate() - date1.getDate() +1;
+            }
+            else if(monthgap==1){
+                totaldays = (30-date1.getDate())+date2.getDate()+1
+            }
+            else if(monthgap==2){
+                totaldays = (30-date1.getDate())+date2.getDate()+31
+            }
+            else{
+                totaldays = (30-date1.getDate())+date2.getDate()+61
+            }
+        }
+
+
         if(totaldays!=1){
             totaldays=totaldays-1
         }
@@ -198,8 +227,6 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
         }
     }
 
-    // const[userName, setUserName] = useState("")
-
     const [reviewList, setReviewList] = useState([])
       useEffect(()=>{
         try {
@@ -208,13 +235,6 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
         .then(res=>
           {
              setReviewList(res.data)
-            // response.forEach(element => {
-                // const rev= element.review
-                // const rname= element.userName
-                // const rdat= element.date
-                // setReviewList(prev=>[{rev,rname,rdat },...prev])
-                // console.log(reviewList);
-            // });
           })
         } catch (error) {
           console.log(error);
@@ -278,7 +298,7 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
 
                 </div>
                 <div className="dfp_maps">
-                    <div className="dfp_maps_title">MAPS</div>
+                    <div className="dfp_maps_title">MAP</div>
                     
                     <div className="dfp_maps_main">
                         <MapComponent location={destinationLocation} />                
@@ -286,7 +306,7 @@ function Destination_Full_Page({lati, longi, dest_to,d_image, d_name, d_desc, d_
                 </div>
                 <div className="dfp_reviews ">
                     <div className="dpf_reviews_title">
-                        REVIEW
+                        REVIEWS
                     </div>
                     <div className='dfp_show_review_section  ' id="dfp_show_review_section">
                     {

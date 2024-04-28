@@ -90,64 +90,6 @@ function Tour_Full_Page({lati, longi,image_cover,tour_name,tour_desc,tour_durati
 		}
 	};
 
-    //Setup for Dates
-
-    let yr =  date.getFullYear()
-    let mo = date.getMonth()+1
-    let da = date.getDate()
-    let da2 = date.getDate()+1
-
-    if(mo <10){
-        mo = '0'+mo
-    }
-    
-    if(da <10){
-        da = '0'+da
-    }
-
-    if(da2 <10){
-        da2 = '0'+da2
-    }
-
-    let maxmo = Number(mo)+3
-    if(maxmo <10){
-        maxmo = '0'+maxmo
-    }
-
-    let maxmoyr = yr
-    if (maxmo>12){
-        maxmo =maxmo%12
-        maxmoyr= maxmoyr+1
-    }
-
-    let currentDate = `${yr}-${mo}-${da}`
-    let currentDate2 = `${yr}-${mo}-${da2}`
-    let maxDate = `${maxmoyr}-${maxmo}-${da}`
-
-
-        
-    const[inputdate1, setInputdate1] = useState(currentDate)
-    const[inputdate2, setInputdate2] = useState(currentDate2)
-
-
-useEffect(()=>{
-    let components1 = inputdate1.split('-');
-    let components2 = inputdate2.split('-');
-    let formattedDate1 = components1[1] + '/' + components1[2] + '/' + components1[0];
-    let formattedDate2 = components2[1] + '/' + components2[2] + '/' + components2[0];
-
-    let date1 = new Date(formattedDate1)
-    let date2 = new Date(formattedDate2)
-    
-    let totaldays =  date2.getDate() - date1.getDate() +1;
-    if(totaldays!=1){
-      totaldays=totaldays-1
-    }
-    const finalAmt = totaldays*amount
-    setCheckoutPrice(finalAmt)
-}, [inputdate1, inputdate2]
-)
-
     // Setup for Reviews
 
     const[review, setReview] = useState("")
@@ -242,7 +184,7 @@ useEffect(()=>{
 
                 
                 <div className="dfp_maps">
-                    <div className="dfp_maps_title">MAPS</div>
+                    <div className="dfp_maps_title">MAP</div>
                     
                     <div className="dfp_maps_main">
                         <MapComponent location={destinationLocation} />                
@@ -251,7 +193,7 @@ useEffect(()=>{
 
                 <div className="dfp_reviews ">
                     <div className="dpf_reviews_title">
-                        REVIEW
+                        REVIEWS
                     </div>
                     <div className='dfp_show_review_section  ' id="dfp_show_review_section">
                     {

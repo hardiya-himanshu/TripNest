@@ -119,7 +119,7 @@ export const allRoutes= [
     },
     {
       path:"/destination/tokyo",
-      element:<Destination_Full_Page lati="35.686958" longi="139.749466" d_image={tokyo_lg} d_name="TOKYO, JAPAN" d_desc={d2_desc} d_a_i_1={d2att1} d_a_i_2={d2att2} d_a_n_1="Sensō-ji" d_a_n_2="N Seoul Tower" d_h_i_1={d2hotel1} d_h_i_2={d2hotel2} d_h_n_1="Shibuya Excel Hotel" d_h_n_2="Hotel Sunroute Plaza" dest_to="/" dest_price="33,999"/>,
+      element:<Destination_Full_Page lati="35.686958" longi="139.749466" d_image={tokyo_lg} d_name="TOKYO, JAPAN" d_desc={d2_desc} d_a_i_1={d2att1} d_a_i_2={d2att2} d_a_n_1="Sensō-ji" d_a_n_2="Tokyo Skytree" d_h_i_1={d2hotel1} d_h_i_2={d2hotel2} d_h_n_1="Shibuya Excel Hotel" d_h_n_2="Hotel Sunroute Plaza" dest_to="/" dest_price="33,999"/>,
     },
     {
       path:"/destination/lakshadweep",

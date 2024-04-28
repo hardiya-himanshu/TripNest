@@ -88,6 +88,18 @@ function Signup() {
     }
   }
 
+  const toastNumber = ()=>{
+    toast.warning("Please Check Your Number")
+  }
+
+  const handleChange = (e) => {
+    // Here we are checking if the length is equal to 10
+    if (e.target.value.length > 10) {
+        toastNumber()
+        return
+    }
+    setPhone(e.target.value);
+};
   return (
     <>
       <div className='main'>
@@ -101,15 +113,15 @@ function Signup() {
         </div>
 
         <form onSubmit={handleSubmit}>
-            <input type="name" placeholder='Name' onChange={(e)=>{setUsername(e.target.value)}} required/>
-            <input type="email" placeholder='Email' onChange={(e)=>{setEmail(e.target.value)}} required/>
+            <input type="name" placeholder='Name' value={username} onChange={(e)=>{setUsername(e.target.value)}} required/>
+            <input type="email" placeholder='Email' value={email}  onChange={(e)=>{setEmail(e.target.value)}} required/>
              <div>
-            <input type="password" id="password" className='loginInputs' placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
+            <input type="password" id="password" className='loginInputs' value={password}  placeholder='Password' onChange={(e)=>{setPassword(e.target.value)}} required/>
             <span className=" absolute right-10 w-7">
               <img src={eye} alt="show" className='passhide' onClick={showPass} />
             </span>
             </div>
-            <input type="number" placeholder='Phone' onChange={(e)=>{setPhone(e.target.value)}} required/>
+            <input type="number" placeholder='Phone' value={phone} onChange={handleChange}  required/>
             <div className="t_c">
                 <label htmlFor="t_c">I accept the <Link to="/terms" className='hover:underline font-semibold hover:text-blue-600' >Terms & Conditions</Link></label>
                 <input type="checkbox" name="t_c" id="t_c" checked={tnc} onChange={changeCheck} required/>

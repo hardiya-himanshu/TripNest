@@ -138,7 +138,37 @@ useEffect(()=>{
     let date1 = new Date(formattedDate1)
     let date2 = new Date(formattedDate2)
     
-    let totaldays =  date2.getDate() - date1.getDate() +1;
+    
+    let totaldays = 1
+    if(date1.getDate()>date2.getDate()){
+        let monthgap = date2.getMonth()-date1.getMonth()
+        if(monthgap==1){
+            totaldays = (30-date1.getDate())+date2.getDate()+1
+        }
+        else if(monthgap==2){
+            totaldays = (30-date1.getDate())+date2.getDate()+31
+        }
+        else{
+            totaldays = (30-date1.getDate())+date2.getDate()+61
+        }
+    }
+    else{
+        let monthgap = date2.getMonth()-date1.getMonth()
+        if(monthgap==0){
+            totaldays  =  date2.getDate() - date1.getDate() +1;
+        }
+        else if(monthgap==1){
+            totaldays = (30-date1.getDate())+date2.getDate()+1
+        }
+        else if(monthgap==2){
+            totaldays = (30-date1.getDate())+date2.getDate()+31
+        }
+        else{
+            totaldays = (30-date1.getDate())+date2.getDate()+61
+        }
+    }
+
+
     if(totaldays!=1){
       totaldays=totaldays-1
     }
@@ -235,7 +265,7 @@ useEffect(()=>{
                 <div className="tfp_city_description">{city_desc}</div>
 
                 <div className="dfp_maps">
-                    <div className="dfp_maps_title">MAPS</div>
+                    <div className="dfp_maps_title">MAP</div>
                     
                     <div className="dfp_maps_main">
                         <MapComponent location={destinationLocation} />                
@@ -244,7 +274,7 @@ useEffect(()=>{
 
                 <div className="dfp_reviews ">
                     <div className="dpf_reviews_title">
-                        REVIEW
+                        REVIEWS
                     </div>
                     <div className='dfp_show_review_section  ' id="dfp_show_review_section">
                     {
