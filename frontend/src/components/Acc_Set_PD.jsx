@@ -113,6 +113,11 @@ function Acc_Set_PD() {
     toast.success("Updated Successfully")
   }
 
+  const toastDeleteImage = ()=>{
+    toast.success("Image Deleted Successfully")
+  }
+
+
   const deleteImage =async() =>{
     try {
       await axios.post('http://localhost:3000/delete_user_image',{
@@ -121,6 +126,7 @@ function Acc_Set_PD() {
     .then(res=>
     {
       // console.log(res);
+      toastDeleteImage()
     })
     } catch (error) {
       console.log(error)
@@ -136,6 +142,19 @@ function Acc_Set_PD() {
     }
     toastNotify()
   }
+
+  const toastNumber = ()=>{
+    toast.warning("Please Check Your Number")
+  }
+
+  const handleChange = (e) => {
+    // Here we are checking if the length is equal to 10
+    if (e.target.value.length > 10) {
+        toastNumber()
+        return
+    }
+    setUserPhone(e.target.value);
+};
 
 
   return (
@@ -181,7 +200,7 @@ function Acc_Set_PD() {
 
         <input type="text" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='NAME'  defaultValue={userName} onChange={(e)=>{setUserName(e.target.value)}}/>
         <input type="email" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='EMAIL' defaultValue={userEmail} onChange={(e)=>{setUserEmail(e.target.value)}} />
-        <input type="number" name="number" id="number" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' defaultValue={userPhone} onChange={(e)=>{setUserPhone(e.target.value)}}/>
+        <input type="number" name="number" id="number" className='rounded-lg w-full h-10 p-2 text-black placeholder:text-gray-500' placeholder='PHONE' value={userPhone} onChange={handleChange}/>
         {/* <input type="date" className='rounded-lg w-full h-10 p-2 text-gray-500 placeholder' placeholder='DOB'/> */}
       </div>
         <input  type="submit" value="SAVE" className='rounded-lg w-24 text-black font-semibold h-8 bg-white cursor-pointer' />
