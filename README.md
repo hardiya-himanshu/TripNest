@@ -4,7 +4,7 @@
 
 ## Video:
 
-https://github.com/hardiya-himanshu/TripNest/assets/107581643/e3ff79a7-5165-4df7-9386-e6341831834f
+https://github.com/hardiya-himanshu/TripNest/assets/107581643/156e82f8-fa6e-4e1c-96e2-a14a25c3310e
 
 ## Steps:
 
