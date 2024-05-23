@@ -4,7 +4,7 @@
 
 ## Video:
 
-<video controls src="assets/TripNest_Video.mp4" title="Title"></video>
+https://github.com/hardiya-himanshu/TripNest/assets/107581643/e3ff79a7-5165-4df7-9386-e6341831834f
 
 ## Steps:
 
