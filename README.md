@@ -14,7 +14,7 @@ https://github.com/hardiya-himanshu/TripNest/assets/107581643/156e82f8-fa6e-4e1c
 
 - Then run **npm i axios bcrypt buffer cloudinary cors dotenv express jsonwebtoken mongoose nodemailer nodemon razorpay**.
 
-- create **.env** extension file in backend and then copy the content from sample.env and modify it as per yours.
+- Create **.env** extension file in backend and then copy the content from sample.env and modify it as per yours.
 
 - Now in **frontend** folder, similiarly open it in Integrated Terminal and run **npm i**.
 
