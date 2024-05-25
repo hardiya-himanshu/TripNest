@@ -20,7 +20,7 @@ https://github.com/hardiya-himanshu/TripNest/assets/107581643/156e82f8-fa6e-4e1c
 
 - Then run **npm i @fortawesome/react-fontawesome @googlemaps/js-api-loader @googlemaps/react-wrapper @react-google-maps/api axios buffer cloudinary gsap multer nanoid react react-anchor-link-smooth-scroll react-audio-player react-dom react-router-dom react-scroll react-toastify sonner use-local-storage**.
 
-### Now you are ready to open TripNest in browser for that you need to follow three steps:
+### Now you are almost ready to open TripNest in browser, next you need to follow three steps:
   
 - Open **backend** folder in Integrated Terminal and run **npm start**.
 
